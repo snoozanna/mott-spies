@@ -1324,7 +1324,7 @@ To hear the audio recording enter the file name into the MoTT Portal.
 <div id="codewordWrapper" class="codeword-wrapper">
   <label for="textbox--password" tabindex="0" ><span aria-label="Enter the word below" role="label" style="color:black">Enter the code below:</span></label>
   /% CODEWORD INPUT %/
-   <div class="code-input">
+   <div class="code-input multi">
      <div id="CI1"><<textbox "_password1" "" >></div>
 	 <div id="CI2"> <<textbox "_password2" "" >></div>
 	<div id="CI3"><<textbox "_password3" "" >></div>
@@ -1339,36 +1339,64 @@ To hear the audio recording enter the file name into the MoTT Portal.
 		 <<set _password3 to _password3.toUpperCase().trim()>>
      /% CODEWORD1 CORRECT %/
          <<if _password1 isnot "" and _password1 is "TEA">>
-         <<replace "#coderesult1">><h2 class="subtitle complete">Correct!</h2><</replace>>
+         
              <<audio "correct" play>>
+			 <<addclass "#CI1" "turq">>
+			 <<timed 2s>>
 		 <<replace "#CI1">><h2 class="subtitle complete">TEA</h2><</replace>>
+		  <<replace "#coderesult1">><</replace>>
+		 <</timed>>
+		 <<timed 3s>>
+			<<include "checkAnswers">>
+			<</timed>>
         <</if>>
     /% CODEWORD1 INCORRECT %/
        <<if _password1 isnot "" and _password1 isnot  "TEA">>
-          <<replace "#coderesult1">><h2 class="subtitle">Thats not right.</h2><</replace>>
-        <<timed 1.5s>><<replace "#coderesult1">><</replace>><</timed>>
+		 <<addclass "#CI1" "red">>
+        
+        <<timed 1.5s>><<replace "#coderesult1">><</replace>>
+		<<removeclass "#CI1" "red">>
+		<</timed>>
           <</if>>
 	 /% CODEWORD2 CORRECT %/
          <<if _password2 isnot "" and _password2 is "AND">>
-         <<replace "#coderesult2">><h2 class="subtitle complete">Correct!</h2><</replace>>
+        
              <<audio "correct" play>>
+			 <<addclass "#CI2" "turq">>
+			 <<timed 2s>>
 		 <<replace "#CI2">><h2 class="subtitle complete">AND</h2><</replace>>
+		  <<replace "#coderesult2">><</replace>>
+		  <</timed>>
+		  <<timed 3s>>
+			<<include "checkAnswers">>
+			<</timed>>
         <</if>>
     /% CODEWORD2 INCORRECT %/
        <<if _password2 isnot "" and _password2 isnot "AND">>
-          <<replace "#coderesult2">><h2 class="subtitle">Thats not right.</h2><</replace>>
-        <<timed 1.5s>><<replace "#coderesult2">><</replace>><</timed>>
+           <<addclass "#CI2" "red">>
+		 
+        <<timed 1.5s>><<replace "#coderesult2">><</replace>>
+		<<removeclass "#CI2" "red">><</timed>>
           <</if>>
 	 /% CODEWORD3 CORRECT %/
          <<if _password3 isnot "" and _password3 is "CRUMPETS">>
-         <<replace "#coderesult3">><h2 class="subtitle complete">Correct!</h2><</replace>>
+        
              <<audio "correct" play>>
+			 <<addclass "#CI3" "turq">>
+			 <<timed 2s>>
 		 <<replace "#CI3">><h2 class="subtitle complete">CRUMPETS</h2><</replace>>
+		 <<replace "#coderesult3">><</replace>>
+		  <</timed>>
+		  <<timed 3s>>
+			<<include "checkAnswers">>
+			<</timed>>
         <</if>>
     /% CODEWORD3 INCORRECT %/
        <<if _password3 isnot "" and _password3 isnot "CRUMPETS">>
-          <<replace "#coderesult3">><h2 class="subtitle">Thats not right.</h2><</replace>>
-        <<timed 1.5s>><<replace "#coderesult3">><</replace>><</timed>>
+		 <<addclass "#CI3" "red">>
+         
+        <<timed 1.5s>><<replace "#coderesult3">><</replace>>
+		<<removeclass "#CI3" "red">><</timed>>
           <</if>>
 		  
 		<</button>> 
@@ -1386,7 +1414,14 @@ To hear the audio recording enter the file name into the MoTT Portal.
     </div>
 
 
-
+:: checkAnswers [nobr]
+ <<if _password1 isnot "" and _password2 isnot "" and _password3 isnot "" >>
+    <<if (_password1 + _password2 + _password3) is "TEAANDCRUMPETS">>
+       <<replace "#coderesult1">><h2 class="subtitle complete">Correct!</h2><</replace>>
+        <<audio "correct" play>>
+      <<timed 2s>><<goto $nextpass>><</timed>>
+    <</if>>
+  <</if>>
 
 :: outro1 [nobr]
 <<set $prevpass to "station4e">>

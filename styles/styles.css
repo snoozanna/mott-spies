@@ -656,33 +656,37 @@ h3.subtitle > span.orange {
   max-width: 60%;
 }
 
-.code-input.multibox > .multi-input-wrapper > input.macro-textbox,
-.code-input.multibox > .multi-input-wrapper > div > input.macro-textbox {
-  width: 4rem;
-  min-width: inherit;
-  color: black;
-  margin-inline-end: 1rem;
-  text-align: center;
-  font-weight: 900;
-  font-size: 2.5rem;
-}
-
-.code-input.multibox > .multi-input-wrapper > input.macro-textbox:focus {
-  color: white;
-  text-align: center;
-  font-weight: 900;
-  font-size: 2.5rem;
-}
-
-.multi-input-wrapper {
+.code-input.multi{
   display: flex;
+    width: 100%;
+    gap: 0.5rem
+}
+.code-input.multi > div{
+  max-width: 33%;
+}
+
+.code-input.multi > div > input.macro-textbox {
+  width: 100%;
+  background-color: var(--orange);
+}
+
+.code-input.multi > div.turq > input.macro-textbox {
+  background-color: var(--turq);
+}
+
+.code-input.multi > div.red > input.macro-textbox {
+  background-color: rgb(177, 52, 52);
+}
+
+.code-input.multi > div > input[type=text] {
+  min-width: 100%;
 }
 
 #coderesult > .subtitle{
   color:black;
 }
 
-#coderesult > .subtitle.complete{
+#coderesult > .subtitle.complete, .turq > .subtitle.complete{
   color: var(--orange);
   text-transform: uppercase;
   font-weight: 900;

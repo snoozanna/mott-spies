@@ -1221,7 +1221,7 @@ To hear the audio recording enter the file name into the MoTT Portal.
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="58" name="pwDecoder" tags="nobr" position="975,725" size="100,100">&lt;div id=&quot;codewordWrapper&quot; class=&quot;codeword-wrapper&quot;&gt;
   &lt;label for=&quot;textbox--password&quot; tabindex=&quot;0&quot; &gt;&lt;span aria-label=&quot;Enter the word below&quot; role=&quot;label&quot; style=&quot;color:black&quot;&gt;Enter the code below:&lt;/span&gt;&lt;/label&gt;
   /% CODEWORD INPUT %/
-   &lt;div class=&quot;code-input&quot;&gt;
+   &lt;div class=&quot;code-input multi&quot;&gt;
      &lt;div id=&quot;CI1&quot;&gt;&lt;&lt;textbox &quot;_password1&quot; &quot;&quot; &gt;&gt;&lt;/div&gt;
 	 &lt;div id=&quot;CI2&quot;&gt; &lt;&lt;textbox &quot;_password2&quot; &quot;&quot; &gt;&gt;&lt;/div&gt;
 	&lt;div id=&quot;CI3&quot;&gt;&lt;&lt;textbox &quot;_password3&quot; &quot;&quot; &gt;&gt;&lt;/div&gt;
@@ -1236,36 +1236,64 @@ To hear the audio recording enter the file name into the MoTT Portal.
 		 &lt;&lt;set _password3 to _password3.toUpperCase().trim()&gt;&gt;
      /% CODEWORD1 CORRECT %/
          &lt;&lt;if _password1 isnot &quot;&quot; and _password1 is &quot;TEA&quot;&gt;&gt;
-         &lt;&lt;replace &quot;#coderesult1&quot;&gt;&gt;&lt;h2 class=&quot;subtitle complete&quot;&gt;Correct!&lt;/h2&gt;&lt;&lt;/replace&gt;&gt;
+         
              &lt;&lt;audio &quot;correct&quot; play&gt;&gt;
+			 &lt;&lt;addclass &quot;#CI1&quot; &quot;turq&quot;&gt;&gt;
+			 &lt;&lt;timed 2s&gt;&gt;
 		 &lt;&lt;replace &quot;#CI1&quot;&gt;&gt;&lt;h2 class=&quot;subtitle complete&quot;&gt;TEA&lt;/h2&gt;&lt;&lt;/replace&gt;&gt;
+		  &lt;&lt;replace &quot;#coderesult1&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
+		 &lt;&lt;/timed&gt;&gt;
+		 &lt;&lt;timed 3s&gt;&gt;
+			&lt;&lt;include &quot;checkAnswers&quot;&gt;&gt;
+			&lt;&lt;/timed&gt;&gt;
         &lt;&lt;/if&gt;&gt;
     /% CODEWORD1 INCORRECT %/
        &lt;&lt;if _password1 isnot &quot;&quot; and _password1 isnot  &quot;TEA&quot;&gt;&gt;
-          &lt;&lt;replace &quot;#coderesult1&quot;&gt;&gt;&lt;h2 class=&quot;subtitle&quot;&gt;Thats not right.&lt;/h2&gt;&lt;&lt;/replace&gt;&gt;
-        &lt;&lt;timed 1.5s&gt;&gt;&lt;&lt;replace &quot;#coderesult1&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
+		 &lt;&lt;addclass &quot;#CI1&quot; &quot;red&quot;&gt;&gt;
+        
+        &lt;&lt;timed 1.5s&gt;&gt;&lt;&lt;replace &quot;#coderesult1&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
+		&lt;&lt;removeclass &quot;#CI1&quot; &quot;red&quot;&gt;&gt;
+		&lt;&lt;/timed&gt;&gt;
           &lt;&lt;/if&gt;&gt;
 	 /% CODEWORD2 CORRECT %/
          &lt;&lt;if _password2 isnot &quot;&quot; and _password2 is &quot;AND&quot;&gt;&gt;
-         &lt;&lt;replace &quot;#coderesult2&quot;&gt;&gt;&lt;h2 class=&quot;subtitle complete&quot;&gt;Correct!&lt;/h2&gt;&lt;&lt;/replace&gt;&gt;
+        
              &lt;&lt;audio &quot;correct&quot; play&gt;&gt;
+			 &lt;&lt;addclass &quot;#CI2&quot; &quot;turq&quot;&gt;&gt;
+			 &lt;&lt;timed 2s&gt;&gt;
 		 &lt;&lt;replace &quot;#CI2&quot;&gt;&gt;&lt;h2 class=&quot;subtitle complete&quot;&gt;AND&lt;/h2&gt;&lt;&lt;/replace&gt;&gt;
+		  &lt;&lt;replace &quot;#coderesult2&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
+		  &lt;&lt;/timed&gt;&gt;
+		  &lt;&lt;timed 3s&gt;&gt;
+			&lt;&lt;include &quot;checkAnswers&quot;&gt;&gt;
+			&lt;&lt;/timed&gt;&gt;
         &lt;&lt;/if&gt;&gt;
     /% CODEWORD2 INCORRECT %/
        &lt;&lt;if _password2 isnot &quot;&quot; and _password2 isnot &quot;AND&quot;&gt;&gt;
-          &lt;&lt;replace &quot;#coderesult2&quot;&gt;&gt;&lt;h2 class=&quot;subtitle&quot;&gt;Thats not right.&lt;/h2&gt;&lt;&lt;/replace&gt;&gt;
-        &lt;&lt;timed 1.5s&gt;&gt;&lt;&lt;replace &quot;#coderesult2&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
+           &lt;&lt;addclass &quot;#CI2&quot; &quot;red&quot;&gt;&gt;
+		 
+        &lt;&lt;timed 1.5s&gt;&gt;&lt;&lt;replace &quot;#coderesult2&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
+		&lt;&lt;removeclass &quot;#CI2&quot; &quot;red&quot;&gt;&gt;&lt;&lt;/timed&gt;&gt;
           &lt;&lt;/if&gt;&gt;
 	 /% CODEWORD3 CORRECT %/
          &lt;&lt;if _password3 isnot &quot;&quot; and _password3 is &quot;CRUMPETS&quot;&gt;&gt;
-         &lt;&lt;replace &quot;#coderesult3&quot;&gt;&gt;&lt;h2 class=&quot;subtitle complete&quot;&gt;Correct!&lt;/h2&gt;&lt;&lt;/replace&gt;&gt;
+        
              &lt;&lt;audio &quot;correct&quot; play&gt;&gt;
+			 &lt;&lt;addclass &quot;#CI3&quot; &quot;turq&quot;&gt;&gt;
+			 &lt;&lt;timed 2s&gt;&gt;
 		 &lt;&lt;replace &quot;#CI3&quot;&gt;&gt;&lt;h2 class=&quot;subtitle complete&quot;&gt;CRUMPETS&lt;/h2&gt;&lt;&lt;/replace&gt;&gt;
+		 &lt;&lt;replace &quot;#coderesult3&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
+		  &lt;&lt;/timed&gt;&gt;
+		  &lt;&lt;timed 3s&gt;&gt;
+			&lt;&lt;include &quot;checkAnswers&quot;&gt;&gt;
+			&lt;&lt;/timed&gt;&gt;
         &lt;&lt;/if&gt;&gt;
     /% CODEWORD3 INCORRECT %/
        &lt;&lt;if _password3 isnot &quot;&quot; and _password3 isnot &quot;CRUMPETS&quot;&gt;&gt;
-          &lt;&lt;replace &quot;#coderesult3&quot;&gt;&gt;&lt;h2 class=&quot;subtitle&quot;&gt;Thats not right.&lt;/h2&gt;&lt;&lt;/replace&gt;&gt;
-        &lt;&lt;timed 1.5s&gt;&gt;&lt;&lt;replace &quot;#coderesult3&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
+		 &lt;&lt;addclass &quot;#CI3&quot; &quot;red&quot;&gt;&gt;
+         
+        &lt;&lt;timed 1.5s&gt;&gt;&lt;&lt;replace &quot;#coderesult3&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
+		&lt;&lt;removeclass &quot;#CI3&quot; &quot;red&quot;&gt;&gt;&lt;&lt;/timed&gt;&gt;
           &lt;&lt;/if&gt;&gt;
 		  
 		&lt;&lt;/button&gt;&gt; 
@@ -1280,7 +1308,13 @@ To hear the audio recording enter the file name into the MoTT Portal.
 		  &lt;div id=&quot;coderesult3&quot;&gt;&lt;/div&gt;
   
   &lt;/div&gt;
-    &lt;/div&gt;</tw-passagedata><tw-passagedata pid="59" name="outro1" tags="nobr" position="1100,725" size="100,100">&lt;&lt;set $prevpass to &quot;station4e&quot;&gt;&gt;
+    &lt;/div&gt;</tw-passagedata><tw-passagedata pid="59" name="checkAnswers" tags="nobr" position="1100,725" size="100,100">&lt;&lt;if _password1 isnot &quot;&quot; and _password2 isnot &quot;&quot; and _password3 isnot &quot;&quot; &gt;&gt;
+    &lt;&lt;if (_password1 + _password2 + _password3) is &quot;TEAANDCRUMPETS&quot;&gt;&gt;
+       &lt;&lt;replace &quot;#coderesult1&quot;&gt;&gt;&lt;h2 class=&quot;subtitle complete&quot;&gt;Correct!&lt;/h2&gt;&lt;&lt;/replace&gt;&gt;
+        &lt;&lt;audio &quot;correct&quot; play&gt;&gt;
+      &lt;&lt;timed 2s&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
+    &lt;&lt;/if&gt;&gt;
+  &lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="60" name="outro1" tags="nobr" position="1225,725" size="100,100">&lt;&lt;set $prevpass to &quot;station4e&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;outro1&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;outro2&quot;&gt;&gt;
 
@@ -1302,7 +1336,7 @@ To hear the audio recording enter the file name into the MoTT Portal.
 
 	&lt;/main&gt;
 	&lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="60" name="outro2" tags="nobr" position="1225,725" size="100,100">&lt;&lt;set $prevpass to &quot;outro1&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="61" name="outro2" tags="nobr" position="100,850" size="100,100">&lt;&lt;set $prevpass to &quot;outro1&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;outro2&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;outro3&quot;&gt;&gt;
 
@@ -1323,7 +1357,7 @@ To hear the audio recording enter the file name into the MoTT Portal.
 
 	&lt;/main&gt;
 	&lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="61" name="outro3" tags="nobr" position="100,850" size="100,100">&lt;&lt;set $prevpass to &quot;outro2&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="62" name="outro3" tags="nobr" position="225,850" size="100,100">&lt;&lt;set $prevpass to &quot;outro2&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;outro3&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;outro4&quot;&gt;&gt;
 
@@ -1348,7 +1382,7 @@ To hear the audio recording enter the file name into the MoTT Portal.
 
 	&lt;/main&gt;
 	&lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="62" name="outro4" tags="nobr" position="225,850" size="100,100">&lt;&lt;set $prevpass to &quot;outro3&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="63" name="outro4" tags="nobr" position="350,850" size="100,100">&lt;&lt;set $prevpass to &quot;outro3&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;outro4&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;outro5&quot;&gt;&gt;
 
@@ -1373,13 +1407,13 @@ To hear the audio recording enter the file name into the MoTT Portal.
 
 	&lt;/main&gt;
 	&lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="63" name="footer" tags="nobr" position="350,850" size="100,100">&lt;footer&gt;&lt;nav class=&quot;&quot;&gt;&lt;div id=&quot;back&quot; class=&quot;button-wrapper&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="64" name="footer" tags="nobr" position="475,850" size="100,100">&lt;footer&gt;&lt;nav class=&quot;&quot;&gt;&lt;div id=&quot;back&quot; class=&quot;button-wrapper&quot;&gt;
 &lt;&lt;if passage() isnot &quot;onboarding1&quot;&gt;&gt;
   &lt;&lt;button [img[assets/img/arrow.png]]&gt;&gt; 
     &lt;&lt;goto $prevpass&gt;&gt;
     &lt;&lt;/button&gt;&gt;
   &lt;&lt;/if&gt;&gt;
-&lt;/div&gt;&lt;/nav&gt;&lt;/footer&gt;</tw-passagedata><tw-passagedata pid="64" name="footernext" tags="nobr" position="475,850" size="100,100">&lt;footer&gt;&lt;nav class=&quot;&quot;&gt;&lt;div id=&quot;back&quot; class=&quot;button-wrapper&quot;&gt;
+&lt;/div&gt;&lt;/nav&gt;&lt;/footer&gt;</tw-passagedata><tw-passagedata pid="65" name="footernext" tags="nobr" position="600,850" size="100,100">&lt;footer&gt;&lt;nav class=&quot;&quot;&gt;&lt;div id=&quot;back&quot; class=&quot;button-wrapper&quot;&gt;
 &lt;&lt;if passage() isnot &quot;onboarding1&quot;&gt;&gt;
   &lt;&lt;button &quot;Back&quot;&gt;&gt; 
     &lt;&lt;goto $prevpass&gt;&gt;
