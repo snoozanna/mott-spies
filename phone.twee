@@ -44,7 +44,7 @@ UIBar.destroy();
 	<div class="comp-warning"><p>Best experienced on a phone.</p>
   </div>
 
-  <div class="entrance-btn-wrapper">
+  <div class="entrance-btn-wrapper" id="startBtn">
 	<div class="center-img-wrapper"><img src="../assets/img/green-cog-logo.png" alt="Green Cog Logo"/></div>
 	
 	<div class="green-link-wrapper" aria-label="Click Button to begin">
