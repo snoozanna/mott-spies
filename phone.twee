@@ -1,0 +1,1519 @@
+:: StoryTitle
+Spies - National Archives - Phone
+
+
+:: StoryData
+{
+	"ifid": "B3CC7B75-82B1-4C5E-A453-149BC0AA8D60",
+	"format": "SugarCube",
+	"format-version": "2.36.1",
+	"start": "Start",
+	"zoom": 0.6
+}
+
+
+:: Story Stylesheet [stylesheet]
+@import url('https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Fondamento:ital@1&family=Italianno&family=Cairo:wght@500&family=Noto+Sans+Mono:wght@700&family=Tangerine:wght@400;700&family=IM+Fell+Double+Pica+SC&family=IM+Fell+English+SC&family=IM+Fell+English:ital@0;1&family=Niconne&family=Montserrat:wght@400;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+@import url("styles/generics.css");
+@import url("styles/styles.css");
+@import url("styles/phone.css");
+
+
+:: Story JavaScript [script]
+UIBar.destroy();
+
+
+
+:: StoryInit
+<<cacheaudio "ping1" "assets/sound/ping1.mp3">>
+<<cacheaudio "correct" "assets/sound/keep2.mp3">>
+<<cacheaudio "uploading" "assets/sound/uploading.mp3">>
+<<cacheaudio "complete" "assets/sound/uploadcomplete.mp3">>
+<<cacheaudio "signal" "assets/sound/signal.mp3">>
+<<cacheaudio "newcomplete" "assets/sound/newcomplete.mp3">>
+<<waitforaudio>>
+
+
+:: Start [nobr] {"position":"134,244.33333333333337","size":"100,100"}
+<<set $prevpass to "Start">>
+<<set $passage to "Start">>
+<<set $nextpass to "onboarding1">>
+
+  <div class="wrapper spies entrance spies1" id="mount">
+	<div class="comp-warning"><p>Best experienced on a phone.</p>
+  </div>
+
+  <div class="entrance-btn-wrapper">
+	<div class="center-img-wrapper"><img src="../assets/img/green-cog-logo.png" alt="Green Cog Logo"/></div>
+	
+	<div class="green-link-wrapper" aria-label="Click Button to begin">
+		<<link "Start ">>
+		<<goto $nextpass>>
+			<</link>>
+	</div>
+</div>
+
+  </div>
+
+
+
+:: header [nobr]
+<header>
+	<div class="logo-wrapper black"><img src="assets/img/na-logo.png" alt="The National Archives Logo" class="logo na" aria-hidden="true"></div> </header>
+
+:: headeror [nobr]
+<header>
+	<div class="logo-wrapper"><img src="assets/img/MoTT-orange.png" alt="The MOTT Logo" class="logo" aria-hidden="true"></div> </header>
+
+:: headerorna [nobr]
+<header>
+	<div class="logo-wrapper"><div class="logo-wrapper black"><img src="assets/img/na-logo.png" alt="The National Archives Logo" class="logo na" aria-hidden="true"></div><img src="assets/img/MoTT-orange.png" alt="The MOTT Logo" class="logo" aria-hidden="true"></div> </header>
+
+:: headerorplain [nobr]
+<header class="plain">
+	<div class="logo-wrapper"><img src="assets/img/MoTT-orange.png" alt="The MOTT Logo" class="logo" aria-hidden="true"></div> </header>
+
+:: headerb [nobr]
+<header>
+	<div class="logo-wrapper"><img src="assets/img/mott-logo-thick.png" alt="The National Archives Logo" class="logo na" aria-hidden="true"></div> </header>
+
+:: audioChoice [nobr] {"position":"134,244.33333333333337","size":"100,100"}
+
+  <div class="wrapper audio" id="mount">
+	<div class="phone-warning"><p>MOTT is best experienced on a computer or tablet</p></div>
+<audio src="https://remote.co.com/MoTT/AgentTraining/assets/audio/Audioon_off.mp3" autoplay>Audio is not supported on your device</audio>
+
+	<p><span class="inline-icon-wrap"><img src="assets/img/audio.png" alt="volume icon"></span>This experience has the option of an audio soundtrack.  </p>
+	<p>Would you like audio on or off? </p>
+<div class="multiple-btn-wrapper">
+	<span aria-label="Click Button to turn audio on" class="button-wrapper ">
+		<<button "On">>
+			<<set $audioOn to true>>
+			<<set $audioClick to true>>
+			<<replace "#mount">>
+				<strong> <span class="inline-icon-wrap"><img src="assets/img/audio.png"></span> Audio On</strong>
+				<br>
+				<p>Press the power on button to continue</p>
+				<poweron><a data-passage="TutorialOne" class="link-internal link-image" role="link" tabindex="0" ><img src="https://remote.co.com/MoTT/AgentTraining/Images/onicon.png" alt="Power On button"></a></poweron>
+				<br>
+			<br>
+				<<link "Back">><<goto "Start">><</link>>
+				
+	<</replace>>
+		<</button>>
+	</span>
+	<span class="button-wrapper " aria-label="Click Button to turn audio off">
+	<<button "Off">>
+		<<set $audioOn to false>>
+		<<set $audioClick to true>>
+<<replace "#mount">>
+			<strong> Audio Off</strong>
+			<p>Press the power on button to continue</p>
+			<a data-passage="TutorialOne" class="link-internal link-image" role="link" tabindex="0" aria-label="Click this power on icon to continue" alt="Power on button icon" ><img src="https://remote.co.com/MoTT/AgentTraining/Images/onicon.png" alt="Power On button"></a>
+	
+			<br>
+			<br>
+			<span aria-label="Click Button to go back"><<link "Back">><<goto "Start">><</link>>
+			</span>
+		<</replace>>
+	<</button>></span>
+</div>
+
+  </div >
+
+
+:: onboarding1 [nobr]
+<<set $prevpass to "Start">>
+<<set $passage to "onboarding1">>
+<<set $nextpass to "onboarding1yes">>
+<div class="wrapper chieflogo">
+	<<include "headerorplain">>
+	<main id="main" class="flex-container-col">
+	/* <<if $audioOn is true>><audio src="assets/audio/PHONE_1_owndevice_01.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
+
+	<div class="intro-text">
+	 <p>You made it</p>
+<p>I can communicate with you on here.</p>
+<p>You’ll need to stay undercover</p>
+<p>Do you think you can do that?</p>
+	  
+	  <div class="flex-container-row">
+  <div class="green-link-wrapper" aria-label="Click a button or link to move on">
+		<<link "Yes">>
+		<<goto "onboarding1yes">>
+			<</link>>
+	</div>
+
+  <div class="green-link-wrapper" aria-label="Click a button or link to move on">
+		<<link "No">>
+		<<goto "onboarding1no">>
+			<</link>>
+	</div>
+	
+    </div>
+	</div>
+	<div class="holding"></div>
+	</main>
+  <<include "footer">>
+</div>
+
+:: onboarding1yes [nobr]
+<<set $prevpass to "onboarding1">>
+<<set $passage to "onboarding1yes">>
+<<set $nextpass to "onboarding2">>
+<div class="wrapper chief">
+	<<include "headerorplain">>
+	<main id="main" class="flex-container-col">
+	/* <<if $audioOn is true>><audio src="assets/audio/PHONE_1_owndevice_01.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
+
+	<div class="intro-text">
+<p>I knew you would be able to - I believe in you – just pretend you are a regular visitor to the Archives today.</p>
+	  
+	  <div class="flex-container-row">
+ <div class="green-link-wrapper" aria-label="Click a button or link to move on">
+		<<link "Okay">>
+		<<goto $nextpass>>
+			<</link>>
+	</div>   
+  </div>
+	</div>
+	<div class="holding"></div>
+	</main>
+  <<include "footer">>
+</div>
+
+:: onboarding1no [nobr]
+<<set $prevpass to "onboarding1">>
+<<set $passage to "onboarding1no">>
+<<set $nextpass to "onboarding2">>
+
+<div class="wrapper chief">
+	<<include "headeror">>
+	<main id="main" class="flex-container-col">
+	/* <<if $audioOn is true>><audio src="assets/audio/PHONE_1_owndevice_01.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
+
+	<div class="intro-text">
+<p>You are being too hard on yourself – I believe in you – just pretend you are a regular visitor to the Archives today.</p>
+	  
+	  <div class="flex-container-row">
+ <div class="green-link-wrapper" aria-label="Click a button or link to move on">
+		<<link "Okay">>
+		<<goto $nextpass>>
+			<</link>>
+	</div>     </div>
+	</div>
+	<div class="holding"></div>
+	</main>
+  <<include "footer">>
+</div>
+
+
+:: onboarding2 [nobr]
+<<set $prevpass to "onboarding1">>
+<<set $passage to "onboarding2">>
+<<set $nextpass to "station1">>
+
+<div class="wrapper chief">
+	<<include "headeror">>
+	<main id="main" class="flex-container-col">
+	/* <<if $audioOn is true>><audio src="assets/audio/PHONE_1_owndevice_02.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
+
+	<div class="intro-text">
+<p>Okay, Kevin’s notebook includes a location in the exhibition gallery we need to find – let’s start there.</p>
+<p>I’ll send you directions.</p>
+<p>[INSTRUCTIONS TO NEXT LOCATION – BAY 4]</p>
+<p>When there, let me know, by clicking </p>
+ <div class="green-link-wrapper" aria-label="Click a button or link to move on">
+		<<link "Here">>
+		<<goto "station1trans">>
+			<</link>>
+	</div> 
+</div>
+	</main>
+	<<include "footer">>
+</div>
+
+:: title1 [nobr]
+<div class="number-title">
+  <span class="station-num">01</span>
+  <span class="station-text">Station</span>
+</div>
+
+:: title2 [nobr]
+<div class="number-title">
+  <span class="station-num">02</span>
+  <span class="station-text">Station</span>
+</div>
+
+:: title3 [nobr]
+<div class="number-title">
+  <span class="station-num">03</span>
+  <span class="station-text">Station</span>
+</div>
+
+:: title4 [nobr]
+<div class="number-title">
+  <span class="station-num">04</span>
+  <span class="station-text">Station</span>
+</div>
+
+:: station1trans[nobr]
+<div class="wrapper titletrans">
+<<include "title1">>
+</div>
+<<timed 3s>>
+	<<goto $nextpass>>
+	<</timed>>
+
+
+:: station1 [nobr]
+<<set $prevpass to "onboarding2">>
+<<set $passage to "station1">>
+<<set $nextpass to "station1b">>
+<<set $stationnum to "01">>
+<<include "title1">>
+<div class="wrapper chief">
+	<<include "headeror">>
+  <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
+	<main id="main" class="">
+	/* <<if $audioOn is true>><audio src="assets/audio/PHONE_3_linkintocafespace_1and2.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
+
+<div class="intro-text" id="intro">
+<p>  Well done for making it this far.</p>
+<p>Wow – MI5 used to operate in complete secrecy.</p>
+<p>No one publicly admitted it existed.</p>
+<p>Much like us at the Ministry of Time Travel.</p>
+
+<p>That reminds me – don’t mention you are undercover for the MoTT!</p>
+</div>
+
+ <div class="green-link-wrapper" aria-label="Click a button or link to move on">
+		<<link "Next">>
+		<<goto $nextpass>>
+			<</link>>
+	</div> 
+
+
+	</main>
+	<<include "footer">>
+</div>
+
+:: station1b [nobr]
+<<set $prevpass to "station1">>
+<<set $passage to "station1b">>
+<<set $nextpass to "station1c">>
+<<include "title1">>
+<div class="wrapper chief">
+	<<include "headeror">>
+  <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
+	<main id="main" class="">
+	/* <<if $audioOn is true>><audio src="assets/audio/PHONE_3_linkintocafespace_1and2.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
+	<div>
+<div class="intro-text" id="intro">
+<p>It seems we need to find a MoTT codeword to unlock what Kevin has been hiding.</p>
+<p>I have a photo – which I can load up – maybe if you can find it. The MoTT codeword will be nearby. Look out for the log.</p>
+</div>
+
+<div id="toggleBtn"><<include "togglePhoto">></div>
+
+<<include "pwPhoto">>
+	</div>
+
+	</main>
+	<<include "footer">>
+</div>
+
+:: togglePhoto [nobr]
+ <div class="green-link-wrapper" aria-label="Click to show photo">
+		<<link "Show Photo">>
+		<<replace "#intro">>
+	<div class="center-img-wrapper"><img src="../assets/img/lomax.jpg" alt="Lomax image"/></div>
+			<</replace>>
+	<<replace "#toggleBtn">>
+	 <div class="green-link-wrapper" aria-label="Click to hide photo">
+		<<link "Hide Photo">>
+		<<replace "#intro">>
+		<p>It seems we need to find a MoTT codeword to unlock what Kevin has been hiding.</p>
+		<p>I have a photo – which I can load up – maybe if you can find it. The MoTT codeword will be nearby. Look out for the log.</p>
+			<</replace>>
+		<<replace "#toggleBtn">>
+		<<include "togglePhoto">>
+			<</replace>>
+		<</link>>
+	</div>  
+	<</replace>>
+	<</link>>
+	</div>   
+
+:: pwPhoto [nobr]
+<div id="codewordWrapper" class="codeword-wrapper">
+  <label for="textbox--password" tabindex="0" ><span aria-label="Enter the word below" role="label" style="color:black">Enter the code below:</span></label>
+  /% CODEWORD INPUT %/
+   <div class="code-input">
+     <<textbox "_password" "" >>
+    </div>
+    <br/>
+  <div class="result-wrapper">
+     <span class="button-wrapper" aria-label="Click Button to go Check your answer">
+       <<button "Enter">>  
+     /% STANDARDISE INPUT %/
+         <<set _password to _password.toUpperCase().trim()>>
+     /% CODEWORD CORRECT %/
+         <<if _password isnot "" and _password is "LOMAX">>
+         <<replace "#coderesult">><h2 class="subtitle complete">Correct!</h2><</replace>>
+             <<audio "correct" play>>
+         <<timed 3s>><<goto $nextpass>><</timed>>
+        <</if>>
+          /% CODEWORD INCORRECT %/
+       <<if _password isnot "" and _password isnot "LOMAX">>
+          <<replace "#coderesult">><h2 class="subtitle">Thats not right.</h2><</replace>>
+        <<timed 1.5s>><<replace "#coderesult">><</replace>><</timed>>
+          <</if>><</button>> 
+       </span>
+  
+     
+      /% CODEWORD FEEDBACK %/
+      <div id="coderesult"></div>
+  
+  </div>
+    </div>
+
+:: TransPass [nobr] {"position":"1257.6666666666667,107.66666666666666","size":"200,100"}
+ <<audio "newcomplete" play>>
+<div class="wrapper dots">
+
+	<main id="main" class=" flex-container-col-cen spin">
+	
+	
+	<<if $audioOn is true>><audio src="https://remote.co.com/MoTT/AgentTraining/Sounds/sfx/Loading op 3.wav" autoplay>Audio not supported in your browser</audio><</if>>
+	
+	<div class="mottlogo-wrapper"><img src="assets/img/mott-logo.png" id="LogoRot" class="logomott logoRot" alt="The Ministry of Time Travel Logo is spinning"></div>
+
+
+	<<timed 8s>><<goto $nextpass>><</timed>>
+	
+
+	</main>
+	<footer></footer>
+</div>
+
+
+:: station1c [nobr]
+<<set $prevpass to "station1b">>
+<<set $passage to "station1c">>
+<<set $nextpass to "station1d">>
+<<include "title1">>
+<div class="wrapper chief">
+	<<include "headeror">>
+  <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
+	<main id="main" class="">
+	/* <<if $audioOn is true>><audio src="assets/audio/PHONE_3_linkintocafespace_1and2.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
+	<div>
+<div class="intro-text" id="intro">
+<p>Good find!</p>
+<p>Lomax. I know her - she worked at MI5.</p>
+<p>Let me bring up her file.</p>
+<p>Head round the corner to [significant point on wall to allow flow of people]</p>
+</div>
+
+ <div class="green-link-wrapper" aria-label="Click a button or link to move on">
+		<<link "We're here">>
+		<<goto $nextpass>>
+			<</link>>
+	</div> 
+
+	</div>
+
+	</main>
+	<<include "footer">>
+</div>
+
+:: station1d [nobr]
+<<set $prevpass to "station1c">>
+<<set $passage to "station1d">>
+<<set $nextpass to "station1e">>
+<<include "title1">>
+<div class="wrapper chief">
+	<<include "headeror">>
+  <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
+	<main id="main" class="">
+	/* <<if $audioOn is true>><audio src="assets/audio/PHONE_3_linkintocafespace_1and2.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
+	<div>
+<div class="intro-text" id="intro">
+<p>Edith Lomax worked in the Registry – which keeps all the top-secret files and documents for MI5. </p>
+<p>Without the smooth running of the Registry, MI5 wouldn’t be able to function. </p>
+
+</div>
+
+ <div class="green-link-wrapper" aria-label="Click a button or link to move on">
+		<<link "Next">>
+		<<goto $nextpass>>
+			<</link>>
+	</div> 
+	</div>
+
+	</main>
+	<<include "footer">>
+</div>
+
+
+:: station1e [nobr]
+<<set $prevpass to "station1d">>
+<<set $passage to "station1e">>
+<<set $nextpass to "station1f">>
+<<include "title1">>
+<div class="wrapper chief">
+	<<include "headeror">>
+  <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
+	<main id="main" class="">
+	/* <<if $audioOn is true>><audio src="assets/audio/PHONE_3_linkintocafespace_1and2.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
+	<div>
+<div class="intro-text" id="intro">
+<p>I’ll explain. In the early years of MI5 the Registry was “almost overwhelmed” by “the tidal wave of documents” which descended on it, but that changed with the appointment of Edith Annie Lomax as lady superintendent. She transformed the Registry. </p>
+</div>
+
+ <div class="green-link-wrapper" aria-label="Click a button or link to move on">
+		<<link "Next">>
+		<<goto $nextpass>>
+			<</link>>
+	</div> 
+	</div>
+
+	</main>
+	<<include "footer">>
+</div>
+
+:: station1f [nobr]
+<<set $prevpass to "station1e">>
+<<set $passage to "station1f">>
+<<set $nextpass to "station1g">>
+<<include "title1">>
+<div class="wrapper chief">
+	<<include "headeror">>
+  <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
+	<main id="main" class="">
+	/* <<if $audioOn is true>><audio src="assets/audio/PHONE_3_linkintocafespace_1and2.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
+	<div>
+<div class="intro-text" id="intro">
+<p>She proved to be one of the most capable administrators in service history and MI5 wouldn’t be what it is today without the work she did. </p>
+
+<p>She later becoming the first female member of staff to be appointed MBE. </p>
+<p>That’s a big award to receive! </p>
+
+</div>
+
+ <div class="green-link-wrapper" aria-label="Click a button or link to move on">
+		<<link "Next">>
+		<<goto $nextpass>>
+			<</link>>
+	</div> 
+	</div>
+
+	</main>
+	<<include "footer">>
+</div>
+
+
+:: station1g [nobr]
+<<set $prevpass to "station1e">>
+<<set $passage to "station1g">>
+<<set $nextpass to "station2">>
+<<include "title1">>
+<div class="wrapper chief">
+	<<include "headeror">>
+  <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
+	<main id="main" class="">
+	/* <<if $audioOn is true>><audio src="assets/audio/PHONE_3_linkintocafespace_1and2.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
+
+<div class="intro-text" id="intro">
+<p>Lomax was important. </p>
+<p>But why is Kevin interested in her? </p>
+<p>I need you to find out more. </p>
+
+</div>
+ <div class="green-link-wrapper" aria-label="Click a button or link to move on">
+		<<link "Next">>
+		<<goto "station2trans">>
+			<</link>>
+	</div> 
+
+	</main>
+	<<include "footer">>
+</div>
+
+:: station2trans[nobr]
+<div class="wrapper titletrans">
+<<include "title2">>
+</div>
+<<timed 3s>>
+	<<goto $nextpass>>
+	<</timed>>
+
+
+
+:: station2 [nobr]
+<<set $prevpass to "station1g">>
+<<set $passage to "station2">>
+<<set $nextpass to "station2b">>
+<<include "title2">>
+<div class="wrapper chief">
+	<<include "headeror">>
+  <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
+	<main id="main" class="">
+	/* <<if $audioOn is true>><audio src="assets/audio/PHONE_3_linkintocafespace_1and2.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
+
+<div class="intro-text" id="intro">
+<p>The next scribble I have in his notebook is a name, “Maxwell Knight” – now that’s someone I do know about! </p>
+<p>Have a look and see what you can find out about him nearby. It seems like Kevin might have hidden something near his name on the board marked ‘Methods and techniques’.</p>
+<p>Use your UV torch to see if you can uncover anything.</p>
+
+
+
+<<include "pwUV">>
+	</div>
+
+	</main>
+	<<include "footer">>
+</div>
+
+:: station2b [nobr]
+<<set $prevpass to "station2">>
+<<set $passage to "station2b">>
+<<set $nextpass to "station2c">>
+<<include "title2">>
+<div class="wrapper chief">
+	<<include "headeror">>
+  <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
+	<main id="main" class="">
+	/* <<if $audioOn is true>><audio src="assets/audio/PHONE_3_linkintocafespace_1and2.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
+
+<div class="intro-text" id="intro">
+<p>Thanks for getting that intel on Maxwell Knight. Staff at MI5 often have to gather information and evidence when they are looking into a situation or person. </p>
+<p>And we do the same at the MoTT! We use the historical records at The National Archives to investigate the past and check that nothing has been changed! You see, there’s a renegade group we have to watch out for who are always trying to alter the course of past events.</p>
+<p>If we catch them doing it, we can get things back on track by using a special machine. It’s called The Signal Fire System.</p>
+<p>It’s difficult to explain, but we use it to connect to the past so we can put things right.</p>
+<p>When we do that, we call it Nudging.</p>
+</div>
+
+ <div class="green-link-wrapper" aria-label="Click a button or link to move on">
+		<<link "Next">>
+		<<goto $nextpass>>
+			<</link>>
+	</div> 
+
+
+	</main>
+	<<include "footer">>
+</div>
+
+:: pwUV [nobr]
+<div id="codewordWrapper" class="codeword-wrapper">
+  <label for="textbox--password" tabindex="0" ><span aria-label="Enter the word below" role="label" style="color:black">Enter the code below:</span></label>
+  /% CODEWORD INPUT %/
+   <div class="code-input">
+     <<textbox "_password" "" >>
+    </div>
+    <br/>
+  <div class="result-wrapper">
+     <span class="button-wrapper" aria-label="Click Button to go Check your answer">
+       <<button "Enter">>  
+     /% STANDARDISE INPUT %/
+         <<set _password to _password.toUpperCase().trim()>>
+     /% CODEWORD CORRECT %/
+         <<if _password isnot "" and _password is "NUDGE">>
+         <<replace "#coderesult">><h2 class="subtitle complete">Correct!</h2><</replace>>
+             <<audio "correct" play>>
+         <<timed 3s>><<goto $nextpass>><</timed>>
+        <</if>>
+          /% CODEWORD INCORRECT %/
+       <<if _password isnot "" and _password isnot "NUDGE">>
+          <<replace "#coderesult">><h2 class="subtitle">Thats not right.</h2><</replace>>
+        <<timed 1.5s>><<replace "#coderesult">><</replace>><</timed>>
+          <</if>><</button>> 
+       </span>
+  
+     
+      /% CODEWORD FEEDBACK %/
+      <div id="coderesult"></div>
+  
+  </div>
+    </div>
+
+:: station2c [nobr]
+<<set $prevpass to "station2b">>
+<<set $passage to "station2c">>
+<<set $nextpass to "station2d">>
+<<include "title2">>
+<div class="wrapper chief">
+	<<include "headeror">>
+  <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
+	<main id="main" class="">
+	/* <<if $audioOn is true>><audio src="assets/audio/PHONE_3_linkintocafespace_1and2.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
+	<div>
+<div class="intro-text" id="intro">
+<p>Ok, it seems there are lots of arrows and a drawing of a cup of tea in Kevin’s notepad. </p>
+<p>Use your UV torch and see if you can find any arrows nearby and see where they lead, it must be something to do with tea. Let me know if you find the box. </p>
+
+</div>
+
+ <div class="green-link-wrapper" aria-label="Click a button or link to move on">
+		<<link "We've found the box">>
+		<<goto $nextpass>>
+			<</link>>
+	</div> 
+	</div>
+
+	</main>
+	<<include "footer">>
+</div>
+
+:: station2d [nobr]
+<<set $prevpass to "station2c">>
+<<set $passage to "station2d">>
+<<set $nextpass to "station2e">>
+<<include "title2">>
+<div class="wrapper chief">
+	<<include "headeror">>
+  <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
+	<main id="main" class="">
+	/* <<if $audioOn is true>><audio src="assets/audio/PHONE_3_linkintocafespace_1and2.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
+
+<div class="intro-text" id="intro">
+<p>
+  Great, send me the file reference number on the box so I can load it up its contents for me to read, you can just look inside!
+
+</p>
+
+<<include "pwBox">>
+	</div>
+
+	</main>
+	<<include "footer">>
+</div>
+
+:: pwBox [nobr]
+<div id="codewordWrapper" class="codeword-wrapper">
+  <label for="textbox--password" tabindex="0" ><span aria-label="Enter the word below" role="label" style="color:black">Enter the code below:</span></label>
+  /% CODEWORD INPUT %/
+   <div class="code-input">
+     <<textbox "_password" "" >>
+    </div>
+    <br/>
+  <div class="result-wrapper">
+     <span class="button-wrapper" aria-label="Click Button to go Check your answer">
+       <<button "Enter">>  
+     /% STANDARDISE INPUT %/
+         <<set _password to _password.toUpperCase().trim()>>
+     /% CODEWORD CORRECT %/
+         <<if _password isnot "" and _password is "JK82">>
+         <<replace "#coderesult">><h2 class="subtitle complete">Correct!</h2><</replace>>
+             <<audio "correct" play>>
+         <<timed 3s>><<goto $nextpass>><</timed>>
+        <</if>>
+          /% CODEWORD INCORRECT %/
+       <<if _password isnot "" and _password isnot "JK82">>
+          <<replace "#coderesult">><h2 class="subtitle">Thats not right.</h2><</replace>>
+        <<timed 1.5s>><<replace "#coderesult">><</replace>><</timed>>
+          <</if>><</button>> 
+       </span>
+  
+     
+      /% CODEWORD FEEDBACK %/
+      <div id="coderesult"></div>
+  
+  </div>
+    </div>
+
+:: station2e [nobr]
+<<set $prevpass to "station2d">>
+<<set $passage to "station2e">>
+<<set $nextpass to "station2f">>
+<<include "title2">>
+<div class="wrapper chief">
+	<<include "headeror">>
+  <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
+	<main id="main" class="">
+	/* <<if $audioOn is true>><audio src="assets/audio/PHONE_3_linkintocafespace_1and2.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
+
+<div class="intro-text" id="intro">
+<p>
+To hear the audio recording enter the file name into the MoTT Portal. 
+</p>
+
+<<include "pwFile">>
+</div>
+
+	</main>
+	<<include "footer">>
+</div>
+
+:: pwFile [nobr]
+<div id="codewordWrapper" class="codeword-wrapper">
+  <label for="textbox--password" tabindex="0" ><span aria-label="Enter the word below" role="label" style="color:black">Enter the code below:</span></label>
+  /% CODEWORD INPUT %/
+   <div class="code-input">
+     <<textbox "_password" "" >>
+    </div>
+    <br/>
+  <div class="result-wrapper">
+     <span class="button-wrapper" aria-label="Click Button to go Check your answer">
+       <<button "Enter">>  
+     /% STANDARDISE INPUT %/
+         <<set _password to _password.toUpperCase().trim()>>
+     /% CODEWORD CORRECT %/
+         <<if _password isnot "" and _password is "JK82-1002">>
+         <<replace "#coderesult">><h2 class="subtitle complete">Correct!</h2><</replace>>
+             <<audio "correct" play>>
+         <<timed 3s>><<goto $nextpass>><</timed>>
+        <</if>>
+          /% CODEWORD INCORRECT %/
+       <<if _password isnot "" and _password isnot "JK82-1002">>
+          <<replace "#coderesult">><h2 class="subtitle">Thats not right.</h2><</replace>>
+        <<timed 1.5s>><<replace "#coderesult">><</replace>><</timed>>
+          <</if>><</button>> 
+       </span>
+  
+     
+      /% CODEWORD FEEDBACK %/
+      <div id="coderesult"></div>
+  
+  </div>
+    </div>
+
+:: station2f [nobr]
+<<set $prevpass to "station2e">>
+<<set $passage to "station2f">>
+<<set $nextpass to "station2g">>
+ <<include "title2">>
+<div class="wrapper chief">
+	<<include "headeror">>
+  <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
+	<main id="main" class="">
+	/* <<if $audioOn is true>><audio src="assets/audio/PHONE_3_linkintocafespace_1and2.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
+	<div>
+<div class="intro-text" id="intro">
+<p>Operation Tea and Crumpets was five years ago - my first mission. </p>
+
+<p>My plan was simple – stop Maxwell feeling overwhelmed – and fast!</p>
+</div>
+
+<div class="green-link-wrapper" aria-label="Click a button or link to move on">
+		<<link "Next">>
+		<<goto $nextpass>>
+			<</link>>
+	</div> 
+	</div>
+
+	</main>
+	<<include "footer">>
+</div>
+
+:: station2g [nobr]
+<<set $prevpass to "station2f">>
+<<set $passage to "station2g">>
+<<set $nextpass to "transcript">>
+<<include "title2">>
+<div class="wrapper chief">
+	<<include "headeror">>
+  <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
+	<main id="main" class="">
+	/* <<if $audioOn is true>><audio src="assets/audio/PHONE_3_linkintocafespace_1and2.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
+	<div>
+<div class="intro-text" id="intro">
+<p>Acting undercover as someone called ‘Harriet P Fredricks’, my favourite secret name, I contacted his receptionist through the Signal Fire System. Let me load up the audio recording & transcript of the interaction.</p>
+</div>
+
+<div class="green-link-wrapper" aria-label="Click a button or link to move on">
+		<<link "Next">>
+		<<goto $nextpass>>
+			<</link>>
+	</div> 
+	</div>
+
+	</main>
+	<<include "footer">>
+</div>
+
+:: transcript [nobr]
+<<set $prevpass to "station2f">>
+<<set $passage to "station2g">>
+<<set $nextpass to "station2h">>
+
+<div class="wrapper dots portrait">
+	/* <<include "headerb">> */
+  <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
+	<main id="main" class="">
+	/* <<if $audioOn is true>><audio src="assets/audio/PHONE_3_linkintocafespace_1and2.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
+	<div>
+<div class="intro-text" id="intro">
+<p>TRANSCRIPT</p>
+</div>
+
+ <span class="button-wrapper" aria-label="Click a button or link to move on">
+      <<button [[Next|$nextpass]]>><</button>>
+    </span>
+	</div>
+
+	</main>
+	<<include "footer">>
+</div>
+
+:: station2h [nobr]
+<<set $prevpass to "station2g">>
+<<set $passage to "station2h">>
+<<set $nextpass to "station2i">>
+<<include "title2">>
+<div class="wrapper chief">
+	<<include "headeror">>
+  <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
+	<main id="main" class="">
+	/* <<if $audioOn is true>><audio src="assets/audio/PHONE_3_linkintocafespace_1and2.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
+	<div>
+<div class="intro-text" id="intro">
+<p>Operation Tea and Crumpets was a success. </p>
+<p>Maxwell stayed at MI5 and I was promoted to Chief Timer. </p>
+<p>So why is Kevin looking into my first case? </p>
+<p>This is very suspicious behaviour. </p>
+<p>I need you to keep going and see what else we can find out. </p>
+</div>
+
+<div class="green-link-wrapper" aria-label="Click a button or link to move on">
+		<<link "Next">>
+		<<goto $nextpass>>
+			<</link>>
+	</div> 
+	</div>
+
+	</main>
+	<<include "footer">>
+</div>
+
+:: station2i [nobr]
+<<set $prevpass to "station2h">>
+<<set $passage to "station2i">>
+<<set $nextpass to "station3">>
+ <<include "title2">>
+<div class="wrapper chief">
+	<<include "headeror">>
+  <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
+	<main id="main" class="">
+	/* <<if $audioOn is true>><audio src="assets/audio/PHONE_3_linkintocafespace_1and2.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
+	<div>
+<div class="intro-text" id="intro">
+<p>The next scribble in his notebook is the name Mary Sherer – and it’s in the section of the exhibition called Double Cross Masterminds.</p>
+<p>Can you find the name of the codename for the Agent she worked with, Lily Sergeyev?  </p>
+
+</div>
+
+<<include "pwLily">>
+	</div>
+
+	</main>
+	<<include "footer">>
+</div>
+
+:: pwLily [nobr]
+<div id="codewordWrapper" class="codeword-wrapper">
+  <label for="textbox--password" tabindex="0" ><span aria-label="Enter the word below" role="label" style="color:black">Enter the code below:</span></label>
+  /% CODEWORD INPUT %/
+   <div class="code-input">
+     <<textbox "_password" "" >>
+    </div>
+    <br/>
+  <div class="result-wrapper">
+     <span class="button-wrapper" aria-label="Click Button to go Check your answer">
+       <<button "Enter">>  
+     /% STANDARDISE INPUT %/
+         <<set _password to _password.toUpperCase().trim()>>
+     /% CODEWORD CORRECT %/
+         <<if _password isnot "" and _password is "TREASURE">>
+         <<replace "#coderesult">><h2 class="subtitle complete">Correct!</h2><</replace>>
+             <<audio "correct" play>>
+         <<timed 3s>><<goto "station3trans">><</timed>>
+        <</if>>
+          /% CODEWORD INCORRECT %/
+       <<if _password isnot "" and _password isnot "TREASURE">>
+          <<replace "#coderesult">><h2 class="subtitle">Thats not right.</h2><</replace>>
+        <<timed 1.5s>><<replace "#coderesult">><</replace>><</timed>>
+          <</if>><</button>> 
+       </span>
+  
+     
+      /% CODEWORD FEEDBACK %/
+      <div id="coderesult"></div>
+  
+  </div>
+    </div>
+
+:: station3trans[nobr]
+<div class="wrapper titletrans">
+<<include "title3">>
+</div>
+<<timed 3s>>
+	<<goto $nextpass>>
+	<</timed>>
+
+:: station3 [nobr]
+<<set $prevpass to "station2i">>
+<<set $passage to "station3">>
+<<set $nextpass to "station3b">>
+<<include "title3">>
+<div class="wrapper chief">
+	<<include "headeror">>
+  <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
+	<main id="main" class="">
+	/* <<if $audioOn is true>><audio src="assets/audio/PHONE_3_linkintocafespace_1and2.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
+
+<div class="intro-text" id="intro">
+<p>Excellent – let’s get you somewhere we can look into this. </p>
+<p>Ahead of you is a spycraft table. </p>
+<p>Head there and when you are there click below</p>
+</div>
+
+<div class="green-link-wrapper" aria-label="Click a button or link to move on">
+		<<link "We're there">>
+		<<goto $nextpass>>
+			<</link>>
+
+	</div>
+
+	</main>
+	<<include "footer">>
+</div>
+
+:: station3b [nobr]
+<<set $prevpass to "station3">>
+<<set $passage to "station3b">>
+<<set $nextpass to "station3c">>
+<<include "title3">>
+<div class="wrapper chief">
+	<<include "headeror">>
+  <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
+	<main id="main" class="">
+	/* <<if $audioOn is true>><audio src="assets/audio/PHONE_3_linkintocafespace_1and2.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
+	<div>
+<div class="intro-text" id="intro">
+<p> In the Second World War, MI5 played a key role in combating enemy spies, intercepting German communications and feeding misinformation back to Germany.</p>
+<p> It seems we are focusing on Mary Sherer. MI5's first female agent runner!</p>
+
+</div>
+
+<div class="green-link-wrapper" aria-label="Click a button or link to move on">
+		<<link "Next">>
+		<<goto $nextpass>>
+			<</link>>
+	</div> 
+	</div>
+
+	</main>
+	<<include "footer">>
+</div>
+
+:: station3c [nobr]
+<<set $prevpass to "station3b">>
+<<set $passage to "station3c">>
+<<set $nextpass to "station3d">>
+<<include "title3">>
+<div class="wrapper chief">
+	<<include "headeror">>
+  <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
+	<main id="main" class="">
+	/* <<if $audioOn is true>><audio src="assets/audio/PHONE_3_linkintocafespace_1and2.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
+	<div>
+<div class="intro-text" id="intro">
+<p>She joined a department called Double Cross – and her job was to be a Handler for an agent called TREASURE.</p>
+<p>A Handler is the person responsible for managing active undercover agents, providing instructions, sending messages and keeping them safe. </p>
+</div>
+
+<div class="green-link-wrapper" aria-label="Click a button or link to move on">
+		<<link "Next">>
+		<<goto $nextpass>>
+			<</link>>
+	</div> 
+	</div>
+
+	</main>
+	<<include "footer">>
+</div>
+
+:: station3d [nobr]
+<<set $prevpass to "station3c">>
+<<set $passage to "station3d">>
+<<set $nextpass to "station3e">>
+<<include "title3">>
+<div class="wrapper chief">
+	<<include "headeror">>
+  <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
+	<main id="main" class="">
+	/* <<if $audioOn is true>><audio src="assets/audio/PHONE_3_linkintocafespace_1and2.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
+	<div>
+<div class="intro-text" id="intro">
+<p>TREASURE was a Double Agent, who was pretending to work for the Germans, but she was actually passing information to Mary Sherer, and to MI5. </p>
+</div>
+
+<div class="green-link-wrapper" aria-label="Click a button or link to move on">
+		<<link "Next">>
+		<<goto $nextpass>>
+			<</link>>
+	</div> 
+	</div>
+
+	</main>
+	<<include "footer">>
+</div>
+
+
+:: station3e [nobr]
+<<set $prevpass to "station3d">>
+<<set $passage to "station3e">>
+<<set $nextpass to "station3f">>
+<<include "title3">>
+<div class="wrapper chief">
+	<<include "headeror">>
+  <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
+	<main id="main" class="">
+	/* <<if $audioOn is true>><audio src="assets/audio/PHONE_3_linkintocafespace_1and2.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
+
+<div class="intro-text" id="intro">
+<p>Mary would send bogus messages to TREASURE for her to pass back the Germans to confuse them.</p>
+<p>Without Mary and TREASURE, Britain’s all-important D-Day plan may never have succeeded.</p>
+</div>
+
+<div class="green-link-wrapper" aria-label="Click a button or link to move on">
+		<<link "Next">>
+		<<goto $nextpass>>
+			<</link>>
+	</div> 
+	</main>
+	<<include "footer">>
+</div>
+
+:: station3f [nobr]
+<<set $prevpass to "station3e">>
+<<set $passage to "station3f">>
+<<set $nextpass to "station3g">>
+ <<include "title3">>
+<div class="wrapper chief">
+	<<include "headeror">>
+  <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
+	<main id="main" class="">
+	/* <<if $audioOn is true>><audio src="assets/audio/PHONE_3_linkintocafespace_1and2.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
+
+<div class="intro-text" id="intro">
+<p>I’ve not heard of Mary before – an unrecognised hero it seems. </p>
+
+<p>What has this got to do with Kevin though? </p>
+
+<p>Use your UV torch to see if you can find anything nearby. </p>
+<<include "pwTorch">>
+</div>
+
+	</main>
+	<<include "footer">>
+</div>
+
+
+:: pwTorch [nobr]
+<div id="codewordWrapper" class="codeword-wrapper">
+  <label for="textbox--password" tabindex="0" ><span aria-label="Enter the word below" role="label" style="color:black">Enter the code below:</span></label>
+  /% CODEWORD INPUT %/
+   <div class="code-input">
+     <<textbox "_password" "" >>
+    </div>
+    <br/>
+  <div class="result-wrapper">
+     <span class="button-wrapper" aria-label="Click Button to go Check your answer">
+       <<button "Enter">>  
+     /% STANDARDISE INPUT %/
+         <<set _password to _password.toUpperCase().trim()>>
+     /% CODEWORD CORRECT %/
+         <<if _password isnot "" and _password is "TADAH">>
+         <<replace "#coderesult">><h2 class="subtitle complete">Correct!</h2><</replace>>
+             <<audio "correct" play>>
+         <<timed 3s>><<goto $nextpass>><</timed>>
+        <</if>>
+          /% CODEWORD INCORRECT %/
+       <<if _password isnot "" and _password isnot "TADAH">>
+          <<replace "#coderesult">><h2 class="subtitle">Thats not right.</h2><</replace>>
+        <<timed 1.5s>><<replace "#coderesult">><</replace>><</timed>>
+          <</if>><</button>> 
+       </span>
+  
+     
+      /% CODEWORD FEEDBACK %/
+      <div id="coderesult"></div>
+  
+  </div>
+    </div>
+
+:: station3g [nobr]
+<<set $prevpass to "station3f">>
+<<set $passage to "station3g">>
+<<set $nextpass to "station4">>
+<<include "title3">>
+<div class="wrapper chief">
+	<<include "headeror">>
+  <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
+	<main id="main" class="">
+	/* <<if $audioOn is true>><audio src="assets/audio/PHONE_3_linkintocafespace_1and2.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
+
+<div class="intro-text" id="intro">
+<p>Oh no, TADAH! That stands for “Time Agent Disrupters Against History”. </p>
+
+<p>They are the one true enemy of the Ministry of Time Travel. Remember earlier, when I mentioned a renegade group we have to watch out for, who are always trying to alter the course of past events? That’s TADAH.</p>
+
+<p>I’ve been keeping something from you. Something I read in Kevin’s notebook that made my blood run cold. He wrote: “I can’t wait for the TADAH moment!”</p>
+
+<p>But I just can’t believe it. Is Kevin <i>really</i> a Double Agent who has been passing messages to the most villainous group in all of time and space?!</p>
+
+<p>The SECRET BENCH file will prove it one way or another.  </p>
+
+<p>We are in very dangerous territory.</p>
+
+</div>
+
+<div class="green-link-wrapper" aria-label="Click a button or link to move on">
+		<<link "Next">>
+		<<goto "station4trans">>
+			<</link>>
+	</div> 
+	</main>
+	<<include "footer">>
+</div>
+
+:: station4trans[nobr]
+<div class="wrapper titletrans">
+<<include "title4">>
+</div>
+<<timed 3s>>
+	<<goto $nextpass>>
+	<</timed>>
+
+:: station4 [nobr]
+<<set $prevpass to "station3g">>
+<<set $passage to "station4">>
+<<set $nextpass to "station4b">>
+<<include "title4">>
+<div class="wrapper chief">
+	<<include "headeror">>
+  <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
+	<main id="main" class="">
+	/* <<if $audioOn is true>><audio src="assets/audio/PHONE_3_linkintocafespace_1and2.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
+
+<div class="intro-text" id="intro">
+<p>The last scribble I have in his notebook is the word <i>Secret</i>. </p>
+<p>At a secret agency you can’t keep secrets from one another. </p>
+<p>You need to trust your friends. </p>
+<p>I thought I could trust Kevin. </p>
+
+
+<div class="green-link-wrapper" aria-label="Click a button or link to move on">
+		<<link "Next">>
+		<<goto $nextpass>>
+			<</link>>
+	</div> 
+	</div>
+
+	</main>
+	<<include "footer">>
+</div>
+
+:: station4b [nobr]
+<<set $prevpass to "station4">>
+<<set $passage to "station4b">>
+<<set $nextpass to "station4c">>
+<<include "title4">>
+<div class="wrapper chief">
+	<<include "headeror">>
+  <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
+	<main id="main" class="">
+	/* <<if $audioOn is true>><audio src="assets/audio/PHONE_3_linkintocafespace_1and2.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
+
+<div class="intro-text" id="intro">
+<p>Has he been a TADAH double agent all along?</p>
+<p>Has he been sending them secret information about the MoTT?</p>
+<p>And if so, what secret information?</p>
+
+<div class="green-link-wrapper" aria-label="Click a button or link to move on">
+		<<link "Next">>
+		<<goto $nextpass>>
+			<</link>>
+	</div> 
+	</div>
+
+	</main>
+	<<include "footer">>
+</div>
+
+:: station4c [nobr]
+<<set $prevpass to "station4b">>
+<<set $passage to "station4c">>
+<<set $nextpass to "station4d">>
+<<include "title4">>
+<div class="wrapper chief">
+	<<include "headeror">>
+  <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
+	<main id="main" class="">
+	/* <<if $audioOn is true>><audio src="assets/audio/PHONE_3_linkintocafespace_1and2.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
+
+<div class="intro-text" id="intro">
+<p> Head into the library room inside the exhibition </p>
+<div class="green-link-wrapper" aria-label="Click a button or link to move on">
+		<<link "We're here">>
+		<<goto $nextpass>>
+			<</link>>
+	</div> 
+	</div>
+
+	</main>
+	<<include "footer">>
+</div>
+
+:: station4d [nobr]
+<<set $prevpass to "station4c">>
+<<set $passage to "station4d">>
+<<set $nextpass to "station4e">>
+<<include "title4">>
+<div class="wrapper chief">
+	<<include "headeror">>
+  <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
+	<main id="main" class="">
+	/* <<if $audioOn is true>><audio src="assets/audio/PHONE_3_linkintocafespace_1and2.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
+
+<div class="intro-text" id="intro">
+<p>In this room I think there is a message that has been put into code. </p>
+<p>MI5 agents, much like MoTT agents, use codes to keep their secrets from being discovered.  </p>
+<p>But agents need to be able to decode those secrets.  </p>
+
+<div class="green-link-wrapper" aria-label="Click a button or link to move on">
+		<<link "Next">>
+		<<goto $nextpass>>
+			<</link>>
+	</div> 
+	</div>
+
+	</main>
+	<<include "footer">>
+</div>
+
+:: station4e [nobr]
+<<set $prevpass to "station4d">>
+<<set $passage to "station4e">>
+<<set $nextpass to "outro1">>
+<<include "title4">>
+<div class="wrapper chief">
+	<<include "headeror">>
+  <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
+	<main id="main" class="">
+	/* <<if $audioOn is true>><audio src="assets/audio/PHONE_3_linkintocafespace_1and2.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
+
+<div class="intro-text" id="intro">
+<p>You should have the MoTT decoder as part of your kit. </p>
+<p>I need you to find out what has been hidden in code, maybe check the document boxes. Kevin seems to like using them! </p>
+<p>Use your UV torch to see if you can find anything and then use the decoder to work out the message.</p>
+
+<<include "pwDecoder">>
+	</div>
+
+	</main>
+	<<include "footer">>
+</div>
+
+:: pwDecoder  [nobr]
+<div id="codewordWrapper" class="codeword-wrapper">
+  <label for="textbox--password" tabindex="0" ><span aria-label="Enter the word below" role="label" style="color:black">Enter the code below:</span></label>
+  /% CODEWORD INPUT %/
+   <div class="code-input">
+     <div id="CI1"><<textbox "_password1" "" >></div>
+	 <div id="CI2"> <<textbox "_password2" "" >></div>
+	<div id="CI3"><<textbox "_password3" "" >></div>
+    </div>
+    <br/>
+  <div class="result-wrapper">
+     <span class="button-wrapper" aria-label="Click Button to go Check your answer">
+       <<button "Enter">>  
+     /% STANDARDISE INPUT %/
+         <<set _password1 to _password1.toUpperCase().trim()>>
+		 <<set _password2 to _password2.toUpperCase().trim()>>
+		 <<set _password3 to _password3.toUpperCase().trim()>>
+     /% CODEWORD1 CORRECT %/
+         <<if _password1 isnot "" and _password1 is "TEA">>
+         <<replace "#coderesult1">><h2 class="subtitle complete">Correct!</h2><</replace>>
+             <<audio "correct" play>>
+		 <<replace "#CI1">><h2 class="subtitle complete">TEA</h2><</replace>>
+        <</if>>
+    /% CODEWORD1 INCORRECT %/
+       <<if _password1 isnot "" and _password1 isnot  "TEA">>
+          <<replace "#coderesult1">><h2 class="subtitle">Thats not right.</h2><</replace>>
+        <<timed 1.5s>><<replace "#coderesult1">><</replace>><</timed>>
+          <</if>>
+	 /% CODEWORD2 CORRECT %/
+         <<if _password2 isnot "" and _password2 is "AND">>
+         <<replace "#coderesult2">><h2 class="subtitle complete">Correct!</h2><</replace>>
+             <<audio "correct" play>>
+		 <<replace "#CI2">><h2 class="subtitle complete">AND</h2><</replace>>
+        <</if>>
+    /% CODEWORD2 INCORRECT %/
+       <<if _password2 isnot "" and _password2 isnot "AND">>
+          <<replace "#coderesult2">><h2 class="subtitle">Thats not right.</h2><</replace>>
+        <<timed 1.5s>><<replace "#coderesult2">><</replace>><</timed>>
+          <</if>>
+	 /% CODEWORD3 CORRECT %/
+         <<if _password3 isnot "" and _password3 is "CRUMPETS">>
+         <<replace "#coderesult3">><h2 class="subtitle complete">Correct!</h2><</replace>>
+             <<audio "correct" play>>
+		 <<replace "#CI3">><h2 class="subtitle complete">CRUMPETS</h2><</replace>>
+        <</if>>
+    /% CODEWORD3 INCORRECT %/
+       <<if _password3 isnot "" and _password3 isnot "CRUMPETS">>
+          <<replace "#coderesult3">><h2 class="subtitle">Thats not right.</h2><</replace>>
+        <<timed 1.5s>><<replace "#coderesult3">><</replace>><</timed>>
+          <</if>>
+		  
+		<</button>> 
+       </span>
+	
+	
+  
+     
+      /% CODEWORD FEEDBACK %/
+      <div id="coderesult1"></div>
+	    <div id="coderesult2"></div>
+		  <div id="coderesult3"></div>
+  
+  </div>
+    </div>
+
+
+
+
+:: outro1 [nobr]
+<<set $prevpass to "station4e">>
+<<set $passage to "outro1">>
+<<set $nextpass to "outro2">>
+
+<div class="wrapper chief">
+	<<include "headerorna">>
+  <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
+	<main id="main" class="">
+	/* <<if $audioOn is true>><audio src="assets/audio/PHONE_3_linkintocafespace_1and2.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
+
+<div class="intro-text" id="intro">
+<p>Operation: Tea & Crumpets. </p>
+<p> I told you! My first mission!</p>
+<div class="green-link-wrapper" aria-label="Click a button or link to move on">
+		<<link "Next">>
+		<<goto $nextpass>>
+			<</link>>
+	</div> 
+	</div>
+
+	</main>
+	<<include "footer">>
+</div>
+
+:: outro2 [nobr]
+<<set $prevpass to "outro1">>
+<<set $passage to "outro2">>
+<<set $nextpass to "outro3">>
+
+<div class="wrapper chief">
+	<<include "headeror">>
+  <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
+	<main id="main" class="">
+	/* <<if $audioOn is true>><audio src="assets/audio/PHONE_3_linkintocafespace_1and2.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
+
+<div class="intro-text" id="intro">
+<p>If he shows TADAH how to nudge my first mission… so that it fails... I won’t become the Chief Timer! </p>
+<div class="green-link-wrapper" aria-label="Click a button or link to move on">
+		<<link "Next">>
+		<<goto $nextpass>>
+			<</link>>
+	</div> 
+	</div>
+
+	</main>
+	<<include "footer">>
+</div>
+
+:: outro3 [nobr]
+<<set $prevpass to "outro2">>
+<<set $passage to "outro3">>
+<<set $nextpass to "outro4">>
+
+<div class="wrapper chief">
+	<<include "headeror">>
+  <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
+	<main id="main" class="">
+	/* <<if $audioOn is true>><audio src="assets/audio/PHONE_3_linkintocafespace_1and2.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
+
+<div class="intro-text" id="intro">
+<p>We need to stop Kevin passing on that information to TADAH!</p>
+<p>I’ve received intel that he went to the shop at The National Archives.</p> 
+<p>And placed something there. </p>
+
+
+<div class="green-link-wrapper" aria-label="Click a button or link to move on">
+		<<link "Next">>
+		<<goto $nextpass>>
+			<</link>>
+	</div> 
+	</div>
+
+	</main>
+	<<include "footer">>
+</div>
+
+
+:: outro4 [nobr]
+<<set $prevpass to "outro3">>
+<<set $passage to "outro4">>
+<<set $nextpass to "outro5">>
+
+<div class="wrapper chief">
+	<<include "headeror">>
+  <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
+	<main id="main" class="">
+	/* <<if $audioOn is true>><audio src="assets/audio/PHONE_3_linkintocafespace_1and2.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
+
+<div class="intro-text" id="intro">
+<p>I need you to head out of the exhibition, to the shop. </p>
+<p>Ask my friend behind the counter if they have seen Kevin. </p>
+<p>We must find out what he has been hiding. </p>
+
+
+/* <div class="green-link-wrapper" aria-label="Click a button or link to move on">
+		<<link "Next">>
+		<<goto $nextpass>>
+			<</link>>
+	</div>  */
+	</div>
+
+	</main>
+	<<include "footer">>
+</div>
+
+
+:: footer [nobr]
+
+<footer><nav class=""><div id="back" class="button-wrapper">
+<<if passage() isnot "onboarding1">>
+  <<button [img[assets/img/arrow.png]]>> 
+    <<goto $prevpass>>
+    <</button>>
+  <</if>>
+</div></nav></footer>
+
+:: footernext [nobr]
+
+<footer><nav class=""><div id="back" class="button-wrapper">
+<<if passage() isnot "onboarding1">>
+  <<button "Back">> 
+    <<goto $prevpass>>
+    <</button>>
+  <</if>>
+</div>
+ <span class="button-wrapper" aria-label="Click a button or link to move on">
+      <<button [[Next|$nextpass]]>><</button>>
+    </span></nav></footer>
