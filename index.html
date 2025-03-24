@@ -829,7 +829,7 @@ scrollToBottom()
 
 &lt;div class=&quot;intro-text transcript&quot; id=&quot;intro&quot;&gt;
 
-&lt;&lt;timed 0.1s&gt;&gt;
+&lt;&lt;timed 0.3s&gt;&gt;
 	&lt;&lt;append &quot;#intro&quot;&gt;&gt;
 	&lt;div class=&quot;message r&quot;&gt;
 		&lt;div class=&quot;sender&quot;&gt;RECEPTIONIST&lt;/div&gt;
@@ -845,6 +845,7 @@ scrollToBottom()
 		&lt;p&gt;This is Ms Harriet P Fredricks – I am calling from the Department of Being Totally Chill. &lt;/p&gt;
 	&lt;/div&gt;
 	&lt;&lt;/append&gt;&gt;
+	&lt;&lt;set $h to setup.callScrollToBottom()&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 
 &lt;&lt;timed 8s&gt;&gt;
@@ -854,6 +855,7 @@ scrollToBottom()
 		&lt;p&gt;I don’t think heard of that department before.&lt;/p&gt;
 	&lt;/div&gt;
 	&lt;&lt;/append&gt;&gt;
+	&lt;&lt;set $h to setup.callScrollToBottom()&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 
 &lt;&lt;timed 10.5s&gt;&gt;
@@ -863,17 +865,17 @@ scrollToBottom()
 		&lt;p&gt;Ermmm. We’re very new and extremely top secret!  &lt;/p&gt;
 	&lt;/div&gt;
 	&lt;&lt;/append&gt;&gt;
-	/* &lt;&lt;ScrollTo &quot;bot1&quot; false&gt;&gt; */
+	&lt;&lt;set $h to setup.callScrollToBottom()&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 
-&lt;&lt;timed 13s&gt;&gt;
+&lt;&lt;timed 13.5s&gt;&gt;
 	&lt;&lt;append &quot;#intro&quot;&gt;&gt;
 	&lt;div class=&quot;message r&quot;  id=&quot;bot2&quot;&gt;
 		&lt;div class=&quot;sender&quot;&gt;RECEPTIONIST&lt;/div&gt;
 		&lt;p&gt;Indeed. And what can I do for you today?&lt;/p&gt;
 	&lt;/div&gt;
 	&lt;&lt;/append&gt;&gt;
-		/* &lt;&lt;ScrollTo &quot;bot2&quot; false&gt;&gt; */
+	&lt;&lt;set $h to setup.callScrollToBottom()&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 
 &lt;&lt;timed 16.5s&gt;&gt;
@@ -883,7 +885,7 @@ scrollToBottom()
 		&lt;p&gt;We’ve noticed Maxwell has been overworking lately and it’s making him rather glum. &lt;/p&gt;
 	&lt;/div&gt;
 	&lt;&lt;/append&gt;&gt;
-/* &lt;&lt;ScrollTo &quot;bot3&quot; false&gt;&gt; */
+&lt;&lt;set $h to setup.callScrollToBottom()&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 
 &lt;&lt;timed 21s&gt;&gt;

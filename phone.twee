@@ -875,7 +875,7 @@ scrollToBottom()
 
 <div class="intro-text transcript" id="intro">
 
-<<timed 0.1s>>
+<<timed 0.3s>>
 	<<append "#intro">>
 	<div class="message r">
 		<div class="sender">RECEPTIONIST</div>
@@ -891,6 +891,7 @@ scrollToBottom()
 		<p>This is Ms Harriet P Fredricks – I am calling from the Department of Being Totally Chill. </p>
 	</div>
 	<</append>>
+	<<set $h to setup.callScrollToBottom()>>
 <</timed>>
 
 <<timed 8s>>
@@ -900,6 +901,7 @@ scrollToBottom()
 		<p>I don’t think heard of that department before.</p>
 	</div>
 	<</append>>
+	<<set $h to setup.callScrollToBottom()>>
 <</timed>>
 
 <<timed 10.5s>>
@@ -909,17 +911,17 @@ scrollToBottom()
 		<p>Ermmm. We’re very new and extremely top secret!  </p>
 	</div>
 	<</append>>
-	/* <<ScrollTo "bot1" false>> */
+	<<set $h to setup.callScrollToBottom()>>
 <</timed>>
 
-<<timed 13s>>
+<<timed 13.5s>>
 	<<append "#intro">>
 	<div class="message r"  id="bot2">
 		<div class="sender">RECEPTIONIST</div>
 		<p>Indeed. And what can I do for you today?</p>
 	</div>
 	<</append>>
-		/* <<ScrollTo "bot2" false>> */
+	<<set $h to setup.callScrollToBottom()>>
 <</timed>>
 
 <<timed 16.5s>>
@@ -929,7 +931,7 @@ scrollToBottom()
 		<p>We’ve noticed Maxwell has been overworking lately and it’s making him rather glum. </p>
 	</div>
 	<</append>>
-/* <<ScrollTo "bot3" false>> */
+<<set $h to setup.callScrollToBottom()>>
 <</timed>>
 
 <<timed 21s>>
