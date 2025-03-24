@@ -237,6 +237,14 @@ header > .logo-wrapper.black > img{
   background-size: 53%,20%, cover;
 }
 
+.wrapper.transcript {
+  background-image: url(./../assets/img/sq-paper-low.jpeg);
+  background-repeat: no-repeat;
+  background-position:  center;
+  background-size:  cover;
+}
+
+
 
 .number-title {
   font-family: var(--body);
@@ -302,6 +310,8 @@ margin-top: initial;
 }
 
 
+
+
 /* ENTRANCE  */
 
 .entrance {
@@ -324,3 +334,42 @@ gap:2rem;
 }
 
 
+/* TRASNCRIPT  */
+.intro-text.transcript{
+  color: black;
+}
+
+.intro-text.transcript > .message{
+  display: flex;
+  flex-direction: column;
+}
+
+.intro-text.transcript > .message > p{
+  background: aliceblue;
+    border-radius: 20px;
+    padding: 1rem;
+    width: fit-content;
+    max-width: 90%;
+    font-size: 1.6rem;
+}
+
+.intro-text.transcript > .message.b{
+  text-align: end;
+  align-items: end;
+}
+
+.intro-text.transcript > .message.b > p{
+  background: rgb(224 235 230);
+}
+
+.intro-text.transcript > .message.r > p{
+  background: rgb(241 238 232);
+}
+
+.intro-text.transcript > .message > .sender{
+font-weight: 900;
+}
+
+#intro{
+  overflow-y: auto;
+}

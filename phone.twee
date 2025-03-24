@@ -23,6 +23,51 @@ Spies - National Archives - Phone
 :: Story JavaScript [script]
 UIBar.destroy();
 
+setup.callScrollToBottom = () => {
+	console.log("scrolling..")
+const scrollToBottom = () => {
+    var element = document.getElementById("bottom");
+    if (element) {
+		console.log|("element", element)
+        element.scrollIntoView({ behavior: "smooth", block: "end" });
+    }
+
+}
+
+scrollToBottom()
+}
+
+// SCROLL MACRO
+// Macro.add('ScrollTo', {
+// 	skipArgs : false,
+// 	handler  : function () {
+// 		if (this.args.length > 0) {
+// 			var Value = this.args[0];
+// 			if (typeof Value === "string" || Value instanceof String) {
+// 				var element = null, params = undefined;
+// 				if (this.args.length > 1) {
+// 					params = this.args[1];
+// 				}
+// 				// wait for element
+// 				var elementWaitID = setInterval(function () {
+// 					element = document.getElementById(Value);
+// 					if (element != null) {
+// 						// stop waiting and set scroll position
+// 						clearInterval(elementWaitID);
+// 						if (params != undefined) {
+// 							element.scrollIntoView(params);
+// 						} else {
+// 							element.scrollIntoView();
+// 						}
+// 					}
+// 				}, 100);
+// 			}
+// 		}
+// 	}
+// });
+
+
+
 
 
 :: StoryInit
@@ -39,6 +84,7 @@ UIBar.destroy();
 <<set $prevpass to "Start">>
 <<set $passage to "Start">>
 <<set $nextpass to "onboarding1">>
+<<set $audioOn to true>>
 
   <div class="wrapper spies entrance spies1" id="mount">
 	<div class="comp-warning"><p>Best experienced on a phone.</p>
@@ -130,7 +176,7 @@ UIBar.destroy();
 <div class="wrapper chieflogo">
 	<<include "headerorplain">>
 	<main id="main" class="flex-container-col">
-	/* <<if $audioOn is true>><audio src="assets/audio/PHONE_1_owndevice_01.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
+	<<if $audioOn is true>><audio src="assets/audio/MoTT_Spies_ONLINE_PLATFORM__MP3.mp3" autoplay>Audio not supported in your browser</audio><</if>>
 
 	<div class="intro-text">
 	 <p>You made it</p>
@@ -165,14 +211,14 @@ UIBar.destroy();
 <div class="wrapper chief">
 	<<include "headerorplain">>
 	<main id="main" class="flex-container-col">
-	/* <<if $audioOn is true>><audio src="assets/audio/PHONE_1_owndevice_01.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
+	<<if $audioOn is true>><audio src="assets/audio/MoTT_Spies_YES__MP3.mp3" autoplay>Audio not supported in your browser</audio><</if>>
 
 	<div class="intro-text">
 <p>I knew you would be able to - I believe in you – just pretend you are a regular visitor to the Archives today.</p>
 	  
 	  <div class="flex-container-row">
  <div class="green-link-wrapper" aria-label="Click a button or link to move on">
-		<<link "Okay">>
+		<<link "Next">>
 		<<goto $nextpass>>
 			<</link>>
 	</div>   
@@ -191,7 +237,7 @@ UIBar.destroy();
 <div class="wrapper chief">
 	<<include "headeror">>
 	<main id="main" class="flex-container-col">
-	/* <<if $audioOn is true>><audio src="assets/audio/PHONE_1_owndevice_01.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
+	<<if $audioOn is true>><audio src="assets/audio/MoTT_Spies_NO__MP3.mp3" autoplay>Audio not supported in your browser</audio><</if>>
 
 	<div class="intro-text">
 <p>You are being too hard on yourself – I believe in you – just pretend you are a regular visitor to the Archives today.</p>
@@ -217,7 +263,7 @@ UIBar.destroy();
 <div class="wrapper chief">
 	<<include "headeror">>
 	<main id="main" class="flex-container-col">
-	/* <<if $audioOn is true>><audio src="assets/audio/PHONE_1_owndevice_02.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
+	<<if $audioOn is true>><audio src="assets/audio/MoTT_Spies_KEVIN_S_NOTEBOOK__MP3.mp3" autoplay>Audio not supported in your browser</audio><</if>>
 
 	<div class="intro-text">
 <p>Okay, Kevin’s notebook includes a location in the exhibition gallery we need to find – let’s start there.</p>
@@ -237,30 +283,34 @@ UIBar.destroy();
 :: title1 [nobr]
 <div class="number-title">
   <span class="station-num">01</span>
-  <span class="station-text">Station</span>
+  /* <span class="station-text">Station</span> */
 </div>
 
 :: title2 [nobr]
 <div class="number-title">
   <span class="station-num">02</span>
-  <span class="station-text">Station</span>
+  /* <span class="station-text">Station</span> */
 </div>
 
 :: title3 [nobr]
 <div class="number-title">
   <span class="station-num">03</span>
-  <span class="station-text">Station</span>
+  /* <span class="station-text">Station</span> */
 </div>
 
 :: title4 [nobr]
 <div class="number-title">
   <span class="station-num">04</span>
-  <span class="station-text">Station</span>
+  /* <span class="station-text">Station</span> */
 </div>
 
 :: station1trans[nobr]
 <div class="wrapper titletrans">
-<<include "title1">>
+<<audio "correct" "play">>
+<div class="number-title">
+  <span class="station-num">01</span>
+  <span class="station-text">Station</span>
+</div>
 </div>
 <<timed 3s>>
 	<<goto $nextpass>>
@@ -277,7 +327,7 @@ UIBar.destroy();
 	<<include "headeror">>
   <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
 	<main id="main" class="">
-	/* <<if $audioOn is true>><audio src="assets/audio/PHONE_3_linkintocafespace_1and2.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
+	<<if $audioOn is true>><audio src="assets/audio/MoTT_Spies_STATION_1__MP3.mp3" autoplay>Audio not supported in your browser</audio><</if>>
 
 <div class="intro-text" id="intro">
 <p>  Well done for making it this far.</p>
@@ -308,7 +358,7 @@ UIBar.destroy();
 	<<include "headeror">>
   <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
 	<main id="main" class="">
-	/* <<if $audioOn is true>><audio src="assets/audio/PHONE_3_linkintocafespace_1and2.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
+	<<if $audioOn is true>><audio src="assets/audio/MoTT_Spies_IT_SEEMS_WE_NEED_TO_FIND__MP3.mp3" autoplay>Audio not supported in your browser</audio><</if>>
 	<div>
 <div class="intro-text" id="intro">
 <p>It seems we need to find a MoTT codeword to unlock what Kevin has been hiding.</p>
@@ -408,7 +458,7 @@ UIBar.destroy();
 	<<include "headeror">>
   <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
 	<main id="main" class="">
-	/* <<if $audioOn is true>><audio src="assets/audio/PHONE_3_linkintocafespace_1and2.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
+	<<if $audioOn is true>><audio src="assets/audio/MoTT_Spies_GOOD_FIND__MP3.mp3" autoplay>Audio not supported in your browser</audio><</if>>
 	<div>
 <div class="intro-text" id="intro">
 <p>Good find!</p>
@@ -438,7 +488,7 @@ UIBar.destroy();
 	<<include "headeror">>
   <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
 	<main id="main" class="">
-	/* <<if $audioOn is true>><audio src="assets/audio/PHONE_3_linkintocafespace_1and2.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
+	<<if $audioOn is true>><audio src="assets/audio/MoTT_Spies_EDITH_LOMAX__MP3.mp3" autoplay>Audio not supported in your browser</audio><</if>>
 	<div>
 <div class="intro-text" id="intro">
 <p>Edith Lomax worked in the Registry – which keeps all the top-secret files and documents for MI5. </p>
@@ -467,7 +517,7 @@ UIBar.destroy();
 	<<include "headeror">>
   <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
 	<main id="main" class="">
-	/* <<if $audioOn is true>><audio src="assets/audio/PHONE_3_linkintocafespace_1and2.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
+	<<if $audioOn is true>><audio src="assets/audio/MoTT_Spies_I_LL_EXPLAIN__MP3.mp3" autoplay>Audio not supported in your browser</audio><</if>>
 	<div>
 <div class="intro-text" id="intro">
 <p>I’ll explain. In the early years of MI5 the Registry was “almost overwhelmed” by “the tidal wave of documents” which descended on it, but that changed with the appointment of Edith Annie Lomax as lady superintendent. She transformed the Registry. </p>
@@ -493,7 +543,7 @@ UIBar.destroy();
 	<<include "headeror">>
   <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
 	<main id="main" class="">
-	/* <<if $audioOn is true>><audio src="assets/audio/PHONE_3_linkintocafespace_1and2.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
+	<<if $audioOn is true>><audio src="assets/audio/MoTT_Spies_SHE_PROVED_TO_BE__MP3.mp3" autoplay>Audio not supported in your browser</audio><</if>>
 	<div>
 <div class="intro-text" id="intro">
 <p>She proved to be one of the most capable administrators in service history and MI5 wouldn’t be what it is today without the work she did. </p>
@@ -524,7 +574,7 @@ UIBar.destroy();
 	<<include "headeror">>
   <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
 	<main id="main" class="">
-	/* <<if $audioOn is true>><audio src="assets/audio/PHONE_3_linkintocafespace_1and2.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
+	<<if $audioOn is true>><audio src="assets/audio/MoTT_Spies_LOMAX_WAS_IMPORTANT__MP3.mp3" autoplay>Audio not supported in your browser</audio><</if>>
 
 <div class="intro-text" id="intro">
 <p>Lomax was important. </p>
@@ -544,8 +594,12 @@ UIBar.destroy();
 
 :: station2trans[nobr]
 <div class="wrapper titletrans">
-<<include "title2">>
+<div class="number-title">
+  <span class="station-num">02</span>
+  <span class="station-text">Station</span>
 </div>
+</div>
+<<audio "correct" "play">>
 <<timed 3s>>
 	<<goto $nextpass>>
 	<</timed>>
@@ -561,7 +615,7 @@ UIBar.destroy();
 	<<include "headeror">>
   <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
 	<main id="main" class="">
-	/* <<if $audioOn is true>><audio src="assets/audio/PHONE_3_linkintocafespace_1and2.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
+	<<if $audioOn is true>><audio src="assets/audio/MoTT_Spies_STATION_2__MP3.mp3" autoplay>Audio not supported in your browser</audio><</if>>
 
 <div class="intro-text" id="intro">
 <p>The next scribble I have in his notebook is a name, “Maxwell Knight” – now that’s someone I do know about! </p>
@@ -580,17 +634,43 @@ UIBar.destroy();
 :: station2b [nobr]
 <<set $prevpass to "station2">>
 <<set $passage to "station2b">>
+<<set $nextpass to "station2b2">>
+<<include "title2">>
+<div class="wrapper chief">
+	<<include "headeror">>
+  <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
+	<main id="main" class="">
+	<<if $audioOn is true>><audio src="assets/audio/MoTT_Spies_THANKS_FOR_GETTING_THAT_INTEL__MP3.mp3" autoplay>Audio not supported in your browser</audio><</if>>
+
+<div class="intro-text" id="intro">
+<p>Thanks for getting that intel on Maxwell Knight. Staff at MI5 often have to gather information and evidence when they are looking into a situation or person. </p>
+<p>And we do the same at the MoTT! We use the historical records at The National Archives to investigate the past and check that nothing has been changed! You see, there’s a renegade group we have to watch out for who are always trying to alter the course of past events.</p>
+</div>
+
+ <div class="green-link-wrapper" aria-label="Click a button or link to move on">
+		<<link "Next">>
+		<<goto $nextpass>>
+			<</link>>
+	</div> 
+
+
+	</main>
+	<<include "footer">>
+</div>
+
+:: station2b2 [nobr]
+<<set $prevpass to "station2b">>
+<<set $passage to "station2b2">>
 <<set $nextpass to "station2c">>
 <<include "title2">>
 <div class="wrapper chief">
 	<<include "headeror">>
   <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
 	<main id="main" class="">
-	/* <<if $audioOn is true>><audio src="assets/audio/PHONE_3_linkintocafespace_1and2.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
+	<<if $audioOn is true>><audio src="assets/audio/MoTT_Spies_IF_WE_CATCH_THEM__MP3.mp3" autoplay>Audio not supported in your browser</audio><</if>>
 
 <div class="intro-text" id="intro">
-<p>Thanks for getting that intel on Maxwell Knight. Staff at MI5 often have to gather information and evidence when they are looking into a situation or person. </p>
-<p>And we do the same at the MoTT! We use the historical records at The National Archives to investigate the past and check that nothing has been changed! You see, there’s a renegade group we have to watch out for who are always trying to alter the course of past events.</p>
+
 <p>If we catch them doing it, we can get things back on track by using a special machine. It’s called The Signal Fire System.</p>
 <p>It’s difficult to explain, but we use it to connect to the past so we can put things right.</p>
 <p>When we do that, we call it Nudging.</p>
@@ -641,7 +721,7 @@ UIBar.destroy();
     </div>
 
 :: station2c [nobr]
-<<set $prevpass to "station2b">>
+<<set $prevpass to "station2b2">>
 <<set $passage to "station2c">>
 <<set $nextpass to "station2d">>
 <<include "title2">>
@@ -649,7 +729,7 @@ UIBar.destroy();
 	<<include "headeror">>
   <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
 	<main id="main" class="">
-	/* <<if $audioOn is true>><audio src="assets/audio/PHONE_3_linkintocafespace_1and2.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
+	<<if $audioOn is true>><audio src="assets/audio/MoTT_Spies_OK_IT_SEEMS_THERE_ARE_LOTS_OF_ARROWS__MP3.mp3" autoplay>Audio not supported in your browser</audio><</if>>
 	<div>
 <div class="intro-text" id="intro">
 <p>Ok, it seems there are lots of arrows and a drawing of a cup of tea in Kevin’s notepad. </p>
@@ -671,82 +751,29 @@ UIBar.destroy();
 :: station2d [nobr]
 <<set $prevpass to "station2c">>
 <<set $passage to "station2d">>
-<<set $nextpass to "station2e">>
-<<include "title2">>
-<div class="wrapper chief">
-	<<include "headeror">>
-  <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
-	<main id="main" class="">
-	/* <<if $audioOn is true>><audio src="assets/audio/PHONE_3_linkintocafespace_1and2.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
-
-<div class="intro-text" id="intro">
-<p>
-  Great, send me the file reference number on the box so I can load it up its contents for me to read, you can just look inside!
-
-</p>
-
-<<include "pwBox">>
-	</div>
-
-	</main>
-	<<include "footer">>
-</div>
-
-:: pwBox [nobr]
-<div id="codewordWrapper" class="codeword-wrapper">
-  <label for="textbox--password" tabindex="0" ><span aria-label="Enter the word below" role="label" style="color:black">Enter the code below:</span></label>
-  /% CODEWORD INPUT %/
-   <div class="code-input">
-     <<textbox "_password" "" >>
-    </div>
-    <br/>
-  <div class="result-wrapper">
-     <span class="button-wrapper" aria-label="Click Button to go Check your answer">
-       <<button "Enter">>  
-     /% STANDARDISE INPUT %/
-         <<set _password to _password.toUpperCase().trim()>>
-     /% CODEWORD CORRECT %/
-         <<if _password isnot "" and _password is "JK82">>
-         <<replace "#coderesult">><h2 class="subtitle complete">Correct!</h2><</replace>>
-             <<audio "correct" play>>
-         <<timed 3s>><<goto $nextpass>><</timed>>
-        <</if>>
-          /% CODEWORD INCORRECT %/
-       <<if _password isnot "" and _password isnot "JK82">>
-          <<replace "#coderesult">><h2 class="subtitle">Thats not right.</h2><</replace>>
-        <<timed 1.5s>><<replace "#coderesult">><</replace>><</timed>>
-          <</if>><</button>> 
-       </span>
-  
-     
-      /% CODEWORD FEEDBACK %/
-      <div id="coderesult"></div>
-  
-  </div>
-    </div>
-
-:: station2e [nobr]
-<<set $prevpass to "station2d">>
-<<set $passage to "station2e">>
 <<set $nextpass to "station2f">>
 <<include "title2">>
 <div class="wrapper chief">
 	<<include "headeror">>
   <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
 	<main id="main" class="">
-	/* <<if $audioOn is true>><audio src="assets/audio/PHONE_3_linkintocafespace_1and2.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
+	<<if $audioOn is true>><audio src="assets/audio/MoTT_Spies_GREAT_OPEN_THE_BOX__MP3.mp3" autoplay>Audio not supported in your browser</audio><</if>>
 
 <div class="intro-text" id="intro">
 <p>
-To hear the audio recording enter the file name into the MoTT Portal. 
+  Great, open the box and read whatever is inside. Send me a file reference number if you find one.
+
 </p>
 
 <<include "pwFile">>
-</div>
+	</div>
 
 	</main>
 	<<include "footer">>
 </div>
+
+
+
 
 :: pwFile [nobr]
 <div id="codewordWrapper" class="codeword-wrapper">
@@ -782,7 +809,7 @@ To hear the audio recording enter the file name into the MoTT Portal.
     </div>
 
 :: station2f [nobr]
-<<set $prevpass to "station2e">>
+<<set $prevpass to "station2d">>
 <<set $passage to "station2f">>
 <<set $nextpass to "station2g">>
  <<include "title2">>
@@ -790,7 +817,7 @@ To hear the audio recording enter the file name into the MoTT Portal.
 	<<include "headeror">>
   <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
 	<main id="main" class="">
-	/* <<if $audioOn is true>><audio src="assets/audio/PHONE_3_linkintocafespace_1and2.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
+	<<if $audioOn is true>><audio src="assets/audio/MoTT_Spies_OPERATION_TEA_AND_CRUMPETS__MP3.mp3" autoplay>Audio not supported in your browser</audio><</if>>
 	<div>
 <div class="intro-text" id="intro">
 <p>Operation Tea and Crumpets was five years ago - my first mission. </p>
@@ -818,7 +845,7 @@ To hear the audio recording enter the file name into the MoTT Portal.
 	<<include "headeror">>
   <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
 	<main id="main" class="">
-	/* <<if $audioOn is true>><audio src="assets/audio/PHONE_3_linkintocafespace_1and2.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
+	<<if $audioOn is true>><audio src="assets/audio/MoTT_Spies_ACTING_UNDERCOVER__MP3.mp3" autoplay>Audio not supported in your browser</audio><</if>>
 	<div>
 <div class="intro-text" id="intro">
 <p>Acting undercover as someone called ‘Harriet P Fredricks’, my favourite secret name, I contacted his receptionist through the Signal Fire System. Let me load up the audio recording & transcript of the interaction.</p>
@@ -840,23 +867,184 @@ To hear the audio recording enter the file name into the MoTT Portal.
 <<set $passage to "station2g">>
 <<set $nextpass to "station2h">>
 
-<div class="wrapper dots portrait">
+<div class="wrapper transcript">
 	/* <<include "headerb">> */
   <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
 	<main id="main" class="">
-	/* <<if $audioOn is true>><audio src="assets/audio/PHONE_3_linkintocafespace_1and2.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
-	<div>
-<div class="intro-text" id="intro">
-<p>TRANSCRIPT</p>
-</div>
+	<<if $audioOn is true>><audio src="assets/audio/MoTT_Spies_2025_TRANSCRIPT_RADIO_EFFECT__MP3.mp3" autoplay>Audio not supported in your browser</audio><</if>>
 
- <span class="button-wrapper" aria-label="Click a button or link to move on">
-      <<button [[Next|$nextpass]]>><</button>>
-    </span>
+<div class="intro-text transcript" id="intro">
+
+<<timed 0.1s>>
+	<<append "#intro">>
+	<div class="message r">
+		<div class="sender">RECEPTIONIST</div>
+		<p>Maxwell Knight’s office. How can I help?</p>
+	</div>
+	<</append>>
+<</timed>>
+
+<<timed 2s>>
+	<<append "#intro">>
+	<div class="message b">
+		<div class="sender">BEATRIX</div>
+		<p>This is Ms Harriet P Fredricks – I am calling from the Department of Being Totally Chill. </p>
+	</div>
+	<</append>>
+<</timed>>
+
+<<timed 8s>>
+	<<append "#intro">>
+	<div class="message r">
+		<div class="sender">RECEPTIONIST</div>
+		<p>I don’t think heard of that department before.</p>
+	</div>
+	<</append>>
+<</timed>>
+
+<<timed 10.5s>>
+	<<append "#intro">>
+	<div class="message b" id="bot1">
+		<div class="sender">BEATRIX</div>
+		<p>Ermmm. We’re very new and extremely top secret!  </p>
+	</div>
+	<</append>>
+	/* <<ScrollTo "bot1" false>> */
+<</timed>>
+
+<<timed 13s>>
+	<<append "#intro">>
+	<div class="message r"  id="bot2">
+		<div class="sender">RECEPTIONIST</div>
+		<p>Indeed. And what can I do for you today?</p>
+	</div>
+	<</append>>
+		/* <<ScrollTo "bot2" false>> */
+<</timed>>
+
+<<timed 16.5s>>
+	<<append "#intro">>
+	<div class="message b" id="bot2">
+		<div class="sender">BEATRIX</div>
+		<p>We’ve noticed Maxwell has been overworking lately and it’s making him rather glum. </p>
+	</div>
+	<</append>>
+/* <<ScrollTo "bot3" false>> */
+<</timed>>
+
+<<timed 21s>>
+	<<append "#intro">>
+	<div class="message r">
+		<div class="sender">RECEPTIONIST</div>
+		<p>Yes - we keep receiving telegrams for him from persons unknown, and his phone won’t stop ringing and when we answer its just trumpets. </p>
+	</div>
+	<</append>>
+		<<set $h to setup.callScrollToBottom()>>
+<</timed>>
+
+<<timed 28s>>
+	<<append "#intro">>
+	<div class="message r">
+		<div class="sender">RECEPTIONIST</div>
+		<p>I have been trying to cheer him up, but I don’t know what to do...</p>
+	</div>
+	
+	<</append>>
+	<<set $h to setup.callScrollToBottom()>>
+<</timed>>
+
+
+<<timed 32s>>
+	<<append "#intro">>
+	<div class="message b">
+		<div class="sender">BEATRIX</div>
+		<p>Maxwell is very important to MI5, and the nation, but don’t worry: we have the solution. This might sound strange, but I need you to get two items. Have you got a pen and paper? </p>
+	</div>
+	<</append>>
+	<<set $h to setup.callScrollToBottom()>>
+	
+<</timed>>
+
+
+<<timed 45s>>
+	<<append "#intro">>
+	<div class="message r">
+		<div class="sender">RECEPTIONIST</div>
+		<p>Yes – go for it.</p>
+	</div>
+	<</append>>
+	<<set $h to setup.callScrollToBottom()>>
+<</timed>>
+
+<<timed 47.5s>>
+	<<append "#intro">>
+	<div class="message b">
+		<div class="sender">BEATRIX</div>
+		<p>A cup of tea and crumpets. </p>
+	</div>
+	<</append>>
+	<<set $h to setup.callScrollToBottom()>>
+<</timed>>
+
+<<timed 50s>>
+	<<append "#intro">>
+	<div class="message r">
+		<div class="sender">RECEPTIONIST</div>
+		<p>A cup of tea and crumpets?</p>
+	</div>
+	<</append>>
+	<<set $h to setup.callScrollToBottom()>>
+<</timed>>
+
+<<timed 52s>>
+	<<append "#intro">>
+	<div class="message b">
+		<div class="sender">BEATRIX</div>
+		<p>Yes – place them on his desk and tell him: Maxwell it’s time for a break.  </p>
+	</div>
+	<</append>>
+	<<set $h to setup.callScrollToBottom()>>
+<</timed>>
+
+<<timed 58s>>
+	<<append "#intro">>
+	<div class="message r">
+		<div class="sender">RECEPTIONIST</div>
+		<p>Are you sure this will work? </p>
+	</div>
+	<</append>>
+	<<set $h to setup.callScrollToBottom()>>
+<</timed>>
+
+<<timed 60s>>
+	<<append "#intro">>
+	<div class="message b">
+		<div class="sender">BEATRIX</div>
+		<p>Trust me. I’m Harriet P Fredricks. </p>
+		</div>
+	<</append>>
+	<<set $h to setup.callScrollToBottom()>>
+<</timed>>
+
+<<timed 63s>>
+	<<append "#intro">>
+	<br/>
+	<div class="message b">
+	 <div class="green-link-wrapper" aria-label="Click a button or link to move on">
+		<<link "Next">>
+		<<goto $nextpass>>
+			<</link>>
+	</div>  
+	</div> 
+	<</append>>
+	<<set $h to setup.callScrollToBottom()>>
+<</timed>>
+
+
 	</div>
 
 	</main>
-	<<include "footer">>
+	<<include "footertranscript">>
 </div>
 
 :: station2h [nobr]
@@ -868,7 +1056,7 @@ To hear the audio recording enter the file name into the MoTT Portal.
 	<<include "headeror">>
   <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
 	<main id="main" class="">
-	/* <<if $audioOn is true>><audio src="assets/audio/PHONE_3_linkintocafespace_1and2.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
+	<<if $audioOn is true>><audio src="assets/audio/MoTT_Spies_OPERATION_TEA_AND_CRUMPETS_WAS_A_SUCCESS__MP3.mp3" autoplay>Audio not supported in your browser</audio><</if>>
 	<div>
 <div class="intro-text" id="intro">
 <p>Operation Tea and Crumpets was a success. </p>
@@ -898,7 +1086,7 @@ To hear the audio recording enter the file name into the MoTT Portal.
 	<<include "headeror">>
   <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
 	<main id="main" class="">
-	/* <<if $audioOn is true>><audio src="assets/audio/PHONE_3_linkintocafespace_1and2.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
+	<<if $audioOn is true>><audio src="assets/audio/MoTT_Spies_THE_NEXT_SCRIBBLE_-_MARY_SHERER__MP3.mp3" autoplay>Audio not supported in your browser</audio><</if>>
 	<div>
 <div class="intro-text" id="intro">
 <p>The next scribble in his notebook is the name Mary Sherer – and it’s in the section of the exhibition called Double Cross Masterminds.</p>
@@ -948,8 +1136,12 @@ To hear the audio recording enter the file name into the MoTT Portal.
 
 :: station3trans[nobr]
 <div class="wrapper titletrans">
-<<include "title3">>
+<div class="number-title">
+  <span class="station-num">03</span>
+  <span class="station-text">Station</span>
 </div>
+</div>
+<<audio "correct" "play">>
 <<timed 3s>>
 	<<goto $nextpass>>
 	<</timed>>
@@ -963,7 +1155,7 @@ To hear the audio recording enter the file name into the MoTT Portal.
 	<<include "headeror">>
   <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
 	<main id="main" class="">
-	/* <<if $audioOn is true>><audio src="assets/audio/PHONE_3_linkintocafespace_1and2.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
+	<<if $audioOn is true>><audio src="assets/audio/MoTT_Spies_EXCELLENT_LET_S_GET_YOU_SOMEWHERE__MP3.mp3" autoplay>Audio not supported in your browser</audio><</if>>
 
 <div class="intro-text" id="intro">
 <p>Excellent – let’s get you somewhere we can look into this. </p>
@@ -991,7 +1183,7 @@ To hear the audio recording enter the file name into the MoTT Portal.
 	<<include "headeror">>
   <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
 	<main id="main" class="">
-	/* <<if $audioOn is true>><audio src="assets/audio/PHONE_3_linkintocafespace_1and2.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
+	<<if $audioOn is true>><audio src="assets/audio/MoTT_Spies_IN_THE_SECOND_WORLD_WAR__MP3.mp3" autoplay>Audio not supported in your browser</audio><</if>>
 	<div>
 <div class="intro-text" id="intro">
 <p> In the Second World War, MI5 played a key role in combating enemy spies, intercepting German communications and feeding misinformation back to Germany.</p>
@@ -1019,7 +1211,7 @@ To hear the audio recording enter the file name into the MoTT Portal.
 	<<include "headeror">>
   <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
 	<main id="main" class="">
-	/* <<if $audioOn is true>><audio src="assets/audio/PHONE_3_linkintocafespace_1and2.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
+	<<if $audioOn is true>><audio src="assets/audio/MoTT_Spies_SHE_JOINED_THE_DEPARTMENT__MP3.mp3" autoplay>Audio not supported in your browser</audio><</if>>
 	<div>
 <div class="intro-text" id="intro">
 <p>She joined a department called Double Cross – and her job was to be a Handler for an agent called TREASURE.</p>
@@ -1046,7 +1238,7 @@ To hear the audio recording enter the file name into the MoTT Portal.
 	<<include "headeror">>
   <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
 	<main id="main" class="">
-	/* <<if $audioOn is true>><audio src="assets/audio/PHONE_3_linkintocafespace_1and2.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
+	<<if $audioOn is true>><audio src="assets/audio/MoTT_Spies_TREASURE_WAS_A_DOUBLE_AGENT__MP3.mp3" autoplay>Audio not supported in your browser</audio><</if>>
 	<div>
 <div class="intro-text" id="intro">
 <p>TREASURE was a Double Agent, who was pretending to work for the Germans, but she was actually passing information to Mary Sherer, and to MI5. </p>
@@ -1073,7 +1265,7 @@ To hear the audio recording enter the file name into the MoTT Portal.
 	<<include "headeror">>
   <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
 	<main id="main" class="">
-	/* <<if $audioOn is true>><audio src="assets/audio/PHONE_3_linkintocafespace_1and2.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
+	<<if $audioOn is true>><audio src="assets/audio/MoTT_Spies_MARY_WOULD_SEND__MP3.mp3" autoplay>Audio not supported in your browser</audio><</if>>
 
 <div class="intro-text" id="intro">
 <p>Mary would send bogus messages to TREASURE for her to pass back the Germans to confuse them.</p>
@@ -1098,7 +1290,7 @@ To hear the audio recording enter the file name into the MoTT Portal.
 	<<include "headeror">>
   <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
 	<main id="main" class="">
-	/* <<if $audioOn is true>><audio src="assets/audio/PHONE_3_linkintocafespace_1and2.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
+	<<if $audioOn is true>><audio src="assets/audio/MoTT_Spies_I_VE_NOT_HEARD_OF_MARY__MP3.mp3" autoplay>Audio not supported in your browser</audio><</if>>
 
 <div class="intro-text" id="intro">
 <p>I’ve not heard of Mary before – an unrecognised hero it seems. </p>
@@ -1106,6 +1298,14 @@ To hear the audio recording enter the file name into the MoTT Portal.
 <p>What has this got to do with Kevin though? </p>
 
 <p>Use your UV torch to see if you can find anything nearby. </p>
+<div class="green-link-wrapper clue " aria-label="Click a button or link to move on" id="clue">
+		<<link "We need some help">>
+		<<replace "#clue">>
+			<span class="clue">Maybe use some of the gadgets on your MoTT spy kit to help decipher the code.</span>
+			<</replace>>
+			<</link>>
+	</div> 
+	<br/>
 <<include "pwTorch">>
 </div>
 
@@ -1150,22 +1350,91 @@ To hear the audio recording enter the file name into the MoTT Portal.
 :: station3g [nobr]
 <<set $prevpass to "station3f">>
 <<set $passage to "station3g">>
-<<set $nextpass to "station4">>
+<<set $nextpass to "station3g2">>
 <<include "title3">>
 <div class="wrapper chief">
 	<<include "headeror">>
   <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
 	<main id="main" class="">
-	/* <<if $audioOn is true>><audio src="assets/audio/PHONE_3_linkintocafespace_1and2.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
+	<<if $audioOn is true>><audio src="assets/audio/MoTT_Spies_OH_NO_TADAH__MP3.mp3" autoplay>Audio not supported in your browser</audio><</if>>
 
 <div class="intro-text" id="intro">
 <p>Oh no, TADAH! That stands for “Time Agent Disrupters Against History”. </p>
 
 <p>They are the one true enemy of the Ministry of Time Travel. Remember earlier, when I mentioned a renegade group we have to watch out for, who are always trying to alter the course of past events? That’s TADAH.</p>
 
+
+</div>
+
+<div class="green-link-wrapper" aria-label="Click a button or link to move on">
+		<<link "Next">>
+		<<goto $nextpass>>
+			<</link>>
+	</div> 
+	</main>
+	<<include "footer">>
+</div>
+
+:: station3g2 [nobr]
+<<set $prevpass to "station3g">>
+<<set $passage to "station3g2">>
+<<set $nextpass to "station3g3">>
+<<include "title3">>
+<div class="wrapper chief">
+	<<include "headeror">>
+  <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
+	<main id="main" class="">
+	<<if $audioOn is true>><audio src="assets/audio/MoTT_Spies_I_VE_BEEN_KEEPING__MP3.mp3" autoplay>Audio not supported in your browser</audio><</if>>
+
+<div class="intro-text" id="intro">
 <p>I’ve been keeping something from you. Something I read in Kevin’s notebook that made my blood run cold. He wrote: “I can’t wait for the TADAH moment!”</p>
+</div>
+
+<div class="green-link-wrapper" aria-label="Click a button or link to move on">
+		<<link "Next">>
+		<<goto $nextpass>>
+			<</link>>
+	</div> 
+	</main>
+	<<include "footer">>
+</div>
+
+:: station3g3 [nobr]
+<<set $prevpass to "station3g2">>
+<<set $passage to "station3g3">>
+<<set $nextpass to "station3g4">>
+<<include "title3">>
+<div class="wrapper chief">
+	<<include "headeror">>
+  <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
+	<main id="main" class="">
+	<<if $audioOn is true>><audio src="assets/audio/MoTT_Spies_BUT_I_JUST_CAN_T_BELIEVE_IT__MP3.mp3" autoplay>Audio not supported in your browser</audio><</if>>
+
+<div class="intro-text" id="intro">
 
 <p>But I just can’t believe it. Is Kevin <i>really</i> a Double Agent who has been passing messages to the most villainous group in all of time and space?!</p>
+</div>
+
+<div class="green-link-wrapper" aria-label="Click a button or link to move on">
+		<<link "Next">>
+		<<goto $nextpass>>
+			<</link>>
+	</div> 
+	</main>
+	<<include "footer">>
+</div>
+:: station3g4 [nobr]
+<<set $prevpass to "station3g3">>
+<<set $passage to "station3g4">>
+<<set $nextpass to "station4">>
+<<include "title3">>
+<div class="wrapper chief">
+	<<include "headeror">>
+  <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
+	<main id="main" class="">
+	<<if $audioOn is true>><audio src="assets/audio/MoTT_Spies_THE_SECRET_BENCH_FILE__MP3.mp3" autoplay>Audio not supported in your browser</audio><</if>>
+
+<div class="intro-text" id="intro">
 
 <p>The SECRET BENCH file will prove it one way or another.  </p>
 
@@ -1184,8 +1453,12 @@ To hear the audio recording enter the file name into the MoTT Portal.
 
 :: station4trans[nobr]
 <div class="wrapper titletrans">
-<<include "title4">>
+<div class="number-title">
+  <span class="station-num">04</span>
+  <span class="station-text">Station</span>
 </div>
+</div>
+<<audio "correct" "play">>
 <<timed 3s>>
 	<<goto $nextpass>>
 	<</timed>>
@@ -1199,7 +1472,7 @@ To hear the audio recording enter the file name into the MoTT Portal.
 	<<include "headeror">>
   <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
 	<main id="main" class="">
-	/* <<if $audioOn is true>><audio src="assets/audio/PHONE_3_linkintocafespace_1and2.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
+	<<if $audioOn is true>><audio src="assets/audio/MoTT_Spies_STATION_4__MP3.mp3" autoplay>Audio not supported in your browser</audio><</if>>
 
 <div class="intro-text" id="intro">
 <p>The last scribble I have in his notebook is the word <i>Secret</i>. </p>
@@ -1228,7 +1501,7 @@ To hear the audio recording enter the file name into the MoTT Portal.
 	<<include "headeror">>
   <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
 	<main id="main" class="">
-	/* <<if $audioOn is true>><audio src="assets/audio/PHONE_3_linkintocafespace_1and2.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
+	<<if $audioOn is true>><audio src="assets/audio/MoTT_Spies_HAS_HE_BEEN__MP3.mp3" autoplay>Audio not supported in your browser</audio><</if>>
 
 <div class="intro-text" id="intro">
 <p>Has he been a TADAH double agent all along?</p>
@@ -1255,7 +1528,7 @@ To hear the audio recording enter the file name into the MoTT Portal.
 	<<include "headeror">>
   <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
 	<main id="main" class="">
-	/* <<if $audioOn is true>><audio src="assets/audio/PHONE_3_linkintocafespace_1and2.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
+	<<if $audioOn is true>><audio src="assets/audio/MoTT_Spies_HEAD_INTO_THE_LIBRARY__MP3.mp3" autoplay>Audio not supported in your browser</audio><</if>>
 
 <div class="intro-text" id="intro">
 <p> Head into the library room inside the exhibition </p>
@@ -1279,7 +1552,7 @@ To hear the audio recording enter the file name into the MoTT Portal.
 	<<include "headeror">>
   <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
 	<main id="main" class="">
-	/* <<if $audioOn is true>><audio src="assets/audio/PHONE_3_linkintocafespace_1and2.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
+	<<if $audioOn is true>><audio src="assets/audio/MoTT_Spies_IN_THIS_ROOM__MP3.mp3" autoplay>Audio not supported in your browser</audio><</if>>
 
 <div class="intro-text" id="intro">
 <p>In this room I think there is a message that has been put into code. </p>
@@ -1306,7 +1579,7 @@ To hear the audio recording enter the file name into the MoTT Portal.
 	<<include "headeror">>
   <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
 	<main id="main" class="">
-	/* <<if $audioOn is true>><audio src="assets/audio/PHONE_3_linkintocafespace_1and2.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
+	<<if $audioOn is true>><audio src="assets/audio/MoTT_Spies_YOU_SHOULD_HAVE__MP3.mp3" autoplay>Audio not supported in your browser</audio><</if>>
 
 <div class="intro-text" id="intro">
 <p>You should have the MoTT decoder as part of your kit. </p>
@@ -1432,7 +1705,7 @@ To hear the audio recording enter the file name into the MoTT Portal.
 	<<include "headerorna">>
   <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
 	<main id="main" class="">
-	/* <<if $audioOn is true>><audio src="assets/audio/PHONE_3_linkintocafespace_1and2.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
+	<<if $audioOn is true>><audio src="assets/audio/MoTT_Spies_I_TOLD_YOU_MY_FIRST_MISSION__MP3.mp3" autoplay>Audio not supported in your browser</audio><</if>>
 
 <div class="intro-text" id="intro">
 <p>Operation: Tea & Crumpets. </p>
@@ -1457,7 +1730,7 @@ To hear the audio recording enter the file name into the MoTT Portal.
 	<<include "headeror">>
   <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
 	<main id="main" class="">
-	/* <<if $audioOn is true>><audio src="assets/audio/PHONE_3_linkintocafespace_1and2.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
+	<<if $audioOn is true>><audio src="assets/audio/MoTT_Spies_IF_HE_SHOWS_TADAH__MP3.mp3" autoplay>Audio not supported in your browser</audio><</if>>
 
 <div class="intro-text" id="intro">
 <p>If he shows TADAH how to nudge my first mission… so that it fails... I won’t become the Chief Timer! </p>
@@ -1481,7 +1754,7 @@ To hear the audio recording enter the file name into the MoTT Portal.
 	<<include "headeror">>
   <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
 	<main id="main" class="">
-	/* <<if $audioOn is true>><audio src="assets/audio/PHONE_3_linkintocafespace_1and2.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
+	<<if $audioOn is true>><audio src="assets/audio/MoTT_Spies_WE_NEED_TO_STOP_KEVIN__MP3.mp3" autoplay>Audio not supported in your browser</audio><</if>>
 
 <div class="intro-text" id="intro">
 <p>We need to stop Kevin passing on that information to TADAH!</p>
@@ -1510,12 +1783,40 @@ To hear the audio recording enter the file name into the MoTT Portal.
 	<<include "headeror">>
   <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
 	<main id="main" class="">
-	/* <<if $audioOn is true>><audio src="assets/audio/PHONE_3_linkintocafespace_1and2.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
+	<<if $audioOn is true>><audio src="assets/audio/MoTT_Spies_I_NEED_YOU__MP3.mp3" autoplay>Audio not supported in your browser</audio><</if>>
 
 <div class="intro-text" id="intro">
 <p>I need you to head out of the exhibition, to the shop. </p>
 <p>Ask my friend behind the counter if they have seen Kevin. </p>
 <p>We must find out what he has been hiding. </p>
+
+
+<div class="green-link-wrapper" aria-label="Click a button or link to move on">
+		<<link "Next">>
+		<<goto $nextpass>>
+			<</link>>
+	</div> 
+	</div>
+
+	</main>
+	<<include "footer">>
+</div>
+
+
+:: outro5 [nobr]
+<<set $prevpass to "outro4">>
+<<set $passage to "outro5">>
+<<set $nextpass to "outro5">>
+
+<div class="wrapper chief">
+	<<include "headeror">>
+  <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
+	<main id="main" class="">
+	<<if $audioOn is true>><audio src="assets/audio/MoTT_Spies_IF_YOU_FIND_THE_PASSWORD__MP3.mp3" autoplay>Audio not supported in your browser</audio><</if>>
+
+<div class="intro-text" id="intro">
+<p>If you find the password, head back to the tablet and let’s open the secret file. </p>
+<p>It’s time for the truth Kevin.</p>
 
 
 /* <div class="green-link-wrapper" aria-label="Click a button or link to move on">
@@ -1529,10 +1830,19 @@ To hear the audio recording enter the file name into the MoTT Portal.
 	<<include "footer">>
 </div>
 
-
 :: footer [nobr]
 
 <footer><nav class=""><div id="back" class="button-wrapper">
+<<if passage() isnot "onboarding1">>
+  <<button [img[assets/img/arrow.png]]>> 
+    <<goto $prevpass>>
+    <</button>>
+  <</if>>
+</div></nav></footer>
+
+:: footertranscript [nobr]
+
+<footer id="bottom"><nav class=""><div id="back" class="button-wrapper">
 <<if passage() isnot "onboarding1">>
   <<button [img[assets/img/arrow.png]]>> 
     <<goto $prevpass>>

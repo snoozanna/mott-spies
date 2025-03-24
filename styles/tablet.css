@@ -17,6 +17,10 @@ img.logo.na {
     max-width: 16%;
 }
 
+#back.button-wrapper {
+  background-color: white;
+}
+
 
 .code-input.multibox > .multi-input-wrapper > input.macro-textbox, .code-input.multibox > .multi-input-wrapper > div > input.macro-textbox {
     width: 6rem;
@@ -27,6 +31,22 @@ img.logo.na {
     font-weight: 900;
     font-size: 3.5rem;
 }
+
+.codeword-wrapper.row{
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  gap: 1rem;
+}
+
+.codeword-wrapper.row > div > .code-input > input[type=text]{
+  min-width: inherit;
+}
+
+span.blackresult{
+  color:black
+}
+
 
 /* GENERAL STYLING TABLET  */
 
@@ -86,8 +106,10 @@ img.logo.na {
 }
 
 .tablet-text > p {
-    color: var(--orange);
+    color: black;
     font-family: var(--roboto);
+    font-weight: 400;
+    font-size: 2rem;
 }
 /* ENTRANCE  */
 

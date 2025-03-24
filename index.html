@@ -108,7 +108,50 @@ var LZString=function(){var r=String.fromCharCode,o="ABCDEFGHIJKLMNOPQRSTUVWXYZa
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
 @import url("styles/generics.css");
 @import url("styles/styles.css");
-@import url("styles/phone.css");</style><script role="script" id="twine-user-script" type="text/twine-javascript">UIBar.destroy();</script><tw-passagedata pid="1" name="StoryInit" tags="" position="100,100" size="100,100">&lt;&lt;cacheaudio &quot;ping1&quot; &quot;assets/sound/ping1.mp3&quot;&gt;&gt;
+@import url("styles/phone.css");</style><script role="script" id="twine-user-script" type="text/twine-javascript">UIBar.destroy();
+
+setup.callScrollToBottom = () => {
+	console.log("scrolling..")
+const scrollToBottom = () => {
+    var element = document.getElementById("bottom");
+    if (element) {
+		console.log|("element", element)
+        element.scrollIntoView({ behavior: "smooth", block: "end" });
+    }
+
+}
+
+scrollToBottom()
+}
+
+// SCROLL MACRO
+// Macro.add('ScrollTo', {
+// 	skipArgs : false,
+// 	handler  : function () {
+// 		if (this.args.length > 0) {
+// 			var Value = this.args[0];
+// 			if (typeof Value === "string" || Value instanceof String) {
+// 				var element = null, params = undefined;
+// 				if (this.args.length > 1) {
+// 					params = this.args[1];
+// 				}
+// 				// wait for element
+// 				var elementWaitID = setInterval(function () {
+// 					element = document.getElementById(Value);
+// 					if (element != null) {
+// 						// stop waiting and set scroll position
+// 						clearInterval(elementWaitID);
+// 						if (params != undefined) {
+// 							element.scrollIntoView(params);
+// 						} else {
+// 							element.scrollIntoView();
+// 						}
+// 					}
+// 				}, 100);
+// 			}
+// 		}
+// 	}
+// });</script><tw-passagedata pid="1" name="StoryInit" tags="" position="100,100" size="100,100">&lt;&lt;cacheaudio &quot;ping1&quot; &quot;assets/sound/ping1.mp3&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;correct&quot; &quot;assets/sound/keep2.mp3&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;uploading&quot; &quot;assets/sound/uploading.mp3&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;complete&quot; &quot;assets/sound/uploadcomplete.mp3&quot;&gt;&gt;
@@ -117,6 +160,7 @@ var LZString=function(){var r=String.fromCharCode,o="ABCDEFGHIJKLMNOPQRSTUVWXYZa
 &lt;&lt;waitforaudio&gt;&gt;</tw-passagedata><tw-passagedata pid="2" name="Start" tags="nobr" position="134,244.33333333333337" size="100,100">&lt;&lt;set $prevpass to &quot;Start&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;Start&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;onboarding1&quot;&gt;&gt;
+&lt;&lt;set $audioOn to true&gt;&gt;
 
   &lt;div class=&quot;wrapper spies entrance spies1&quot; id=&quot;mount&quot;&gt;
 	&lt;div class=&quot;comp-warning&quot;&gt;&lt;p&gt;Best experienced on a phone.&lt;/p&gt;
@@ -183,7 +227,7 @@ var LZString=function(){var r=String.fromCharCode,o="ABCDEFGHIJKLMNOPQRSTUVWXYZa
 &lt;div class=&quot;wrapper chieflogo&quot;&gt;
 	&lt;&lt;include &quot;headerorplain&quot;&gt;&gt;
 	&lt;main id=&quot;main&quot; class=&quot;flex-container-col&quot;&gt;
-	/* &lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;assets/audio/PHONE_1_owndevice_01.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt; */
+	&lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;assets/audio/MoTT_Spies_ONLINE_PLATFORM__MP3.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt;
 
 	&lt;div class=&quot;intro-text&quot;&gt;
 	 &lt;p&gt;You made it&lt;/p&gt;
@@ -215,14 +259,14 @@ var LZString=function(){var r=String.fromCharCode,o="ABCDEFGHIJKLMNOPQRSTUVWXYZa
 &lt;div class=&quot;wrapper chief&quot;&gt;
 	&lt;&lt;include &quot;headerorplain&quot;&gt;&gt;
 	&lt;main id=&quot;main&quot; class=&quot;flex-container-col&quot;&gt;
-	/* &lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;assets/audio/PHONE_1_owndevice_01.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt; */
+	&lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;assets/audio/MoTT_Spies_YES__MP3.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt;
 
 	&lt;div class=&quot;intro-text&quot;&gt;
 &lt;p&gt;I knew you would be able to - I believe in you – just pretend you are a regular visitor to the Archives today.&lt;/p&gt;
 	  
 	  &lt;div class=&quot;flex-container-row&quot;&gt;
  &lt;div class=&quot;green-link-wrapper&quot; aria-label=&quot;Click a button or link to move on&quot;&gt;
-		&lt;&lt;link &quot;Okay&quot;&gt;&gt;
+		&lt;&lt;link &quot;Next&quot;&gt;&gt;
 		&lt;&lt;goto $nextpass&gt;&gt;
 			&lt;&lt;/link&gt;&gt;
 	&lt;/div&gt;   
@@ -238,7 +282,7 @@ var LZString=function(){var r=String.fromCharCode,o="ABCDEFGHIJKLMNOPQRSTUVWXYZa
 &lt;div class=&quot;wrapper chief&quot;&gt;
 	&lt;&lt;include &quot;headeror&quot;&gt;&gt;
 	&lt;main id=&quot;main&quot; class=&quot;flex-container-col&quot;&gt;
-	/* &lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;assets/audio/PHONE_1_owndevice_01.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt; */
+	&lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;assets/audio/MoTT_Spies_NO__MP3.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt;
 
 	&lt;div class=&quot;intro-text&quot;&gt;
 &lt;p&gt;You are being too hard on yourself – I believe in you – just pretend you are a regular visitor to the Archives today.&lt;/p&gt;
@@ -260,7 +304,7 @@ var LZString=function(){var r=String.fromCharCode,o="ABCDEFGHIJKLMNOPQRSTUVWXYZa
 &lt;div class=&quot;wrapper chief&quot;&gt;
 	&lt;&lt;include &quot;headeror&quot;&gt;&gt;
 	&lt;main id=&quot;main&quot; class=&quot;flex-container-col&quot;&gt;
-	/* &lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;assets/audio/PHONE_1_owndevice_02.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt; */
+	&lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;assets/audio/MoTT_Spies_KEVIN_S_NOTEBOOK__MP3.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt;
 
 	&lt;div class=&quot;intro-text&quot;&gt;
 &lt;p&gt;Okay, Kevin’s notebook includes a location in the exhibition gallery we need to find – let’s start there.&lt;/p&gt;
@@ -277,18 +321,22 @@ var LZString=function(){var r=String.fromCharCode,o="ABCDEFGHIJKLMNOPQRSTUVWXYZa
 	&lt;&lt;include &quot;footer&quot;&gt;&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="13" name="title1" tags="nobr" position="350,225" size="100,100">&lt;div class=&quot;number-title&quot;&gt;
   &lt;span class=&quot;station-num&quot;&gt;01&lt;/span&gt;
-  &lt;span class=&quot;station-text&quot;&gt;Station&lt;/span&gt;
+  /* &lt;span class=&quot;station-text&quot;&gt;Station&lt;/span&gt; */
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="14" name="title2" tags="nobr" position="475,225" size="100,100">&lt;div class=&quot;number-title&quot;&gt;
   &lt;span class=&quot;station-num&quot;&gt;02&lt;/span&gt;
-  &lt;span class=&quot;station-text&quot;&gt;Station&lt;/span&gt;
+  /* &lt;span class=&quot;station-text&quot;&gt;Station&lt;/span&gt; */
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="15" name="title3" tags="nobr" position="600,225" size="100,100">&lt;div class=&quot;number-title&quot;&gt;
   &lt;span class=&quot;station-num&quot;&gt;03&lt;/span&gt;
-  &lt;span class=&quot;station-text&quot;&gt;Station&lt;/span&gt;
+  /* &lt;span class=&quot;station-text&quot;&gt;Station&lt;/span&gt; */
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="16" name="title4" tags="nobr" position="725,225" size="100,100">&lt;div class=&quot;number-title&quot;&gt;
   &lt;span class=&quot;station-num&quot;&gt;04&lt;/span&gt;
-  &lt;span class=&quot;station-text&quot;&gt;Station&lt;/span&gt;
+  /* &lt;span class=&quot;station-text&quot;&gt;Station&lt;/span&gt; */
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="17" name="station1trans" tags="nobr" position="850,225" size="100,100">&lt;div class=&quot;wrapper titletrans&quot;&gt;
-&lt;&lt;include &quot;title1&quot;&gt;&gt;
+&lt;&lt;audio &quot;correct&quot; &quot;play&quot;&gt;&gt;
+&lt;div class=&quot;number-title&quot;&gt;
+  &lt;span class=&quot;station-num&quot;&gt;01&lt;/span&gt;
+  &lt;span class=&quot;station-text&quot;&gt;Station&lt;/span&gt;
+&lt;/div&gt;
 &lt;/div&gt;
 &lt;&lt;timed 3s&gt;&gt;
 	&lt;&lt;goto $nextpass&gt;&gt;
@@ -301,7 +349,7 @@ var LZString=function(){var r=String.fromCharCode,o="ABCDEFGHIJKLMNOPQRSTUVWXYZa
 	&lt;&lt;include &quot;headeror&quot;&gt;&gt;
   &lt;div class=&quot;rotate-warning&quot;&gt;&lt;h3&gt;Rotate your phone.&lt;/h3&gt;&lt;/div&gt;
 	&lt;main id=&quot;main&quot; class=&quot;&quot;&gt;
-	/* &lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;assets/audio/PHONE_3_linkintocafespace_1and2.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt; */
+	&lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;assets/audio/MoTT_Spies_STATION_1__MP3.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;div class=&quot;intro-text&quot; id=&quot;intro&quot;&gt;
 &lt;p&gt;  Well done for making it this far.&lt;/p&gt;
@@ -329,7 +377,7 @@ var LZString=function(){var r=String.fromCharCode,o="ABCDEFGHIJKLMNOPQRSTUVWXYZa
 	&lt;&lt;include &quot;headeror&quot;&gt;&gt;
   &lt;div class=&quot;rotate-warning&quot;&gt;&lt;h3&gt;Rotate your phone.&lt;/h3&gt;&lt;/div&gt;
 	&lt;main id=&quot;main&quot; class=&quot;&quot;&gt;
-	/* &lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;assets/audio/PHONE_3_linkintocafespace_1and2.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt; */
+	&lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;assets/audio/MoTT_Spies_IT_SEEMS_WE_NEED_TO_FIND__MP3.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt;
 	&lt;div&gt;
 &lt;div class=&quot;intro-text&quot; id=&quot;intro&quot;&gt;
 &lt;p&gt;It seems we need to find a MoTT codeword to unlock what Kevin has been hiding.&lt;/p&gt;
@@ -416,7 +464,7 @@ var LZString=function(){var r=String.fromCharCode,o="ABCDEFGHIJKLMNOPQRSTUVWXYZa
 	&lt;&lt;include &quot;headeror&quot;&gt;&gt;
   &lt;div class=&quot;rotate-warning&quot;&gt;&lt;h3&gt;Rotate your phone.&lt;/h3&gt;&lt;/div&gt;
 	&lt;main id=&quot;main&quot; class=&quot;&quot;&gt;
-	/* &lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;assets/audio/PHONE_3_linkintocafespace_1and2.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt; */
+	&lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;assets/audio/MoTT_Spies_GOOD_FIND__MP3.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt;
 	&lt;div&gt;
 &lt;div class=&quot;intro-text&quot; id=&quot;intro&quot;&gt;
 &lt;p&gt;Good find!&lt;/p&gt;
@@ -443,7 +491,7 @@ var LZString=function(){var r=String.fromCharCode,o="ABCDEFGHIJKLMNOPQRSTUVWXYZa
 	&lt;&lt;include &quot;headeror&quot;&gt;&gt;
   &lt;div class=&quot;rotate-warning&quot;&gt;&lt;h3&gt;Rotate your phone.&lt;/h3&gt;&lt;/div&gt;
 	&lt;main id=&quot;main&quot; class=&quot;&quot;&gt;
-	/* &lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;assets/audio/PHONE_3_linkintocafespace_1and2.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt; */
+	&lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;assets/audio/MoTT_Spies_EDITH_LOMAX__MP3.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt;
 	&lt;div&gt;
 &lt;div class=&quot;intro-text&quot; id=&quot;intro&quot;&gt;
 &lt;p&gt;Edith Lomax worked in the Registry – which keeps all the top-secret files and documents for MI5. &lt;/p&gt;
@@ -468,7 +516,7 @@ var LZString=function(){var r=String.fromCharCode,o="ABCDEFGHIJKLMNOPQRSTUVWXYZa
 	&lt;&lt;include &quot;headeror&quot;&gt;&gt;
   &lt;div class=&quot;rotate-warning&quot;&gt;&lt;h3&gt;Rotate your phone.&lt;/h3&gt;&lt;/div&gt;
 	&lt;main id=&quot;main&quot; class=&quot;&quot;&gt;
-	/* &lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;assets/audio/PHONE_3_linkintocafespace_1and2.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt; */
+	&lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;assets/audio/MoTT_Spies_I_LL_EXPLAIN__MP3.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt;
 	&lt;div&gt;
 &lt;div class=&quot;intro-text&quot; id=&quot;intro&quot;&gt;
 &lt;p&gt;I’ll explain. In the early years of MI5 the Registry was “almost overwhelmed” by “the tidal wave of documents” which descended on it, but that changed with the appointment of Edith Annie Lomax as lady superintendent. She transformed the Registry. &lt;/p&gt;
@@ -491,7 +539,7 @@ var LZString=function(){var r=String.fromCharCode,o="ABCDEFGHIJKLMNOPQRSTUVWXYZa
 	&lt;&lt;include &quot;headeror&quot;&gt;&gt;
   &lt;div class=&quot;rotate-warning&quot;&gt;&lt;h3&gt;Rotate your phone.&lt;/h3&gt;&lt;/div&gt;
 	&lt;main id=&quot;main&quot; class=&quot;&quot;&gt;
-	/* &lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;assets/audio/PHONE_3_linkintocafespace_1and2.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt; */
+	&lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;assets/audio/MoTT_Spies_SHE_PROVED_TO_BE__MP3.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt;
 	&lt;div&gt;
 &lt;div class=&quot;intro-text&quot; id=&quot;intro&quot;&gt;
 &lt;p&gt;She proved to be one of the most capable administrators in service history and MI5 wouldn’t be what it is today without the work she did. &lt;/p&gt;
@@ -518,7 +566,7 @@ var LZString=function(){var r=String.fromCharCode,o="ABCDEFGHIJKLMNOPQRSTUVWXYZa
 	&lt;&lt;include &quot;headeror&quot;&gt;&gt;
   &lt;div class=&quot;rotate-warning&quot;&gt;&lt;h3&gt;Rotate your phone.&lt;/h3&gt;&lt;/div&gt;
 	&lt;main id=&quot;main&quot; class=&quot;&quot;&gt;
-	/* &lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;assets/audio/PHONE_3_linkintocafespace_1and2.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt; */
+	&lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;assets/audio/MoTT_Spies_LOMAX_WAS_IMPORTANT__MP3.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;div class=&quot;intro-text&quot; id=&quot;intro&quot;&gt;
 &lt;p&gt;Lomax was important. &lt;/p&gt;
@@ -535,8 +583,12 @@ var LZString=function(){var r=String.fromCharCode,o="ABCDEFGHIJKLMNOPQRSTUVWXYZa
 	&lt;/main&gt;
 	&lt;&lt;include &quot;footer&quot;&gt;&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="28" name="station2trans" tags="nobr" position="975,350" size="100,100">&lt;div class=&quot;wrapper titletrans&quot;&gt;
-&lt;&lt;include &quot;title2&quot;&gt;&gt;
+&lt;div class=&quot;number-title&quot;&gt;
+  &lt;span class=&quot;station-num&quot;&gt;02&lt;/span&gt;
+  &lt;span class=&quot;station-text&quot;&gt;Station&lt;/span&gt;
 &lt;/div&gt;
+&lt;/div&gt;
+&lt;&lt;audio &quot;correct&quot; &quot;play&quot;&gt;&gt;
 &lt;&lt;timed 3s&gt;&gt;
 	&lt;&lt;goto $nextpass&gt;&gt;
 	&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="29" name="station2" tags="nobr" position="1100,350" size="100,100">&lt;&lt;set $prevpass to &quot;station1g&quot;&gt;&gt;
@@ -547,7 +599,7 @@ var LZString=function(){var r=String.fromCharCode,o="ABCDEFGHIJKLMNOPQRSTUVWXYZa
 	&lt;&lt;include &quot;headeror&quot;&gt;&gt;
   &lt;div class=&quot;rotate-warning&quot;&gt;&lt;h3&gt;Rotate your phone.&lt;/h3&gt;&lt;/div&gt;
 	&lt;main id=&quot;main&quot; class=&quot;&quot;&gt;
-	/* &lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;assets/audio/PHONE_3_linkintocafespace_1and2.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt; */
+	&lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;assets/audio/MoTT_Spies_STATION_2__MP3.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;div class=&quot;intro-text&quot; id=&quot;intro&quot;&gt;
 &lt;p&gt;The next scribble I have in his notebook is a name, “Maxwell Knight” – now that’s someone I do know about! &lt;/p&gt;
@@ -563,17 +615,40 @@ var LZString=function(){var r=String.fromCharCode,o="ABCDEFGHIJKLMNOPQRSTUVWXYZa
 	&lt;&lt;include &quot;footer&quot;&gt;&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="30" name="station2b" tags="nobr" position="1225,350" size="100,100">&lt;&lt;set $prevpass to &quot;station2&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;station2b&quot;&gt;&gt;
+&lt;&lt;set $nextpass to &quot;station2b2&quot;&gt;&gt;
+&lt;&lt;include &quot;title2&quot;&gt;&gt;
+&lt;div class=&quot;wrapper chief&quot;&gt;
+	&lt;&lt;include &quot;headeror&quot;&gt;&gt;
+  &lt;div class=&quot;rotate-warning&quot;&gt;&lt;h3&gt;Rotate your phone.&lt;/h3&gt;&lt;/div&gt;
+	&lt;main id=&quot;main&quot; class=&quot;&quot;&gt;
+	&lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;assets/audio/MoTT_Spies_THANKS_FOR_GETTING_THAT_INTEL__MP3.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt;
+
+&lt;div class=&quot;intro-text&quot; id=&quot;intro&quot;&gt;
+&lt;p&gt;Thanks for getting that intel on Maxwell Knight. Staff at MI5 often have to gather information and evidence when they are looking into a situation or person. &lt;/p&gt;
+&lt;p&gt;And we do the same at the MoTT! We use the historical records at The National Archives to investigate the past and check that nothing has been changed! You see, there’s a renegade group we have to watch out for who are always trying to alter the course of past events.&lt;/p&gt;
+&lt;/div&gt;
+
+ &lt;div class=&quot;green-link-wrapper&quot; aria-label=&quot;Click a button or link to move on&quot;&gt;
+		&lt;&lt;link &quot;Next&quot;&gt;&gt;
+		&lt;&lt;goto $nextpass&gt;&gt;
+			&lt;&lt;/link&gt;&gt;
+	&lt;/div&gt; 
+
+
+	&lt;/main&gt;
+	&lt;&lt;include &quot;footer&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="31" name="station2b2" tags="nobr" position="100,475" size="100,100">&lt;&lt;set $prevpass to &quot;station2b&quot;&gt;&gt;
+&lt;&lt;set $passage to &quot;station2b2&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;station2c&quot;&gt;&gt;
 &lt;&lt;include &quot;title2&quot;&gt;&gt;
 &lt;div class=&quot;wrapper chief&quot;&gt;
 	&lt;&lt;include &quot;headeror&quot;&gt;&gt;
   &lt;div class=&quot;rotate-warning&quot;&gt;&lt;h3&gt;Rotate your phone.&lt;/h3&gt;&lt;/div&gt;
 	&lt;main id=&quot;main&quot; class=&quot;&quot;&gt;
-	/* &lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;assets/audio/PHONE_3_linkintocafespace_1and2.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt; */
+	&lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;assets/audio/MoTT_Spies_IF_WE_CATCH_THEM__MP3.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;div class=&quot;intro-text&quot; id=&quot;intro&quot;&gt;
-&lt;p&gt;Thanks for getting that intel on Maxwell Knight. Staff at MI5 often have to gather information and evidence when they are looking into a situation or person. &lt;/p&gt;
-&lt;p&gt;And we do the same at the MoTT! We use the historical records at The National Archives to investigate the past and check that nothing has been changed! You see, there’s a renegade group we have to watch out for who are always trying to alter the course of past events.&lt;/p&gt;
+
 &lt;p&gt;If we catch them doing it, we can get things back on track by using a special machine. It’s called The Signal Fire System.&lt;/p&gt;
 &lt;p&gt;It’s difficult to explain, but we use it to connect to the past so we can put things right.&lt;/p&gt;
 &lt;p&gt;When we do that, we call it Nudging.&lt;/p&gt;
@@ -588,7 +663,7 @@ var LZString=function(){var r=String.fromCharCode,o="ABCDEFGHIJKLMNOPQRSTUVWXYZa
 
 	&lt;/main&gt;
 	&lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="31" name="pwUV" tags="nobr" position="100,475" size="100,100">&lt;div id=&quot;codewordWrapper&quot; class=&quot;codeword-wrapper&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="32" name="pwUV" tags="nobr" position="225,475" size="100,100">&lt;div id=&quot;codewordWrapper&quot; class=&quot;codeword-wrapper&quot;&gt;
   &lt;label for=&quot;textbox--password&quot; tabindex=&quot;0&quot; &gt;&lt;span aria-label=&quot;Enter the word below&quot; role=&quot;label&quot; style=&quot;color:black&quot;&gt;Enter the code below:&lt;/span&gt;&lt;/label&gt;
   /% CODEWORD INPUT %/
    &lt;div class=&quot;code-input&quot;&gt;
@@ -618,7 +693,7 @@ var LZString=function(){var r=String.fromCharCode,o="ABCDEFGHIJKLMNOPQRSTUVWXYZa
       &lt;div id=&quot;coderesult&quot;&gt;&lt;/div&gt;
   
   &lt;/div&gt;
-    &lt;/div&gt;</tw-passagedata><tw-passagedata pid="32" name="station2c" tags="nobr" position="225,475" size="100,100">&lt;&lt;set $prevpass to &quot;station2b&quot;&gt;&gt;
+    &lt;/div&gt;</tw-passagedata><tw-passagedata pid="33" name="station2c" tags="nobr" position="350,475" size="100,100">&lt;&lt;set $prevpass to &quot;station2b2&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;station2c&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;station2d&quot;&gt;&gt;
 &lt;&lt;include &quot;title2&quot;&gt;&gt;
@@ -626,7 +701,7 @@ var LZString=function(){var r=String.fromCharCode,o="ABCDEFGHIJKLMNOPQRSTUVWXYZa
 	&lt;&lt;include &quot;headeror&quot;&gt;&gt;
   &lt;div class=&quot;rotate-warning&quot;&gt;&lt;h3&gt;Rotate your phone.&lt;/h3&gt;&lt;/div&gt;
 	&lt;main id=&quot;main&quot; class=&quot;&quot;&gt;
-	/* &lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;assets/audio/PHONE_3_linkintocafespace_1and2.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt; */
+	&lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;assets/audio/MoTT_Spies_OK_IT_SEEMS_THERE_ARE_LOTS_OF_ARROWS__MP3.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt;
 	&lt;div&gt;
 &lt;div class=&quot;intro-text&quot; id=&quot;intro&quot;&gt;
 &lt;p&gt;Ok, it seems there are lots of arrows and a drawing of a cup of tea in Kevin’s notepad. &lt;/p&gt;
@@ -643,78 +718,28 @@ var LZString=function(){var r=String.fromCharCode,o="ABCDEFGHIJKLMNOPQRSTUVWXYZa
 
 	&lt;/main&gt;
 	&lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="33" name="station2d" tags="nobr" position="350,475" size="100,100">&lt;&lt;set $prevpass to &quot;station2c&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="34" name="station2d" tags="nobr" position="475,475" size="100,100">&lt;&lt;set $prevpass to &quot;station2c&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;station2d&quot;&gt;&gt;
-&lt;&lt;set $nextpass to &quot;station2e&quot;&gt;&gt;
-&lt;&lt;include &quot;title2&quot;&gt;&gt;
-&lt;div class=&quot;wrapper chief&quot;&gt;
-	&lt;&lt;include &quot;headeror&quot;&gt;&gt;
-  &lt;div class=&quot;rotate-warning&quot;&gt;&lt;h3&gt;Rotate your phone.&lt;/h3&gt;&lt;/div&gt;
-	&lt;main id=&quot;main&quot; class=&quot;&quot;&gt;
-	/* &lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;assets/audio/PHONE_3_linkintocafespace_1and2.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt; */
-
-&lt;div class=&quot;intro-text&quot; id=&quot;intro&quot;&gt;
-&lt;p&gt;
-  Great, send me the file reference number on the box so I can load it up its contents for me to read, you can just look inside!
-
-&lt;/p&gt;
-
-&lt;&lt;include &quot;pwBox&quot;&gt;&gt;
-	&lt;/div&gt;
-
-	&lt;/main&gt;
-	&lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="34" name="pwBox" tags="nobr" position="475,475" size="100,100">&lt;div id=&quot;codewordWrapper&quot; class=&quot;codeword-wrapper&quot;&gt;
-  &lt;label for=&quot;textbox--password&quot; tabindex=&quot;0&quot; &gt;&lt;span aria-label=&quot;Enter the word below&quot; role=&quot;label&quot; style=&quot;color:black&quot;&gt;Enter the code below:&lt;/span&gt;&lt;/label&gt;
-  /% CODEWORD INPUT %/
-   &lt;div class=&quot;code-input&quot;&gt;
-     &lt;&lt;textbox &quot;_password&quot; &quot;&quot; &gt;&gt;
-    &lt;/div&gt;
-    &lt;br/&gt;
-  &lt;div class=&quot;result-wrapper&quot;&gt;
-     &lt;span class=&quot;button-wrapper&quot; aria-label=&quot;Click Button to go Check your answer&quot;&gt;
-       &lt;&lt;button &quot;Enter&quot;&gt;&gt;  
-     /% STANDARDISE INPUT %/
-         &lt;&lt;set _password to _password.toUpperCase().trim()&gt;&gt;
-     /% CODEWORD CORRECT %/
-         &lt;&lt;if _password isnot &quot;&quot; and _password is &quot;JK82&quot;&gt;&gt;
-         &lt;&lt;replace &quot;#coderesult&quot;&gt;&gt;&lt;h2 class=&quot;subtitle complete&quot;&gt;Correct!&lt;/h2&gt;&lt;&lt;/replace&gt;&gt;
-             &lt;&lt;audio &quot;correct&quot; play&gt;&gt;
-         &lt;&lt;timed 3s&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
-        &lt;&lt;/if&gt;&gt;
-          /% CODEWORD INCORRECT %/
-       &lt;&lt;if _password isnot &quot;&quot; and _password isnot &quot;JK82&quot;&gt;&gt;
-          &lt;&lt;replace &quot;#coderesult&quot;&gt;&gt;&lt;h2 class=&quot;subtitle&quot;&gt;Thats not right.&lt;/h2&gt;&lt;&lt;/replace&gt;&gt;
-        &lt;&lt;timed 1.5s&gt;&gt;&lt;&lt;replace &quot;#coderesult&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
-          &lt;&lt;/if&gt;&gt;&lt;&lt;/button&gt;&gt; 
-       &lt;/span&gt;
-  
-     
-      /% CODEWORD FEEDBACK %/
-      &lt;div id=&quot;coderesult&quot;&gt;&lt;/div&gt;
-  
-  &lt;/div&gt;
-    &lt;/div&gt;</tw-passagedata><tw-passagedata pid="35" name="station2e" tags="nobr" position="600,475" size="100,100">&lt;&lt;set $prevpass to &quot;station2d&quot;&gt;&gt;
-&lt;&lt;set $passage to &quot;station2e&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;station2f&quot;&gt;&gt;
 &lt;&lt;include &quot;title2&quot;&gt;&gt;
 &lt;div class=&quot;wrapper chief&quot;&gt;
 	&lt;&lt;include &quot;headeror&quot;&gt;&gt;
   &lt;div class=&quot;rotate-warning&quot;&gt;&lt;h3&gt;Rotate your phone.&lt;/h3&gt;&lt;/div&gt;
 	&lt;main id=&quot;main&quot; class=&quot;&quot;&gt;
-	/* &lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;assets/audio/PHONE_3_linkintocafespace_1and2.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt; */
+	&lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;assets/audio/MoTT_Spies_GREAT_OPEN_THE_BOX__MP3.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;div class=&quot;intro-text&quot; id=&quot;intro&quot;&gt;
 &lt;p&gt;
-To hear the audio recording enter the file name into the MoTT Portal. 
+  Great, open the box and read whatever is inside. Send me a file reference number if you find one.
+
 &lt;/p&gt;
 
 &lt;&lt;include &quot;pwFile&quot;&gt;&gt;
-&lt;/div&gt;
+	&lt;/div&gt;
 
 	&lt;/main&gt;
 	&lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="36" name="pwFile" tags="nobr" position="725,475" size="100,100">&lt;div id=&quot;codewordWrapper&quot; class=&quot;codeword-wrapper&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="35" name="pwFile" tags="nobr" position="600,475" size="100,100">&lt;div id=&quot;codewordWrapper&quot; class=&quot;codeword-wrapper&quot;&gt;
   &lt;label for=&quot;textbox--password&quot; tabindex=&quot;0&quot; &gt;&lt;span aria-label=&quot;Enter the word below&quot; role=&quot;label&quot; style=&quot;color:black&quot;&gt;Enter the code below:&lt;/span&gt;&lt;/label&gt;
   /% CODEWORD INPUT %/
    &lt;div class=&quot;code-input&quot;&gt;
@@ -744,7 +769,7 @@ To hear the audio recording enter the file name into the MoTT Portal.
       &lt;div id=&quot;coderesult&quot;&gt;&lt;/div&gt;
   
   &lt;/div&gt;
-    &lt;/div&gt;</tw-passagedata><tw-passagedata pid="37" name="station2f" tags="nobr" position="850,475" size="100,100">&lt;&lt;set $prevpass to &quot;station2e&quot;&gt;&gt;
+    &lt;/div&gt;</tw-passagedata><tw-passagedata pid="36" name="station2f" tags="nobr" position="725,475" size="100,100">&lt;&lt;set $prevpass to &quot;station2d&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;station2f&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;station2g&quot;&gt;&gt;
  &lt;&lt;include &quot;title2&quot;&gt;&gt;
@@ -752,7 +777,7 @@ To hear the audio recording enter the file name into the MoTT Portal.
 	&lt;&lt;include &quot;headeror&quot;&gt;&gt;
   &lt;div class=&quot;rotate-warning&quot;&gt;&lt;h3&gt;Rotate your phone.&lt;/h3&gt;&lt;/div&gt;
 	&lt;main id=&quot;main&quot; class=&quot;&quot;&gt;
-	/* &lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;assets/audio/PHONE_3_linkintocafespace_1and2.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt; */
+	&lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;assets/audio/MoTT_Spies_OPERATION_TEA_AND_CRUMPETS__MP3.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt;
 	&lt;div&gt;
 &lt;div class=&quot;intro-text&quot; id=&quot;intro&quot;&gt;
 &lt;p&gt;Operation Tea and Crumpets was five years ago - my first mission. &lt;/p&gt;
@@ -769,7 +794,7 @@ To hear the audio recording enter the file name into the MoTT Portal.
 
 	&lt;/main&gt;
 	&lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="38" name="station2g" tags="nobr" position="975,475" size="100,100">&lt;&lt;set $prevpass to &quot;station2f&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="37" name="station2g" tags="nobr" position="850,475" size="100,100">&lt;&lt;set $prevpass to &quot;station2f&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;station2g&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;transcript&quot;&gt;&gt;
 &lt;&lt;include &quot;title2&quot;&gt;&gt;
@@ -777,7 +802,7 @@ To hear the audio recording enter the file name into the MoTT Portal.
 	&lt;&lt;include &quot;headeror&quot;&gt;&gt;
   &lt;div class=&quot;rotate-warning&quot;&gt;&lt;h3&gt;Rotate your phone.&lt;/h3&gt;&lt;/div&gt;
 	&lt;main id=&quot;main&quot; class=&quot;&quot;&gt;
-	/* &lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;assets/audio/PHONE_3_linkintocafespace_1and2.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt; */
+	&lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;assets/audio/MoTT_Spies_ACTING_UNDERCOVER__MP3.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt;
 	&lt;div&gt;
 &lt;div class=&quot;intro-text&quot; id=&quot;intro&quot;&gt;
 &lt;p&gt;Acting undercover as someone called ‘Harriet P Fredricks’, my favourite secret name, I contacted his receptionist through the Signal Fire System. Let me load up the audio recording &amp; transcript of the interaction.&lt;/p&gt;
@@ -792,28 +817,189 @@ To hear the audio recording enter the file name into the MoTT Portal.
 
 	&lt;/main&gt;
 	&lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="39" name="transcript" tags="nobr" position="1100,475" size="100,100">&lt;&lt;set $prevpass to &quot;station2f&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="38" name="transcript" tags="nobr" position="975,475" size="100,100">&lt;&lt;set $prevpass to &quot;station2f&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;station2g&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;station2h&quot;&gt;&gt;
 
-&lt;div class=&quot;wrapper dots portrait&quot;&gt;
+&lt;div class=&quot;wrapper transcript&quot;&gt;
 	/* &lt;&lt;include &quot;headerb&quot;&gt;&gt; */
   &lt;div class=&quot;rotate-warning&quot;&gt;&lt;h3&gt;Rotate your phone.&lt;/h3&gt;&lt;/div&gt;
 	&lt;main id=&quot;main&quot; class=&quot;&quot;&gt;
-	/* &lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;assets/audio/PHONE_3_linkintocafespace_1and2.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt; */
-	&lt;div&gt;
-&lt;div class=&quot;intro-text&quot; id=&quot;intro&quot;&gt;
-&lt;p&gt;TRANSCRIPT&lt;/p&gt;
-&lt;/div&gt;
+	&lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;assets/audio/MoTT_Spies_2025_TRANSCRIPT_RADIO_EFFECT__MP3.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt;
 
- &lt;span class=&quot;button-wrapper&quot; aria-label=&quot;Click a button or link to move on&quot;&gt;
-      &lt;&lt;button [[Next|$nextpass]]&gt;&gt;&lt;&lt;/button&gt;&gt;
-    &lt;/span&gt;
+&lt;div class=&quot;intro-text transcript&quot; id=&quot;intro&quot;&gt;
+
+&lt;&lt;timed 0.1s&gt;&gt;
+	&lt;&lt;append &quot;#intro&quot;&gt;&gt;
+	&lt;div class=&quot;message r&quot;&gt;
+		&lt;div class=&quot;sender&quot;&gt;RECEPTIONIST&lt;/div&gt;
+		&lt;p&gt;Maxwell Knight’s office. How can I help?&lt;/p&gt;
+	&lt;/div&gt;
+	&lt;&lt;/append&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
+
+&lt;&lt;timed 2s&gt;&gt;
+	&lt;&lt;append &quot;#intro&quot;&gt;&gt;
+	&lt;div class=&quot;message b&quot;&gt;
+		&lt;div class=&quot;sender&quot;&gt;BEATRIX&lt;/div&gt;
+		&lt;p&gt;This is Ms Harriet P Fredricks – I am calling from the Department of Being Totally Chill. &lt;/p&gt;
+	&lt;/div&gt;
+	&lt;&lt;/append&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
+
+&lt;&lt;timed 8s&gt;&gt;
+	&lt;&lt;append &quot;#intro&quot;&gt;&gt;
+	&lt;div class=&quot;message r&quot;&gt;
+		&lt;div class=&quot;sender&quot;&gt;RECEPTIONIST&lt;/div&gt;
+		&lt;p&gt;I don’t think heard of that department before.&lt;/p&gt;
+	&lt;/div&gt;
+	&lt;&lt;/append&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
+
+&lt;&lt;timed 10.5s&gt;&gt;
+	&lt;&lt;append &quot;#intro&quot;&gt;&gt;
+	&lt;div class=&quot;message b&quot; id=&quot;bot1&quot;&gt;
+		&lt;div class=&quot;sender&quot;&gt;BEATRIX&lt;/div&gt;
+		&lt;p&gt;Ermmm. We’re very new and extremely top secret!  &lt;/p&gt;
+	&lt;/div&gt;
+	&lt;&lt;/append&gt;&gt;
+	/* &lt;&lt;ScrollTo &quot;bot1&quot; false&gt;&gt; */
+&lt;&lt;/timed&gt;&gt;
+
+&lt;&lt;timed 13s&gt;&gt;
+	&lt;&lt;append &quot;#intro&quot;&gt;&gt;
+	&lt;div class=&quot;message r&quot;  id=&quot;bot2&quot;&gt;
+		&lt;div class=&quot;sender&quot;&gt;RECEPTIONIST&lt;/div&gt;
+		&lt;p&gt;Indeed. And what can I do for you today?&lt;/p&gt;
+	&lt;/div&gt;
+	&lt;&lt;/append&gt;&gt;
+		/* &lt;&lt;ScrollTo &quot;bot2&quot; false&gt;&gt; */
+&lt;&lt;/timed&gt;&gt;
+
+&lt;&lt;timed 16.5s&gt;&gt;
+	&lt;&lt;append &quot;#intro&quot;&gt;&gt;
+	&lt;div class=&quot;message b&quot; id=&quot;bot2&quot;&gt;
+		&lt;div class=&quot;sender&quot;&gt;BEATRIX&lt;/div&gt;
+		&lt;p&gt;We’ve noticed Maxwell has been overworking lately and it’s making him rather glum. &lt;/p&gt;
+	&lt;/div&gt;
+	&lt;&lt;/append&gt;&gt;
+/* &lt;&lt;ScrollTo &quot;bot3&quot; false&gt;&gt; */
+&lt;&lt;/timed&gt;&gt;
+
+&lt;&lt;timed 21s&gt;&gt;
+	&lt;&lt;append &quot;#intro&quot;&gt;&gt;
+	&lt;div class=&quot;message r&quot;&gt;
+		&lt;div class=&quot;sender&quot;&gt;RECEPTIONIST&lt;/div&gt;
+		&lt;p&gt;Yes - we keep receiving telegrams for him from persons unknown, and his phone won’t stop ringing and when we answer its just trumpets. &lt;/p&gt;
+	&lt;/div&gt;
+	&lt;&lt;/append&gt;&gt;
+		&lt;&lt;set $h to setup.callScrollToBottom()&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
+
+&lt;&lt;timed 28s&gt;&gt;
+	&lt;&lt;append &quot;#intro&quot;&gt;&gt;
+	&lt;div class=&quot;message r&quot;&gt;
+		&lt;div class=&quot;sender&quot;&gt;RECEPTIONIST&lt;/div&gt;
+		&lt;p&gt;I have been trying to cheer him up, but I don’t know what to do...&lt;/p&gt;
+	&lt;/div&gt;
+	
+	&lt;&lt;/append&gt;&gt;
+	&lt;&lt;set $h to setup.callScrollToBottom()&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
+
+
+&lt;&lt;timed 32s&gt;&gt;
+	&lt;&lt;append &quot;#intro&quot;&gt;&gt;
+	&lt;div class=&quot;message b&quot;&gt;
+		&lt;div class=&quot;sender&quot;&gt;BEATRIX&lt;/div&gt;
+		&lt;p&gt;Maxwell is very important to MI5, and the nation, but don’t worry: we have the solution. This might sound strange, but I need you to get two items. Have you got a pen and paper? &lt;/p&gt;
+	&lt;/div&gt;
+	&lt;&lt;/append&gt;&gt;
+	&lt;&lt;set $h to setup.callScrollToBottom()&gt;&gt;
+	
+&lt;&lt;/timed&gt;&gt;
+
+
+&lt;&lt;timed 45s&gt;&gt;
+	&lt;&lt;append &quot;#intro&quot;&gt;&gt;
+	&lt;div class=&quot;message r&quot;&gt;
+		&lt;div class=&quot;sender&quot;&gt;RECEPTIONIST&lt;/div&gt;
+		&lt;p&gt;Yes – go for it.&lt;/p&gt;
+	&lt;/div&gt;
+	&lt;&lt;/append&gt;&gt;
+	&lt;&lt;set $h to setup.callScrollToBottom()&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
+
+&lt;&lt;timed 47.5s&gt;&gt;
+	&lt;&lt;append &quot;#intro&quot;&gt;&gt;
+	&lt;div class=&quot;message b&quot;&gt;
+		&lt;div class=&quot;sender&quot;&gt;BEATRIX&lt;/div&gt;
+		&lt;p&gt;A cup of tea and crumpets. &lt;/p&gt;
+	&lt;/div&gt;
+	&lt;&lt;/append&gt;&gt;
+	&lt;&lt;set $h to setup.callScrollToBottom()&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
+
+&lt;&lt;timed 50s&gt;&gt;
+	&lt;&lt;append &quot;#intro&quot;&gt;&gt;
+	&lt;div class=&quot;message r&quot;&gt;
+		&lt;div class=&quot;sender&quot;&gt;RECEPTIONIST&lt;/div&gt;
+		&lt;p&gt;A cup of tea and crumpets?&lt;/p&gt;
+	&lt;/div&gt;
+	&lt;&lt;/append&gt;&gt;
+	&lt;&lt;set $h to setup.callScrollToBottom()&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
+
+&lt;&lt;timed 52s&gt;&gt;
+	&lt;&lt;append &quot;#intro&quot;&gt;&gt;
+	&lt;div class=&quot;message b&quot;&gt;
+		&lt;div class=&quot;sender&quot;&gt;BEATRIX&lt;/div&gt;
+		&lt;p&gt;Yes – place them on his desk and tell him: Maxwell it’s time for a break.  &lt;/p&gt;
+	&lt;/div&gt;
+	&lt;&lt;/append&gt;&gt;
+	&lt;&lt;set $h to setup.callScrollToBottom()&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
+
+&lt;&lt;timed 58s&gt;&gt;
+	&lt;&lt;append &quot;#intro&quot;&gt;&gt;
+	&lt;div class=&quot;message r&quot;&gt;
+		&lt;div class=&quot;sender&quot;&gt;RECEPTIONIST&lt;/div&gt;
+		&lt;p&gt;Are you sure this will work? &lt;/p&gt;
+	&lt;/div&gt;
+	&lt;&lt;/append&gt;&gt;
+	&lt;&lt;set $h to setup.callScrollToBottom()&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
+
+&lt;&lt;timed 60s&gt;&gt;
+	&lt;&lt;append &quot;#intro&quot;&gt;&gt;
+	&lt;div class=&quot;message b&quot;&gt;
+		&lt;div class=&quot;sender&quot;&gt;BEATRIX&lt;/div&gt;
+		&lt;p&gt;Trust me. I’m Harriet P Fredricks. &lt;/p&gt;
+		&lt;/div&gt;
+	&lt;&lt;/append&gt;&gt;
+	&lt;&lt;set $h to setup.callScrollToBottom()&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
+
+&lt;&lt;timed 63s&gt;&gt;
+	&lt;&lt;append &quot;#intro&quot;&gt;&gt;
+	&lt;br/&gt;
+	&lt;div class=&quot;message b&quot;&gt;
+	 &lt;div class=&quot;green-link-wrapper&quot; aria-label=&quot;Click a button or link to move on&quot;&gt;
+		&lt;&lt;link &quot;Next&quot;&gt;&gt;
+		&lt;&lt;goto $nextpass&gt;&gt;
+			&lt;&lt;/link&gt;&gt;
+	&lt;/div&gt;  
+	&lt;/div&gt; 
+	&lt;&lt;/append&gt;&gt;
+	&lt;&lt;set $h to setup.callScrollToBottom()&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
+
+
 	&lt;/div&gt;
 
 	&lt;/main&gt;
-	&lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="40" name="station2h" tags="nobr" position="1225,475" size="100,100">&lt;&lt;set $prevpass to &quot;station2g&quot;&gt;&gt;
+	&lt;&lt;include &quot;footertranscript&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="39" name="station2h" tags="nobr" position="1100,475" size="100,100">&lt;&lt;set $prevpass to &quot;station2g&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;station2h&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;station2i&quot;&gt;&gt;
 &lt;&lt;include &quot;title2&quot;&gt;&gt;
@@ -821,7 +1007,7 @@ To hear the audio recording enter the file name into the MoTT Portal.
 	&lt;&lt;include &quot;headeror&quot;&gt;&gt;
   &lt;div class=&quot;rotate-warning&quot;&gt;&lt;h3&gt;Rotate your phone.&lt;/h3&gt;&lt;/div&gt;
 	&lt;main id=&quot;main&quot; class=&quot;&quot;&gt;
-	/* &lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;assets/audio/PHONE_3_linkintocafespace_1and2.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt; */
+	&lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;assets/audio/MoTT_Spies_OPERATION_TEA_AND_CRUMPETS_WAS_A_SUCCESS__MP3.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt;
 	&lt;div&gt;
 &lt;div class=&quot;intro-text&quot; id=&quot;intro&quot;&gt;
 &lt;p&gt;Operation Tea and Crumpets was a success. &lt;/p&gt;
@@ -840,7 +1026,7 @@ To hear the audio recording enter the file name into the MoTT Portal.
 
 	&lt;/main&gt;
 	&lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="41" name="station2i" tags="nobr" position="100,600" size="100,100">&lt;&lt;set $prevpass to &quot;station2h&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="40" name="station2i" tags="nobr" position="1225,475" size="100,100">&lt;&lt;set $prevpass to &quot;station2h&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;station2i&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;station3&quot;&gt;&gt;
  &lt;&lt;include &quot;title2&quot;&gt;&gt;
@@ -848,7 +1034,7 @@ To hear the audio recording enter the file name into the MoTT Portal.
 	&lt;&lt;include &quot;headeror&quot;&gt;&gt;
   &lt;div class=&quot;rotate-warning&quot;&gt;&lt;h3&gt;Rotate your phone.&lt;/h3&gt;&lt;/div&gt;
 	&lt;main id=&quot;main&quot; class=&quot;&quot;&gt;
-	/* &lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;assets/audio/PHONE_3_linkintocafespace_1and2.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt; */
+	&lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;assets/audio/MoTT_Spies_THE_NEXT_SCRIBBLE_-_MARY_SHERER__MP3.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt;
 	&lt;div&gt;
 &lt;div class=&quot;intro-text&quot; id=&quot;intro&quot;&gt;
 &lt;p&gt;The next scribble in his notebook is the name Mary Sherer – and it’s in the section of the exhibition called Double Cross Masterminds.&lt;/p&gt;
@@ -861,7 +1047,7 @@ To hear the audio recording enter the file name into the MoTT Portal.
 
 	&lt;/main&gt;
 	&lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="42" name="pwLily" tags="nobr" position="225,600" size="100,100">&lt;div id=&quot;codewordWrapper&quot; class=&quot;codeword-wrapper&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="41" name="pwLily" tags="nobr" position="100,600" size="100,100">&lt;div id=&quot;codewordWrapper&quot; class=&quot;codeword-wrapper&quot;&gt;
   &lt;label for=&quot;textbox--password&quot; tabindex=&quot;0&quot; &gt;&lt;span aria-label=&quot;Enter the word below&quot; role=&quot;label&quot; style=&quot;color:black&quot;&gt;Enter the code below:&lt;/span&gt;&lt;/label&gt;
   /% CODEWORD INPUT %/
    &lt;div class=&quot;code-input&quot;&gt;
@@ -891,12 +1077,16 @@ To hear the audio recording enter the file name into the MoTT Portal.
       &lt;div id=&quot;coderesult&quot;&gt;&lt;/div&gt;
   
   &lt;/div&gt;
-    &lt;/div&gt;</tw-passagedata><tw-passagedata pid="43" name="station3trans" tags="nobr" position="350,600" size="100,100">&lt;div class=&quot;wrapper titletrans&quot;&gt;
-&lt;&lt;include &quot;title3&quot;&gt;&gt;
+    &lt;/div&gt;</tw-passagedata><tw-passagedata pid="42" name="station3trans" tags="nobr" position="225,600" size="100,100">&lt;div class=&quot;wrapper titletrans&quot;&gt;
+&lt;div class=&quot;number-title&quot;&gt;
+  &lt;span class=&quot;station-num&quot;&gt;03&lt;/span&gt;
+  &lt;span class=&quot;station-text&quot;&gt;Station&lt;/span&gt;
 &lt;/div&gt;
+&lt;/div&gt;
+&lt;&lt;audio &quot;correct&quot; &quot;play&quot;&gt;&gt;
 &lt;&lt;timed 3s&gt;&gt;
 	&lt;&lt;goto $nextpass&gt;&gt;
-	&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="44" name="station3" tags="nobr" position="475,600" size="100,100">&lt;&lt;set $prevpass to &quot;station2i&quot;&gt;&gt;
+	&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="43" name="station3" tags="nobr" position="350,600" size="100,100">&lt;&lt;set $prevpass to &quot;station2i&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;station3&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;station3b&quot;&gt;&gt;
 &lt;&lt;include &quot;title3&quot;&gt;&gt;
@@ -904,7 +1094,7 @@ To hear the audio recording enter the file name into the MoTT Portal.
 	&lt;&lt;include &quot;headeror&quot;&gt;&gt;
   &lt;div class=&quot;rotate-warning&quot;&gt;&lt;h3&gt;Rotate your phone.&lt;/h3&gt;&lt;/div&gt;
 	&lt;main id=&quot;main&quot; class=&quot;&quot;&gt;
-	/* &lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;assets/audio/PHONE_3_linkintocafespace_1and2.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt; */
+	&lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;assets/audio/MoTT_Spies_EXCELLENT_LET_S_GET_YOU_SOMEWHERE__MP3.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;div class=&quot;intro-text&quot; id=&quot;intro&quot;&gt;
 &lt;p&gt;Excellent – let’s get you somewhere we can look into this. &lt;/p&gt;
@@ -921,7 +1111,7 @@ To hear the audio recording enter the file name into the MoTT Portal.
 
 	&lt;/main&gt;
 	&lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="45" name="station3b" tags="nobr" position="600,600" size="100,100">&lt;&lt;set $prevpass to &quot;station3&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="44" name="station3b" tags="nobr" position="475,600" size="100,100">&lt;&lt;set $prevpass to &quot;station3&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;station3b&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;station3c&quot;&gt;&gt;
 &lt;&lt;include &quot;title3&quot;&gt;&gt;
@@ -929,7 +1119,7 @@ To hear the audio recording enter the file name into the MoTT Portal.
 	&lt;&lt;include &quot;headeror&quot;&gt;&gt;
   &lt;div class=&quot;rotate-warning&quot;&gt;&lt;h3&gt;Rotate your phone.&lt;/h3&gt;&lt;/div&gt;
 	&lt;main id=&quot;main&quot; class=&quot;&quot;&gt;
-	/* &lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;assets/audio/PHONE_3_linkintocafespace_1and2.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt; */
+	&lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;assets/audio/MoTT_Spies_IN_THE_SECOND_WORLD_WAR__MP3.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt;
 	&lt;div&gt;
 &lt;div class=&quot;intro-text&quot; id=&quot;intro&quot;&gt;
 &lt;p&gt; In the Second World War, MI5 played a key role in combating enemy spies, intercepting German communications and feeding misinformation back to Germany.&lt;/p&gt;
@@ -946,7 +1136,7 @@ To hear the audio recording enter the file name into the MoTT Portal.
 
 	&lt;/main&gt;
 	&lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="46" name="station3c" tags="nobr" position="725,600" size="100,100">&lt;&lt;set $prevpass to &quot;station3b&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="45" name="station3c" tags="nobr" position="600,600" size="100,100">&lt;&lt;set $prevpass to &quot;station3b&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;station3c&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;station3d&quot;&gt;&gt;
 &lt;&lt;include &quot;title3&quot;&gt;&gt;
@@ -954,7 +1144,7 @@ To hear the audio recording enter the file name into the MoTT Portal.
 	&lt;&lt;include &quot;headeror&quot;&gt;&gt;
   &lt;div class=&quot;rotate-warning&quot;&gt;&lt;h3&gt;Rotate your phone.&lt;/h3&gt;&lt;/div&gt;
 	&lt;main id=&quot;main&quot; class=&quot;&quot;&gt;
-	/* &lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;assets/audio/PHONE_3_linkintocafespace_1and2.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt; */
+	&lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;assets/audio/MoTT_Spies_SHE_JOINED_THE_DEPARTMENT__MP3.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt;
 	&lt;div&gt;
 &lt;div class=&quot;intro-text&quot; id=&quot;intro&quot;&gt;
 &lt;p&gt;She joined a department called Double Cross – and her job was to be a Handler for an agent called TREASURE.&lt;/p&gt;
@@ -970,7 +1160,7 @@ To hear the audio recording enter the file name into the MoTT Portal.
 
 	&lt;/main&gt;
 	&lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="47" name="station3d" tags="nobr" position="850,600" size="100,100">&lt;&lt;set $prevpass to &quot;station3c&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="46" name="station3d" tags="nobr" position="725,600" size="100,100">&lt;&lt;set $prevpass to &quot;station3c&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;station3d&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;station3e&quot;&gt;&gt;
 &lt;&lt;include &quot;title3&quot;&gt;&gt;
@@ -978,7 +1168,7 @@ To hear the audio recording enter the file name into the MoTT Portal.
 	&lt;&lt;include &quot;headeror&quot;&gt;&gt;
   &lt;div class=&quot;rotate-warning&quot;&gt;&lt;h3&gt;Rotate your phone.&lt;/h3&gt;&lt;/div&gt;
 	&lt;main id=&quot;main&quot; class=&quot;&quot;&gt;
-	/* &lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;assets/audio/PHONE_3_linkintocafespace_1and2.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt; */
+	&lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;assets/audio/MoTT_Spies_TREASURE_WAS_A_DOUBLE_AGENT__MP3.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt;
 	&lt;div&gt;
 &lt;div class=&quot;intro-text&quot; id=&quot;intro&quot;&gt;
 &lt;p&gt;TREASURE was a Double Agent, who was pretending to work for the Germans, but she was actually passing information to Mary Sherer, and to MI5. &lt;/p&gt;
@@ -993,7 +1183,7 @@ To hear the audio recording enter the file name into the MoTT Portal.
 
 	&lt;/main&gt;
 	&lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="48" name="station3e" tags="nobr" position="975,600" size="100,100">&lt;&lt;set $prevpass to &quot;station3d&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="47" name="station3e" tags="nobr" position="850,600" size="100,100">&lt;&lt;set $prevpass to &quot;station3d&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;station3e&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;station3f&quot;&gt;&gt;
 &lt;&lt;include &quot;title3&quot;&gt;&gt;
@@ -1001,7 +1191,7 @@ To hear the audio recording enter the file name into the MoTT Portal.
 	&lt;&lt;include &quot;headeror&quot;&gt;&gt;
   &lt;div class=&quot;rotate-warning&quot;&gt;&lt;h3&gt;Rotate your phone.&lt;/h3&gt;&lt;/div&gt;
 	&lt;main id=&quot;main&quot; class=&quot;&quot;&gt;
-	/* &lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;assets/audio/PHONE_3_linkintocafespace_1and2.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt; */
+	&lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;assets/audio/MoTT_Spies_MARY_WOULD_SEND__MP3.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;div class=&quot;intro-text&quot; id=&quot;intro&quot;&gt;
 &lt;p&gt;Mary would send bogus messages to TREASURE for her to pass back the Germans to confuse them.&lt;/p&gt;
@@ -1015,7 +1205,7 @@ To hear the audio recording enter the file name into the MoTT Portal.
 	&lt;/div&gt; 
 	&lt;/main&gt;
 	&lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="49" name="station3f" tags="nobr" position="1100,600" size="100,100">&lt;&lt;set $prevpass to &quot;station3e&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="48" name="station3f" tags="nobr" position="975,600" size="100,100">&lt;&lt;set $prevpass to &quot;station3e&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;station3f&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;station3g&quot;&gt;&gt;
  &lt;&lt;include &quot;title3&quot;&gt;&gt;
@@ -1023,7 +1213,7 @@ To hear the audio recording enter the file name into the MoTT Portal.
 	&lt;&lt;include &quot;headeror&quot;&gt;&gt;
   &lt;div class=&quot;rotate-warning&quot;&gt;&lt;h3&gt;Rotate your phone.&lt;/h3&gt;&lt;/div&gt;
 	&lt;main id=&quot;main&quot; class=&quot;&quot;&gt;
-	/* &lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;assets/audio/PHONE_3_linkintocafespace_1and2.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt; */
+	&lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;assets/audio/MoTT_Spies_I_VE_NOT_HEARD_OF_MARY__MP3.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;div class=&quot;intro-text&quot; id=&quot;intro&quot;&gt;
 &lt;p&gt;I’ve not heard of Mary before – an unrecognised hero it seems. &lt;/p&gt;
@@ -1031,12 +1221,20 @@ To hear the audio recording enter the file name into the MoTT Portal.
 &lt;p&gt;What has this got to do with Kevin though? &lt;/p&gt;
 
 &lt;p&gt;Use your UV torch to see if you can find anything nearby. &lt;/p&gt;
+&lt;div class=&quot;green-link-wrapper clue &quot; aria-label=&quot;Click a button or link to move on&quot; id=&quot;clue&quot;&gt;
+		&lt;&lt;link &quot;We need some help&quot;&gt;&gt;
+		&lt;&lt;replace &quot;#clue&quot;&gt;&gt;
+			&lt;span class=&quot;clue&quot;&gt;Maybe use some of the gadgets on your MoTT spy kit to help decipher the code.&lt;/span&gt;
+			&lt;&lt;/replace&gt;&gt;
+			&lt;&lt;/link&gt;&gt;
+	&lt;/div&gt; 
+	&lt;br/&gt;
 &lt;&lt;include &quot;pwTorch&quot;&gt;&gt;
 &lt;/div&gt;
 
 	&lt;/main&gt;
 	&lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="50" name="pwTorch" tags="nobr" position="1225,600" size="100,100">&lt;div id=&quot;codewordWrapper&quot; class=&quot;codeword-wrapper&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="49" name="pwTorch" tags="nobr" position="1100,600" size="100,100">&lt;div id=&quot;codewordWrapper&quot; class=&quot;codeword-wrapper&quot;&gt;
   &lt;label for=&quot;textbox--password&quot; tabindex=&quot;0&quot; &gt;&lt;span aria-label=&quot;Enter the word below&quot; role=&quot;label&quot; style=&quot;color:black&quot;&gt;Enter the code below:&lt;/span&gt;&lt;/label&gt;
   /% CODEWORD INPUT %/
    &lt;div class=&quot;code-input&quot;&gt;
@@ -1066,24 +1264,85 @@ To hear the audio recording enter the file name into the MoTT Portal.
       &lt;div id=&quot;coderesult&quot;&gt;&lt;/div&gt;
   
   &lt;/div&gt;
-    &lt;/div&gt;</tw-passagedata><tw-passagedata pid="51" name="station3g" tags="nobr" position="100,725" size="100,100">&lt;&lt;set $prevpass to &quot;station3f&quot;&gt;&gt;
+    &lt;/div&gt;</tw-passagedata><tw-passagedata pid="50" name="station3g" tags="nobr" position="1225,600" size="100,100">&lt;&lt;set $prevpass to &quot;station3f&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;station3g&quot;&gt;&gt;
-&lt;&lt;set $nextpass to &quot;station4&quot;&gt;&gt;
+&lt;&lt;set $nextpass to &quot;station3g2&quot;&gt;&gt;
 &lt;&lt;include &quot;title3&quot;&gt;&gt;
 &lt;div class=&quot;wrapper chief&quot;&gt;
 	&lt;&lt;include &quot;headeror&quot;&gt;&gt;
   &lt;div class=&quot;rotate-warning&quot;&gt;&lt;h3&gt;Rotate your phone.&lt;/h3&gt;&lt;/div&gt;
 	&lt;main id=&quot;main&quot; class=&quot;&quot;&gt;
-	/* &lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;assets/audio/PHONE_3_linkintocafespace_1and2.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt; */
+	&lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;assets/audio/MoTT_Spies_OH_NO_TADAH__MP3.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;div class=&quot;intro-text&quot; id=&quot;intro&quot;&gt;
 &lt;p&gt;Oh no, TADAH! That stands for “Time Agent Disrupters Against History”. &lt;/p&gt;
 
 &lt;p&gt;They are the one true enemy of the Ministry of Time Travel. Remember earlier, when I mentioned a renegade group we have to watch out for, who are always trying to alter the course of past events? That’s TADAH.&lt;/p&gt;
 
+
+&lt;/div&gt;
+
+&lt;div class=&quot;green-link-wrapper&quot; aria-label=&quot;Click a button or link to move on&quot;&gt;
+		&lt;&lt;link &quot;Next&quot;&gt;&gt;
+		&lt;&lt;goto $nextpass&gt;&gt;
+			&lt;&lt;/link&gt;&gt;
+	&lt;/div&gt; 
+	&lt;/main&gt;
+	&lt;&lt;include &quot;footer&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="51" name="station3g2" tags="nobr" position="100,725" size="100,100">&lt;&lt;set $prevpass to &quot;station3g&quot;&gt;&gt;
+&lt;&lt;set $passage to &quot;station3g2&quot;&gt;&gt;
+&lt;&lt;set $nextpass to &quot;station3g3&quot;&gt;&gt;
+&lt;&lt;include &quot;title3&quot;&gt;&gt;
+&lt;div class=&quot;wrapper chief&quot;&gt;
+	&lt;&lt;include &quot;headeror&quot;&gt;&gt;
+  &lt;div class=&quot;rotate-warning&quot;&gt;&lt;h3&gt;Rotate your phone.&lt;/h3&gt;&lt;/div&gt;
+	&lt;main id=&quot;main&quot; class=&quot;&quot;&gt;
+	&lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;assets/audio/MoTT_Spies_I_VE_BEEN_KEEPING__MP3.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt;
+
+&lt;div class=&quot;intro-text&quot; id=&quot;intro&quot;&gt;
 &lt;p&gt;I’ve been keeping something from you. Something I read in Kevin’s notebook that made my blood run cold. He wrote: “I can’t wait for the TADAH moment!”&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;green-link-wrapper&quot; aria-label=&quot;Click a button or link to move on&quot;&gt;
+		&lt;&lt;link &quot;Next&quot;&gt;&gt;
+		&lt;&lt;goto $nextpass&gt;&gt;
+			&lt;&lt;/link&gt;&gt;
+	&lt;/div&gt; 
+	&lt;/main&gt;
+	&lt;&lt;include &quot;footer&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="52" name="station3g3" tags="nobr" position="225,725" size="100,100">&lt;&lt;set $prevpass to &quot;station3g2&quot;&gt;&gt;
+&lt;&lt;set $passage to &quot;station3g3&quot;&gt;&gt;
+&lt;&lt;set $nextpass to &quot;station3g4&quot;&gt;&gt;
+&lt;&lt;include &quot;title3&quot;&gt;&gt;
+&lt;div class=&quot;wrapper chief&quot;&gt;
+	&lt;&lt;include &quot;headeror&quot;&gt;&gt;
+  &lt;div class=&quot;rotate-warning&quot;&gt;&lt;h3&gt;Rotate your phone.&lt;/h3&gt;&lt;/div&gt;
+	&lt;main id=&quot;main&quot; class=&quot;&quot;&gt;
+	&lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;assets/audio/MoTT_Spies_BUT_I_JUST_CAN_T_BELIEVE_IT__MP3.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt;
+
+&lt;div class=&quot;intro-text&quot; id=&quot;intro&quot;&gt;
 
 &lt;p&gt;But I just can’t believe it. Is Kevin &lt;i&gt;really&lt;/i&gt; a Double Agent who has been passing messages to the most villainous group in all of time and space?!&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;green-link-wrapper&quot; aria-label=&quot;Click a button or link to move on&quot;&gt;
+		&lt;&lt;link &quot;Next&quot;&gt;&gt;
+		&lt;&lt;goto $nextpass&gt;&gt;
+			&lt;&lt;/link&gt;&gt;
+	&lt;/div&gt; 
+	&lt;/main&gt;
+	&lt;&lt;include &quot;footer&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="53" name="station3g4" tags="nobr" position="350,725" size="100,100">&lt;&lt;set $prevpass to &quot;station3g3&quot;&gt;&gt;
+&lt;&lt;set $passage to &quot;station3g4&quot;&gt;&gt;
+&lt;&lt;set $nextpass to &quot;station4&quot;&gt;&gt;
+&lt;&lt;include &quot;title3&quot;&gt;&gt;
+&lt;div class=&quot;wrapper chief&quot;&gt;
+	&lt;&lt;include &quot;headeror&quot;&gt;&gt;
+  &lt;div class=&quot;rotate-warning&quot;&gt;&lt;h3&gt;Rotate your phone.&lt;/h3&gt;&lt;/div&gt;
+	&lt;main id=&quot;main&quot; class=&quot;&quot;&gt;
+	&lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;assets/audio/MoTT_Spies_THE_SECRET_BENCH_FILE__MP3.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt;
+
+&lt;div class=&quot;intro-text&quot; id=&quot;intro&quot;&gt;
 
 &lt;p&gt;The SECRET BENCH file will prove it one way or another.  &lt;/p&gt;
 
@@ -1098,12 +1357,16 @@ To hear the audio recording enter the file name into the MoTT Portal.
 	&lt;/div&gt; 
 	&lt;/main&gt;
 	&lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="52" name="station4trans" tags="nobr" position="225,725" size="100,100">&lt;div class=&quot;wrapper titletrans&quot;&gt;
-&lt;&lt;include &quot;title4&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="54" name="station4trans" tags="nobr" position="475,725" size="100,100">&lt;div class=&quot;wrapper titletrans&quot;&gt;
+&lt;div class=&quot;number-title&quot;&gt;
+  &lt;span class=&quot;station-num&quot;&gt;04&lt;/span&gt;
+  &lt;span class=&quot;station-text&quot;&gt;Station&lt;/span&gt;
 &lt;/div&gt;
+&lt;/div&gt;
+&lt;&lt;audio &quot;correct&quot; &quot;play&quot;&gt;&gt;
 &lt;&lt;timed 3s&gt;&gt;
 	&lt;&lt;goto $nextpass&gt;&gt;
-	&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="53" name="station4" tags="nobr" position="350,725" size="100,100">&lt;&lt;set $prevpass to &quot;station3g&quot;&gt;&gt;
+	&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="55" name="station4" tags="nobr" position="600,725" size="100,100">&lt;&lt;set $prevpass to &quot;station3g&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;station4&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;station4b&quot;&gt;&gt;
 &lt;&lt;include &quot;title4&quot;&gt;&gt;
@@ -1111,7 +1374,7 @@ To hear the audio recording enter the file name into the MoTT Portal.
 	&lt;&lt;include &quot;headeror&quot;&gt;&gt;
   &lt;div class=&quot;rotate-warning&quot;&gt;&lt;h3&gt;Rotate your phone.&lt;/h3&gt;&lt;/div&gt;
 	&lt;main id=&quot;main&quot; class=&quot;&quot;&gt;
-	/* &lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;assets/audio/PHONE_3_linkintocafespace_1and2.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt; */
+	&lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;assets/audio/MoTT_Spies_STATION_4__MP3.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;div class=&quot;intro-text&quot; id=&quot;intro&quot;&gt;
 &lt;p&gt;The last scribble I have in his notebook is the word &lt;i&gt;Secret&lt;/i&gt;. &lt;/p&gt;
@@ -1129,7 +1392,7 @@ To hear the audio recording enter the file name into the MoTT Portal.
 
 	&lt;/main&gt;
 	&lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="54" name="station4b" tags="nobr" position="475,725" size="100,100">&lt;&lt;set $prevpass to &quot;station4&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="56" name="station4b" tags="nobr" position="725,725" size="100,100">&lt;&lt;set $prevpass to &quot;station4&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;station4b&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;station4c&quot;&gt;&gt;
 &lt;&lt;include &quot;title4&quot;&gt;&gt;
@@ -1137,7 +1400,7 @@ To hear the audio recording enter the file name into the MoTT Portal.
 	&lt;&lt;include &quot;headeror&quot;&gt;&gt;
   &lt;div class=&quot;rotate-warning&quot;&gt;&lt;h3&gt;Rotate your phone.&lt;/h3&gt;&lt;/div&gt;
 	&lt;main id=&quot;main&quot; class=&quot;&quot;&gt;
-	/* &lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;assets/audio/PHONE_3_linkintocafespace_1and2.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt; */
+	&lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;assets/audio/MoTT_Spies_HAS_HE_BEEN__MP3.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;div class=&quot;intro-text&quot; id=&quot;intro&quot;&gt;
 &lt;p&gt;Has he been a TADAH double agent all along?&lt;/p&gt;
@@ -1153,7 +1416,7 @@ To hear the audio recording enter the file name into the MoTT Portal.
 
 	&lt;/main&gt;
 	&lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="55" name="station4c" tags="nobr" position="600,725" size="100,100">&lt;&lt;set $prevpass to &quot;station4b&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="57" name="station4c" tags="nobr" position="850,725" size="100,100">&lt;&lt;set $prevpass to &quot;station4b&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;station4c&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;station4d&quot;&gt;&gt;
 &lt;&lt;include &quot;title4&quot;&gt;&gt;
@@ -1161,7 +1424,7 @@ To hear the audio recording enter the file name into the MoTT Portal.
 	&lt;&lt;include &quot;headeror&quot;&gt;&gt;
   &lt;div class=&quot;rotate-warning&quot;&gt;&lt;h3&gt;Rotate your phone.&lt;/h3&gt;&lt;/div&gt;
 	&lt;main id=&quot;main&quot; class=&quot;&quot;&gt;
-	/* &lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;assets/audio/PHONE_3_linkintocafespace_1and2.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt; */
+	&lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;assets/audio/MoTT_Spies_HEAD_INTO_THE_LIBRARY__MP3.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;div class=&quot;intro-text&quot; id=&quot;intro&quot;&gt;
 &lt;p&gt; Head into the library room inside the exhibition &lt;/p&gt;
@@ -1174,7 +1437,7 @@ To hear the audio recording enter the file name into the MoTT Portal.
 
 	&lt;/main&gt;
 	&lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="56" name="station4d" tags="nobr" position="725,725" size="100,100">&lt;&lt;set $prevpass to &quot;station4c&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="58" name="station4d" tags="nobr" position="975,725" size="100,100">&lt;&lt;set $prevpass to &quot;station4c&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;station4d&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;station4e&quot;&gt;&gt;
 &lt;&lt;include &quot;title4&quot;&gt;&gt;
@@ -1182,7 +1445,7 @@ To hear the audio recording enter the file name into the MoTT Portal.
 	&lt;&lt;include &quot;headeror&quot;&gt;&gt;
   &lt;div class=&quot;rotate-warning&quot;&gt;&lt;h3&gt;Rotate your phone.&lt;/h3&gt;&lt;/div&gt;
 	&lt;main id=&quot;main&quot; class=&quot;&quot;&gt;
-	/* &lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;assets/audio/PHONE_3_linkintocafespace_1and2.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt; */
+	&lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;assets/audio/MoTT_Spies_IN_THIS_ROOM__MP3.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;div class=&quot;intro-text&quot; id=&quot;intro&quot;&gt;
 &lt;p&gt;In this room I think there is a message that has been put into code. &lt;/p&gt;
@@ -1198,7 +1461,7 @@ To hear the audio recording enter the file name into the MoTT Portal.
 
 	&lt;/main&gt;
 	&lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="57" name="station4e" tags="nobr" position="850,725" size="100,100">&lt;&lt;set $prevpass to &quot;station4d&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="59" name="station4e" tags="nobr" position="1100,725" size="100,100">&lt;&lt;set $prevpass to &quot;station4d&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;station4e&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;outro1&quot;&gt;&gt;
 &lt;&lt;include &quot;title4&quot;&gt;&gt;
@@ -1206,7 +1469,7 @@ To hear the audio recording enter the file name into the MoTT Portal.
 	&lt;&lt;include &quot;headeror&quot;&gt;&gt;
   &lt;div class=&quot;rotate-warning&quot;&gt;&lt;h3&gt;Rotate your phone.&lt;/h3&gt;&lt;/div&gt;
 	&lt;main id=&quot;main&quot; class=&quot;&quot;&gt;
-	/* &lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;assets/audio/PHONE_3_linkintocafespace_1and2.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt; */
+	&lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;assets/audio/MoTT_Spies_YOU_SHOULD_HAVE__MP3.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;div class=&quot;intro-text&quot; id=&quot;intro&quot;&gt;
 &lt;p&gt;You should have the MoTT decoder as part of your kit. &lt;/p&gt;
@@ -1218,7 +1481,7 @@ To hear the audio recording enter the file name into the MoTT Portal.
 
 	&lt;/main&gt;
 	&lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="58" name="pwDecoder" tags="nobr" position="975,725" size="100,100">&lt;div id=&quot;codewordWrapper&quot; class=&quot;codeword-wrapper&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="60" name="pwDecoder" tags="nobr" position="1225,725" size="100,100">&lt;div id=&quot;codewordWrapper&quot; class=&quot;codeword-wrapper&quot;&gt;
   &lt;label for=&quot;textbox--password&quot; tabindex=&quot;0&quot; &gt;&lt;span aria-label=&quot;Enter the word below&quot; role=&quot;label&quot; style=&quot;color:black&quot;&gt;Enter the code below:&lt;/span&gt;&lt;/label&gt;
   /% CODEWORD INPUT %/
    &lt;div class=&quot;code-input multi&quot;&gt;
@@ -1308,13 +1571,13 @@ To hear the audio recording enter the file name into the MoTT Portal.
 		  &lt;div id=&quot;coderesult3&quot;&gt;&lt;/div&gt;
   
   &lt;/div&gt;
-    &lt;/div&gt;</tw-passagedata><tw-passagedata pid="59" name="checkAnswers" tags="nobr" position="1100,725" size="100,100">&lt;&lt;if _password1 isnot &quot;&quot; and _password2 isnot &quot;&quot; and _password3 isnot &quot;&quot; &gt;&gt;
+    &lt;/div&gt;</tw-passagedata><tw-passagedata pid="61" name="checkAnswers" tags="nobr" position="100,850" size="100,100">&lt;&lt;if _password1 isnot &quot;&quot; and _password2 isnot &quot;&quot; and _password3 isnot &quot;&quot; &gt;&gt;
     &lt;&lt;if (_password1 + _password2 + _password3) is &quot;TEAANDCRUMPETS&quot;&gt;&gt;
        &lt;&lt;replace &quot;#coderesult1&quot;&gt;&gt;&lt;h2 class=&quot;subtitle complete&quot;&gt;Correct!&lt;/h2&gt;&lt;&lt;/replace&gt;&gt;
         &lt;&lt;audio &quot;correct&quot; play&gt;&gt;
       &lt;&lt;timed 2s&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
     &lt;&lt;/if&gt;&gt;
-  &lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="60" name="outro1" tags="nobr" position="1225,725" size="100,100">&lt;&lt;set $prevpass to &quot;station4e&quot;&gt;&gt;
+  &lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="62" name="outro1" tags="nobr" position="225,850" size="100,100">&lt;&lt;set $prevpass to &quot;station4e&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;outro1&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;outro2&quot;&gt;&gt;
 
@@ -1322,7 +1585,7 @@ To hear the audio recording enter the file name into the MoTT Portal.
 	&lt;&lt;include &quot;headerorna&quot;&gt;&gt;
   &lt;div class=&quot;rotate-warning&quot;&gt;&lt;h3&gt;Rotate your phone.&lt;/h3&gt;&lt;/div&gt;
 	&lt;main id=&quot;main&quot; class=&quot;&quot;&gt;
-	/* &lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;assets/audio/PHONE_3_linkintocafespace_1and2.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt; */
+	&lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;assets/audio/MoTT_Spies_I_TOLD_YOU_MY_FIRST_MISSION__MP3.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;div class=&quot;intro-text&quot; id=&quot;intro&quot;&gt;
 &lt;p&gt;Operation: Tea &amp; Crumpets. &lt;/p&gt;
@@ -1336,7 +1599,7 @@ To hear the audio recording enter the file name into the MoTT Portal.
 
 	&lt;/main&gt;
 	&lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="61" name="outro2" tags="nobr" position="100,850" size="100,100">&lt;&lt;set $prevpass to &quot;outro1&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="63" name="outro2" tags="nobr" position="350,850" size="100,100">&lt;&lt;set $prevpass to &quot;outro1&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;outro2&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;outro3&quot;&gt;&gt;
 
@@ -1344,7 +1607,7 @@ To hear the audio recording enter the file name into the MoTT Portal.
 	&lt;&lt;include &quot;headeror&quot;&gt;&gt;
   &lt;div class=&quot;rotate-warning&quot;&gt;&lt;h3&gt;Rotate your phone.&lt;/h3&gt;&lt;/div&gt;
 	&lt;main id=&quot;main&quot; class=&quot;&quot;&gt;
-	/* &lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;assets/audio/PHONE_3_linkintocafespace_1and2.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt; */
+	&lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;assets/audio/MoTT_Spies_IF_HE_SHOWS_TADAH__MP3.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;div class=&quot;intro-text&quot; id=&quot;intro&quot;&gt;
 &lt;p&gt;If he shows TADAH how to nudge my first mission… so that it fails... I won’t become the Chief Timer! &lt;/p&gt;
@@ -1357,7 +1620,7 @@ To hear the audio recording enter the file name into the MoTT Portal.
 
 	&lt;/main&gt;
 	&lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="62" name="outro3" tags="nobr" position="225,850" size="100,100">&lt;&lt;set $prevpass to &quot;outro2&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="64" name="outro3" tags="nobr" position="475,850" size="100,100">&lt;&lt;set $prevpass to &quot;outro2&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;outro3&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;outro4&quot;&gt;&gt;
 
@@ -1365,7 +1628,7 @@ To hear the audio recording enter the file name into the MoTT Portal.
 	&lt;&lt;include &quot;headeror&quot;&gt;&gt;
   &lt;div class=&quot;rotate-warning&quot;&gt;&lt;h3&gt;Rotate your phone.&lt;/h3&gt;&lt;/div&gt;
 	&lt;main id=&quot;main&quot; class=&quot;&quot;&gt;
-	/* &lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;assets/audio/PHONE_3_linkintocafespace_1and2.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt; */
+	&lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;assets/audio/MoTT_Spies_WE_NEED_TO_STOP_KEVIN__MP3.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;div class=&quot;intro-text&quot; id=&quot;intro&quot;&gt;
 &lt;p&gt;We need to stop Kevin passing on that information to TADAH!&lt;/p&gt;
@@ -1382,7 +1645,7 @@ To hear the audio recording enter the file name into the MoTT Portal.
 
 	&lt;/main&gt;
 	&lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="63" name="outro4" tags="nobr" position="350,850" size="100,100">&lt;&lt;set $prevpass to &quot;outro3&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="65" name="outro4" tags="nobr" position="600,850" size="100,100">&lt;&lt;set $prevpass to &quot;outro3&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;outro4&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;outro5&quot;&gt;&gt;
 
@@ -1390,12 +1653,36 @@ To hear the audio recording enter the file name into the MoTT Portal.
 	&lt;&lt;include &quot;headeror&quot;&gt;&gt;
   &lt;div class=&quot;rotate-warning&quot;&gt;&lt;h3&gt;Rotate your phone.&lt;/h3&gt;&lt;/div&gt;
 	&lt;main id=&quot;main&quot; class=&quot;&quot;&gt;
-	/* &lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;assets/audio/PHONE_3_linkintocafespace_1and2.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt; */
+	&lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;assets/audio/MoTT_Spies_I_NEED_YOU__MP3.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;div class=&quot;intro-text&quot; id=&quot;intro&quot;&gt;
 &lt;p&gt;I need you to head out of the exhibition, to the shop. &lt;/p&gt;
 &lt;p&gt;Ask my friend behind the counter if they have seen Kevin. &lt;/p&gt;
 &lt;p&gt;We must find out what he has been hiding. &lt;/p&gt;
+
+
+&lt;div class=&quot;green-link-wrapper&quot; aria-label=&quot;Click a button or link to move on&quot;&gt;
+		&lt;&lt;link &quot;Next&quot;&gt;&gt;
+		&lt;&lt;goto $nextpass&gt;&gt;
+			&lt;&lt;/link&gt;&gt;
+	&lt;/div&gt; 
+	&lt;/div&gt;
+
+	&lt;/main&gt;
+	&lt;&lt;include &quot;footer&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="66" name="outro5" tags="nobr" position="725,850" size="100,100">&lt;&lt;set $prevpass to &quot;outro4&quot;&gt;&gt;
+&lt;&lt;set $passage to &quot;outro5&quot;&gt;&gt;
+&lt;&lt;set $nextpass to &quot;outro5&quot;&gt;&gt;
+
+&lt;div class=&quot;wrapper chief&quot;&gt;
+	&lt;&lt;include &quot;headeror&quot;&gt;&gt;
+  &lt;div class=&quot;rotate-warning&quot;&gt;&lt;h3&gt;Rotate your phone.&lt;/h3&gt;&lt;/div&gt;
+	&lt;main id=&quot;main&quot; class=&quot;&quot;&gt;
+	&lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;assets/audio/MoTT_Spies_IF_YOU_FIND_THE_PASSWORD__MP3.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt;
+
+&lt;div class=&quot;intro-text&quot; id=&quot;intro&quot;&gt;
+&lt;p&gt;If you find the password, head back to the tablet and let’s open the secret file. &lt;/p&gt;
+&lt;p&gt;It’s time for the truth Kevin.&lt;/p&gt;
 
 
 /* &lt;div class=&quot;green-link-wrapper&quot; aria-label=&quot;Click a button or link to move on&quot;&gt;
@@ -1407,13 +1694,19 @@ To hear the audio recording enter the file name into the MoTT Portal.
 
 	&lt;/main&gt;
 	&lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="64" name="footer" tags="nobr" position="475,850" size="100,100">&lt;footer&gt;&lt;nav class=&quot;&quot;&gt;&lt;div id=&quot;back&quot; class=&quot;button-wrapper&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="67" name="footer" tags="nobr" position="850,850" size="100,100">&lt;footer&gt;&lt;nav class=&quot;&quot;&gt;&lt;div id=&quot;back&quot; class=&quot;button-wrapper&quot;&gt;
 &lt;&lt;if passage() isnot &quot;onboarding1&quot;&gt;&gt;
   &lt;&lt;button [img[assets/img/arrow.png]]&gt;&gt; 
     &lt;&lt;goto $prevpass&gt;&gt;
     &lt;&lt;/button&gt;&gt;
   &lt;&lt;/if&gt;&gt;
-&lt;/div&gt;&lt;/nav&gt;&lt;/footer&gt;</tw-passagedata><tw-passagedata pid="65" name="footernext" tags="nobr" position="600,850" size="100,100">&lt;footer&gt;&lt;nav class=&quot;&quot;&gt;&lt;div id=&quot;back&quot; class=&quot;button-wrapper&quot;&gt;
+&lt;/div&gt;&lt;/nav&gt;&lt;/footer&gt;</tw-passagedata><tw-passagedata pid="68" name="footertranscript" tags="nobr" position="975,850" size="100,100">&lt;footer id=&quot;bottom&quot;&gt;&lt;nav class=&quot;&quot;&gt;&lt;div id=&quot;back&quot; class=&quot;button-wrapper&quot;&gt;
+&lt;&lt;if passage() isnot &quot;onboarding1&quot;&gt;&gt;
+  &lt;&lt;button [img[assets/img/arrow.png]]&gt;&gt; 
+    &lt;&lt;goto $prevpass&gt;&gt;
+    &lt;&lt;/button&gt;&gt;
+  &lt;&lt;/if&gt;&gt;
+&lt;/div&gt;&lt;/nav&gt;&lt;/footer&gt;</tw-passagedata><tw-passagedata pid="69" name="footernext" tags="nobr" position="1100,850" size="100,100">&lt;footer&gt;&lt;nav class=&quot;&quot;&gt;&lt;div id=&quot;back&quot; class=&quot;button-wrapper&quot;&gt;
 &lt;&lt;if passage() isnot &quot;onboarding1&quot;&gt;&gt;
   &lt;&lt;button &quot;Back&quot;&gt;&gt; 
     &lt;&lt;goto $prevpass&gt;&gt;

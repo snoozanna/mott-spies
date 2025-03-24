@@ -644,6 +644,10 @@ input.macro-textbox {
   font-size: 2rem;
 }
 
+input[type=text] {
+  min-width: inherit;
+}
+
 h3.orange {
   color: white;
 }
@@ -759,4 +763,14 @@ h3.subtitle > span.orange {
   vertical-align: middle; /* Aligns arrow with text */
   transform: rotate(-135deg);  /* Rotate the arrow */
   
+}
+
+.green-link-wrapper.clue{
+  color: black;
+  font-weight: 900;
+  font-size: 2rem;
+  text-align: right;
+}
+.green-link-wrapper.clue > a{
+  font-size: 2.5rem;
 }
