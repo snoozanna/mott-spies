@@ -81,39 +81,17 @@ UIBar.destroy();
 	<div id="video" role="video" class="video-wrapper"  aria-label="Video 1"><iframe src="https://player.vimeo.com/video/570862001?h=c5306be0ef&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="MOTT Training 6"></iframe></div>
 	</main>
 
-<footer><nav><div class="green-link-wrapper back"><<link "Back" $prevpass>><</link>></div><div id="text"></div></nav></footer>
-</div>
-<<silently>>
-<<timed 0.1s t8n>><<append "#text">><br><span class="green-link-wrapper" aria-label="Click a button or link to move on"><<link "Next" $nextpass>><</link>></span><</append>> <</timed>>
-<</silently>>
+<<include "footerpw">>
 
 :: video2[nobr]
 <<set $prevpass to "video1">>
 <<set $passage to "video2">>
-<<set $nextpass to "video3">>
-/* VIDEO 2  */
-
-<div class="wrapper spies2">
-	<main id="main" class="video">
-	<div id="video" role="video" class="video-wrapper"  aria-label="Video 2"><iframe src="https://player.vimeo.com/video/570862001?h=c5306be0ef&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="MOTT Training 6"></iframe></div>
-	</main>
-
-<footer><nav><div class="green-link-wrapper back"><<link "Back" $prevpass>><</link>></div><div id="text"></div></nav></footer>
-</div>
-<<silently>>
-<<timed 0.1s t8n>><<append "#text">><br><span class="green-link-wrapper" aria-label="Click a button or link to move on"><<link "Next" $nextpass>><</link>></span><</append>> <</timed>>
-<</silently>>
-
-
-:: video3[nobr]
-<<set $prevpass to "video2">>
-<<set $passage to "video3">>
 <<set $nextpass to "exit">>
-/* VIDEO 3  */
+/* VIDEO 2  (video 1c) */
 
 <div class="wrapper spies2">
 	<main id="main" class="video">
-	<div id="video" role="video" class="video-wrapper"  aria-label="Video 3"><iframe src="https://player.vimeo.com/video/570862001?h=c5306be0ef&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="MOTT Training 6"></iframe></div>
+	<div id="video" role="video" class="video-wrapper"  aria-label="Video 2"><iframe src="https://player.vimeo.com/video/1068803512?h=8c6801ca6d&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="MOTT Training 6"></iframe></div>
 	</main>
 
 <footer><nav><div class="green-link-wrapper back"><<link "Back" $prevpass>><</link>></div><div id="text"></div></nav></footer>
@@ -121,10 +99,12 @@ UIBar.destroy();
 <<silently>>
 <<timed 0.1s t8n>><<append "#text">><br><span class="green-link-wrapper" aria-label="Click a button or link to move on"><<link "Next" $nextpass>><</link>></span><</append>> <</timed>>
 <</silently>>
+
+
 
 
 :: exit [nobr]
-<<set $prevpass to "video3">>
+<<set $prevpass to "video2">>
 <<set $passage to "exit">>
 <<set $nextpass to "entrance">>
 <div class="wrapper spies spies2">
@@ -137,7 +117,7 @@ UIBar.destroy();
 <p>Before you head into the exhibition here’s a few things you should know.</p>
 <p>It’s all about MI5, which is the Security Service for the UK that works hard to keep us all safe, and it is full of stories about the people who have made MI5 what it is.</p>
 <p>I need to stay here and keep an eye on Kevin, but you can access the online platform with your MoTT spy kit. </p>
-<p>Have a look at it now and we’ll speak more when you’re connected to the platform!</p>
+<p>Have a look at it now and we’ll speak more when you’re connected to the platform on your phone!</p>
 
 </div>
 	</main>
@@ -155,12 +135,22 @@ UIBar.destroy();
 
 <div class="green-link-wrapper back"><<link "Back" $prevpass>><</link>></div><div id="text"></div></nav></footer>
 
+:: footerpw [nobr]
 
+
+<footer><nav><span class="green-link-wrapper back" aria-label="Click to move back"><<link "Back" $prevpass>><</link>></span><div id="text"></div>
+</nav></footer>
+
+<<silently>>
+<<timed 3s t8n>><<append "#text">>
+	<<include "pwVid">>
+<</append>> <</timed>>
+<</silently>>
 
 
 :: pwBench [nobr]
   <div class="doc-container"> <img src="../assets/img/4468641.png"/>
- <span>Bench File</span>
+ <span>Secret Bench File</span>
 <div id="codewordWrapper" class="codeword-wrapper">
   <label for="textbox--password" tabindex="0" ><span aria-label="Enter password" role="label">Enter password:</span></label>
   /% CODEWORD INPUT %/
@@ -196,14 +186,51 @@ UIBar.destroy();
 <<set $prevpass to "entrance">>
 <<set $passage to "benchvid">>
 <<set $nextpass to "entrance">>
-/* VIDEO 3  */
+/* BENCH VID  */
 
-<div class="wrapper cogs">
+<div class="wrapper spies2">
 	<main id="main" class="video">
-	<div id="video" role="video" class="video-wrapper"  aria-label="Video 4"><iframe src="https://player.vimeo.com/video/570862001?h=c5306be0ef&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="MOTT Training 6"></iframe></div>
+	<div id="video" role="video" class="video-wrapper"  aria-label="Video 4"><iframe src="https://player.vimeo.com/video/1068803631?h=5434f73715&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="MOTT Training 6"></iframe></div>
 	</main>
 		<footer><nav><div id="back" class="button-wrapper"><<link "Back" $prevpass>><</link>></div><div id="text"></div></nav></footer>
 </div>
 <<silently>>
 <<timed 0.1s t8n>><<append "#text">><br><span class="button-wrapper" aria-label="Click a button or link to move on"><<button "Next" $nextpass>><</button>></span><</append>> <</timed>>
 <</silently>>
+
+
+:: pwVid [nobr]
+<div id="codewordWrapper" class="codeword-wrapper row">
+<div>
+  <label for="textbox--password" tabindex="0" ><span aria-label="Enter the word below" role="label" style="color:black">Enter the code below:</span></label>
+  /% CODEWORD INPUT %/
+   <div class="code-input">
+     <<textbox "_password" "" >>
+    </div>
+
+</div>
+     <div id="coderesult"></div>
+  <div class="result-wrapper">
+     <span class="button-wrapper" aria-label="Click Button to go Check your answer">
+       <<button "Enter">>  
+     /% STANDARDISE INPUT %/
+         <<set _password to _password.toUpperCase().trim()>>
+     /% CODEWORD CORRECT %/
+         <<if _password isnot "" and _password is "CRUMPET">>
+         <<replace "#coderesult">><span class="blackresult">Correct!</span><</replace>>
+             <<audio "correct" play>>
+         <<timed 3s>><<goto $nextpass>><</timed>>
+        <</if>>
+          /% CODEWORD INCORRECT %/
+       <<if _password isnot "" and _password isnot "CRUMPET">>
+          <<replace "#coderesult">><span class="blackresult">Thats not right.</span><</replace>>
+        <<timed 1.5s>><<replace "#coderesult">><</replace>><</timed>>
+          <</if>><</button>> 
+       </span>
+  
+     
+      /% CODEWORD FEEDBACK %/
+ 
+  
+  </div>
+    </div>
