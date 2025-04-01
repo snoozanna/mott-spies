@@ -537,7 +537,7 @@ scrollToBottom()
 :: station1f [nobr]
 <<set $prevpass to "station1e">>
 <<set $passage to "station1f">>
-<<set $nextpass to "station1g">>
+<<set $nextpass to "station1f2">>
 <<include "title1">>
 <div class="wrapper chief">
 	<<include "headeror">>
@@ -548,6 +548,32 @@ scrollToBottom()
 <div class="intro-text" id="intro">
 <p>She proved to be one of the most capable administrators in service history and MI5 wouldn’t be what it is today without the work she did. </p>
 
+
+</div>
+
+ <div class="green-link-wrapper" aria-label="Click a button or link to move on">
+		<<link "Next">>
+		<<goto $nextpass>>
+			<</link>>
+	</div> 
+	</div>
+
+	</main>
+	<<include "footer">>
+</div>
+
+:: station1f2 [nobr]
+<<set $prevpass to "station1f">>
+<<set $passage to "station1f2">>
+<<set $nextpass to "station1g">>
+<<include "title1">>
+<div class="wrapper chief">
+	<<include "headeror">>
+  <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
+	<main id="main" class="">
+	<<if $audioOn is true>><audio src="assets/audio/MoTT_Spies_SHELATER_BECAME__MP3.mp3" autoplay>Audio not supported in your browser</audio><</if>>
+	<div>
+<div class="intro-text" id="intro">
 <p>She later becoming the first female member of staff to be appointed MBE. </p>
 <p>That’s a big award to receive! </p>
 
@@ -564,9 +590,8 @@ scrollToBottom()
 	<<include "footer">>
 </div>
 
-
 :: station1g [nobr]
-<<set $prevpass to "station1e">>
+<<set $prevpass to "station1f2">>
 <<set $passage to "station1g">>
 <<set $nextpass to "station2">>
 <<include "title1">>
@@ -811,7 +836,7 @@ scrollToBottom()
 :: station2f [nobr]
 <<set $prevpass to "station2d">>
 <<set $passage to "station2f">>
-<<set $nextpass to "station2g">>
+<<set $nextpass to "station2f2">>
  <<include "title2">>
 <div class="wrapper chief">
 	<<include "headeror">>
@@ -821,6 +846,32 @@ scrollToBottom()
 	<div>
 <div class="intro-text" id="intro">
 <p>Operation Tea and Crumpets was five years ago - my first mission. </p>
+
+</div>
+
+<div class="green-link-wrapper" aria-label="Click a button or link to move on">
+		<<link "Next">>
+		<<goto $nextpass>>
+			<</link>>
+	</div> 
+	</div>
+
+	</main>
+	<<include "footer">>
+</div>
+
+:: station2f2 [nobr]
+<<set $prevpass to "station2f">>
+<<set $passage to "station2f2">>
+<<set $nextpass to "station2g">>
+ <<include "title2">>
+<div class="wrapper chief">
+	<<include "headeror">>
+  <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
+	<main id="main" class="">
+	<<if $audioOn is true>><audio src="assets/audio/MoTT_Spies_MY_PLAN_WAS_SIMPLE__MP3.mp3" autoplay>Audio not supported in your browser</audio><</if>>
+	<div>
+<div class="intro-text" id="intro">
 
 <p>My plan was simple – stop Maxwell feeling overwhelmed – and fast!</p>
 </div>
@@ -837,7 +888,7 @@ scrollToBottom()
 </div>
 
 :: station2g [nobr]
-<<set $prevpass to "station2f">>
+<<set $prevpass to "station2f2">>
 <<set $passage to "station2g">>
 <<set $nextpass to "transcript">>
 <<include "title2">>
@@ -1188,7 +1239,7 @@ scrollToBottom()
 	<<if $audioOn is true>><audio src="assets/audio/MoTT_Spies_IN_THE_SECOND_WORLD_WAR__MP3.mp3" autoplay>Audio not supported in your browser</audio><</if>>
 	<div>
 <div class="intro-text" id="intro">
-<p> In the Second World War, MI5 played a key role in combating enemy spies, intercepting German communications and feeding misinformation back to Germany.</p>
+<p> In the Second World War, MI5 played a role in combating enemy spies, intercepting German communications and feeding misinformation back to Germany.</p>
 <p> It seems we are focusing on Mary Sherer. MI5's first female agent runner!</p>
 
 </div>
@@ -1760,8 +1811,7 @@ scrollToBottom()
 
 <div class="intro-text" id="intro">
 <p>We need to stop Kevin passing on that information to TADAH!</p>
-<p>I’ve received intel that he went to the shop at The National Archives.</p> 
-<p>And placed something there. </p>
+<nd>I’ve received intel that he went to the shop at The National Archives and placed something there. </p>
 
 
 <div class="green-link-wrapper" aria-label="Click a button or link to move on">
@@ -1817,8 +1867,8 @@ scrollToBottom()
 	<<if $audioOn is true>><audio src="assets/audio/MoTT_Spies_IF_YOU_FIND_THE_PASSWORD__MP3.mp3" autoplay>Audio not supported in your browser</audio><</if>>
 
 <div class="intro-text" id="intro">
-<p>If you find the password, head back to the tablet and let’s open the secret file. </p>
-<p>It’s time for the truth Kevin.</p>
+<p>If you find the Secret Bench File password, head back to the tablet and enter it when you can. </p>
+<p>We must know what Kevin is up to. </p>
 
 
 /* <div class="green-link-wrapper" aria-label="Click a button or link to move on">

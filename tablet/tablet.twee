@@ -78,7 +78,7 @@ UIBar.destroy();
 
 <div class="wrapper spies2">
 	<main id="main" class="video">
-	<div id="video" role="video" class="video-wrapper"  aria-label="Video 1"><iframe src="https://player.vimeo.com/video/570862001?h=c5306be0ef&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="MOTT Training 6"></iframe></div>
+	<div id="video" role="video" class="video-wrapper"  aria-label="Video 1"><iframe src="https://player.vimeo.com/video/1069551028?h=cec1ff6ba7&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="MOTT Training 6"></iframe></div>
 	</main>
 
 <<include "footerpw">>
@@ -111,7 +111,7 @@ UIBar.destroy();
 	/* <<include "header">> */
 	<main id="main" class="tabletmain ">
 
-	/* <<if $audioOn is true>><audio src="../assets/audio/TABLET_1_MOTT.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
+	<audio src="../assets/audio/MoTT_Spies_TABLET_PLATFORM__MP3.mp3" autoplay>Audio not supported in your browser</audio>
 <div class="tablet-text">
 <div class="logo-wrapper"><img src="../assets/img/na-logo.png" alt="The National Archives Logo" class="logo na" aria-hidden="true"></div> 
 <p>Before you head into the exhibition here’s a few things you should know.</p>
