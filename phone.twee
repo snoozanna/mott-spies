@@ -91,7 +91,7 @@ scrollToBottom()
   </div>
 
   <div class="entrance-btn-wrapper" id="startBtn">
-	<div class="center-img-wrapper"><img src="../assets/img/green-cog-logo.png" alt="Green Cog Logo"/></div>
+	<div class="center-img-wrapper"><img src="assets/img/green-cog-logo.png" alt="Green Cog Logo"/></div>
 	
 	<div class="green-link-wrapper" aria-label="Click Button to begin">
 		<<link "Start ">>
@@ -262,7 +262,7 @@ scrollToBottom()
 <div class="wrapper chief">
 	<<include "headeror">>
 	<main id="main" class="flex-container-col">
-	<<if $audioOn is true>><audio src="assets/audio/MoTT_Spies_KEVIN_S_NOTEBOOK__MP3.mp3" autoplay>Audio not supported in your browser</audio><</if>>
+	<<if $audioOn is true>><audio src="" autoplay>Audio not supported in your browser</audio><</if>>
 
 	<div class="intro-text">
 <p>If you’d prefer to not hear me out loud you could turn the volume down or you could put headphones in to be undercover. </p>
@@ -429,7 +429,7 @@ scrollToBottom()
  <div class="green-link-wrapper" aria-label="Click to show photo">
 		<<link "Show Photo">>
 		<<replace "#intro">>
-	<div class="center-img-wrapper"><img src="../assets/img/lomax.jpg" alt="Lomax image"/></div>
+	<div class="center-img-wrapper"><img src="assets/img/lomax.jpg" alt="Lomax image"/></div>
 			<</replace>>
 	<<replace "#toggleBtn">>
 	 <div class="green-link-wrapper" aria-label="Click to hide photo">
