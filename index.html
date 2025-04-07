@@ -255,7 +255,7 @@ scrollToBottom()
   &lt;&lt;include &quot;footer&quot;&gt;&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="10" name="onboarding1yes" tags="nobr" position="1225,100" size="100,100">&lt;&lt;set $prevpass to &quot;onboarding1&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;onboarding1yes&quot;&gt;&gt;
-&lt;&lt;set $nextpass to &quot;onboarding2&quot;&gt;&gt;
+&lt;&lt;set $nextpass to &quot;onboarding2a&quot;&gt;&gt;
 &lt;div class=&quot;wrapper chief&quot;&gt;
 	&lt;&lt;include &quot;headerorplain&quot;&gt;&gt;
 	&lt;main id=&quot;main&quot; class=&quot;flex-container-col&quot;&gt;
@@ -277,7 +277,7 @@ scrollToBottom()
   &lt;&lt;include &quot;footer&quot;&gt;&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="11" name="onboarding1no" tags="nobr" position="100,225" size="100,100">&lt;&lt;set $prevpass to &quot;onboarding1&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;onboarding1no&quot;&gt;&gt;
-&lt;&lt;set $nextpass to &quot;onboarding2&quot;&gt;&gt;
+&lt;&lt;set $nextpass to &quot;onboarding2a&quot;&gt;&gt;
 
 &lt;div class=&quot;wrapper chief&quot;&gt;
 	&lt;&lt;include &quot;headeror&quot;&gt;&gt;
@@ -297,7 +297,26 @@ scrollToBottom()
 	&lt;div class=&quot;holding&quot;&gt;&lt;/div&gt;
 	&lt;/main&gt;
   &lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="12" name="onboarding2" tags="nobr" position="225,225" size="100,100">&lt;&lt;set $prevpass to &quot;onboarding1&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="12" name="onboarding2a" tags="nobr" position="225,225" size="100,100">&lt;&lt;set $prevpass to &quot;onboarding1&quot;&gt;&gt;
+&lt;&lt;set $passage to &quot;onboarding2a&quot;&gt;&gt;
+&lt;&lt;set $nextpass to &quot;onboarding2&quot;&gt;&gt;
+
+&lt;div class=&quot;wrapper chief&quot;&gt;
+	&lt;&lt;include &quot;headeror&quot;&gt;&gt;
+	&lt;main id=&quot;main&quot; class=&quot;flex-container-col&quot;&gt;
+	&lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;assets/audio/MoTT_Spies_KEVIN_S_NOTEBOOK__MP3.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt;
+
+	&lt;div class=&quot;intro-text&quot;&gt;
+&lt;p&gt;If you’d prefer to not hear me out loud you could turn the volume down or you could put headphones in to be undercover. &lt;/p&gt;
+ &lt;div class=&quot;green-link-wrapper&quot; aria-label=&quot;Click a button or link to move on&quot;&gt;
+		&lt;&lt;link &quot;Next&quot;&gt;&gt;
+		&lt;&lt;goto $nextpass&gt;&gt;
+			&lt;&lt;/link&gt;&gt;
+	&lt;/div&gt; 
+&lt;/div&gt;
+	&lt;/main&gt;
+	&lt;&lt;include &quot;footer&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="13" name="onboarding2" tags="nobr" position="350,225" size="100,100">&lt;&lt;set $prevpass to &quot;onboarding2a&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;onboarding2&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;station1&quot;&gt;&gt;
 
@@ -309,8 +328,7 @@ scrollToBottom()
 	&lt;div class=&quot;intro-text&quot;&gt;
 &lt;p&gt;Okay, Kevin’s notebook includes a location in the exhibition gallery we need to find – let’s start there.&lt;/p&gt;
 &lt;p&gt;I’ll send you directions.&lt;/p&gt;
-&lt;p&gt;[INSTRUCTIONS TO NEXT LOCATION – BAY 4]&lt;/p&gt;
-&lt;p&gt;When there, let me know, by clicking &lt;/p&gt;
+&lt;p&gt;Head through the doors, past the shop and look for the MoTT marker on the floor. and when there, let me know, by clicking &lt;/p&gt;
  &lt;div class=&quot;green-link-wrapper&quot; aria-label=&quot;Click a button or link to move on&quot;&gt;
 		&lt;&lt;link &quot;Here&quot;&gt;&gt;
 		&lt;&lt;goto &quot;station1trans&quot;&gt;&gt;
@@ -319,19 +337,19 @@ scrollToBottom()
 &lt;/div&gt;
 	&lt;/main&gt;
 	&lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="13" name="title1" tags="nobr" position="350,225" size="100,100">&lt;div class=&quot;number-title&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="14" name="title1" tags="nobr" position="475,225" size="100,100">&lt;div class=&quot;number-title&quot;&gt;
   &lt;span class=&quot;station-num&quot;&gt;01&lt;/span&gt;
   /* &lt;span class=&quot;station-text&quot;&gt;Station&lt;/span&gt; */
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="14" name="title2" tags="nobr" position="475,225" size="100,100">&lt;div class=&quot;number-title&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="15" name="title2" tags="nobr" position="600,225" size="100,100">&lt;div class=&quot;number-title&quot;&gt;
   &lt;span class=&quot;station-num&quot;&gt;02&lt;/span&gt;
   /* &lt;span class=&quot;station-text&quot;&gt;Station&lt;/span&gt; */
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="15" name="title3" tags="nobr" position="600,225" size="100,100">&lt;div class=&quot;number-title&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="16" name="title3" tags="nobr" position="725,225" size="100,100">&lt;div class=&quot;number-title&quot;&gt;
   &lt;span class=&quot;station-num&quot;&gt;03&lt;/span&gt;
   /* &lt;span class=&quot;station-text&quot;&gt;Station&lt;/span&gt; */
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="16" name="title4" tags="nobr" position="725,225" size="100,100">&lt;div class=&quot;number-title&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="17" name="title4" tags="nobr" position="850,225" size="100,100">&lt;div class=&quot;number-title&quot;&gt;
   &lt;span class=&quot;station-num&quot;&gt;04&lt;/span&gt;
   /* &lt;span class=&quot;station-text&quot;&gt;Station&lt;/span&gt; */
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="17" name="station1trans" tags="nobr" position="850,225" size="100,100">&lt;div class=&quot;wrapper titletrans&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="18" name="station1trans" tags="nobr" position="975,225" size="100,100">&lt;div class=&quot;wrapper titletrans&quot;&gt;
 &lt;&lt;audio &quot;correct&quot; &quot;play&quot;&gt;&gt;
 &lt;div class=&quot;number-title&quot;&gt;
   &lt;span class=&quot;station-num&quot;&gt;01&lt;/span&gt;
@@ -340,9 +358,9 @@ scrollToBottom()
 &lt;/div&gt;
 &lt;&lt;timed 3s&gt;&gt;
 	&lt;&lt;goto $nextpass&gt;&gt;
-	&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="18" name="station1" tags="nobr" position="975,225" size="100,100">&lt;&lt;set $prevpass to &quot;onboarding2&quot;&gt;&gt;
+	&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="19" name="station1" tags="nobr" position="1100,225" size="100,100">&lt;&lt;set $prevpass to &quot;onboarding2&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;station1&quot;&gt;&gt;
-&lt;&lt;set $nextpass to &quot;station1b&quot;&gt;&gt;
+&lt;&lt;set $nextpass to &quot;station1a&quot;&gt;&gt;
 &lt;&lt;set $stationnum to &quot;01&quot;&gt;&gt;
 &lt;&lt;include &quot;title1&quot;&gt;&gt;
 &lt;div class=&quot;wrapper chief&quot;&gt;
@@ -369,7 +387,33 @@ scrollToBottom()
 
 	&lt;/main&gt;
 	&lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="19" name="station1b" tags="nobr" position="1100,225" size="100,100">&lt;&lt;set $prevpass to &quot;station1&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="20" name="station1a" tags="nobr" position="1225,225" size="100,100">&lt;&lt;set $prevpass to &quot;station1&quot;&gt;&gt;
+&lt;&lt;set $passage to &quot;station1a&quot;&gt;&gt;
+&lt;&lt;set $nextpass to &quot;station1b&quot;&gt;&gt;
+&lt;&lt;set $stationnum to &quot;01&quot;&gt;&gt;
+&lt;&lt;include &quot;title1&quot;&gt;&gt;
+&lt;div class=&quot;wrapper chief&quot;&gt;
+	&lt;&lt;include &quot;headeror&quot;&gt;&gt;
+  &lt;div class=&quot;rotate-warning&quot;&gt;&lt;h3&gt;Rotate your phone.&lt;/h3&gt;&lt;/div&gt;
+	&lt;main id=&quot;main&quot; class=&quot;&quot;&gt;
+	&lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt;
+
+&lt;div class=&quot;intro-text&quot; id=&quot;intro&quot;&gt;
+&lt;p&gt;Head into the exhibition following the arrows on the floor. &lt;/p&gt;
+&lt;p&gt;Turn left and you are looking for Early Years. &lt;/p&gt;
+
+&lt;/div&gt;
+
+ &lt;div class=&quot;green-link-wrapper&quot; aria-label=&quot;Click a button or link to move on&quot;&gt;
+		&lt;&lt;link &quot;Next&quot;&gt;&gt;
+		&lt;&lt;goto $nextpass&gt;&gt;
+			&lt;&lt;/link&gt;&gt;
+	&lt;/div&gt; 
+
+
+	&lt;/main&gt;
+	&lt;&lt;include &quot;footer&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="21" name="station1b" tags="nobr" position="100,350" size="100,100">&lt;&lt;set $prevpass to &quot;station1a&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;station1b&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;station1c&quot;&gt;&gt;
 &lt;&lt;include &quot;title1&quot;&gt;&gt;
@@ -381,7 +425,9 @@ scrollToBottom()
 	&lt;div&gt;
 &lt;div class=&quot;intro-text&quot; id=&quot;intro&quot;&gt;
 &lt;p&gt;It seems we need to find a MoTT codeword to unlock what Kevin has been hiding.&lt;/p&gt;
-&lt;p&gt;I have a photo – which I can load up – maybe if you can find it. The MoTT codeword will be nearby. Look out for the log.&lt;/p&gt;
+&lt;p&gt;I have a photo – which I can load up – maybe if you can find it. The MoTT codeword will be nearby. &lt;/p&gt;
+&lt;p&gt;Look out for the MoTT logo. &lt;/p&gt;
+
 &lt;/div&gt;
 
 &lt;div id=&quot;toggleBtn&quot;&gt;&lt;&lt;include &quot;togglePhoto&quot;&gt;&gt;&lt;/div&gt;
@@ -391,7 +437,7 @@ scrollToBottom()
 
 	&lt;/main&gt;
 	&lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="20" name="togglePhoto" tags="nobr" position="1225,225" size="100,100">&lt;div class=&quot;green-link-wrapper&quot; aria-label=&quot;Click to show photo&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="22" name="togglePhoto" tags="nobr" position="225,350" size="100,100">&lt;div class=&quot;green-link-wrapper&quot; aria-label=&quot;Click to show photo&quot;&gt;
 		&lt;&lt;link &quot;Show Photo&quot;&gt;&gt;
 		&lt;&lt;replace &quot;#intro&quot;&gt;&gt;
 	&lt;div class=&quot;center-img-wrapper&quot;&gt;&lt;img src=&quot;../assets/img/lomax.jpg&quot; alt=&quot;Lomax image&quot;/&gt;&lt;/div&gt;
@@ -410,8 +456,8 @@ scrollToBottom()
 	&lt;/div&gt;  
 	&lt;&lt;/replace&gt;&gt;
 	&lt;&lt;/link&gt;&gt;
-	&lt;/div&gt;</tw-passagedata><tw-passagedata pid="21" name="pwPhoto" tags="nobr" position="100,350" size="100,100">&lt;div id=&quot;codewordWrapper&quot; class=&quot;codeword-wrapper&quot;&gt;
-  &lt;label for=&quot;textbox--password&quot; tabindex=&quot;0&quot; &gt;&lt;span aria-label=&quot;Enter the word below&quot; role=&quot;label&quot; style=&quot;color:black&quot;&gt;Enter the code below:&lt;/span&gt;&lt;/label&gt;
+	&lt;/div&gt;</tw-passagedata><tw-passagedata pid="23" name="pwPhoto" tags="nobr" position="350,350" size="100,100">&lt;div id=&quot;codewordWrapper&quot; class=&quot;codeword-wrapper&quot;&gt;
+  &lt;label for=&quot;textbox--password&quot; tabindex=&quot;0&quot; &gt;&lt;span aria-label=&quot;Enter the word below&quot; role=&quot;label&quot; style=&quot;color:black&quot;&gt;Enter the letters here:&lt;/span&gt;&lt;/label&gt;
   /% CODEWORD INPUT %/
    &lt;div class=&quot;code-input&quot;&gt;
      &lt;&lt;textbox &quot;_password&quot; &quot;&quot; &gt;&gt;
@@ -440,7 +486,7 @@ scrollToBottom()
       &lt;div id=&quot;coderesult&quot;&gt;&lt;/div&gt;
   
   &lt;/div&gt;
-    &lt;/div&gt;</tw-passagedata><tw-passagedata pid="22" name="TransPass" tags="nobr" position="1257.6666666666667,107.66666666666666" size="200,100">&lt;&lt;audio &quot;newcomplete&quot; play&gt;&gt;
+    &lt;/div&gt;</tw-passagedata><tw-passagedata pid="24" name="TransPass" tags="nobr" position="1257.6666666666667,107.66666666666666" size="200,100">&lt;&lt;audio &quot;newcomplete&quot; play&gt;&gt;
 &lt;div class=&quot;wrapper dots&quot;&gt;
 
 	&lt;main id=&quot;main&quot; class=&quot; flex-container-col-cen spin&quot;&gt;
@@ -456,7 +502,7 @@ scrollToBottom()
 
 	&lt;/main&gt;
 	&lt;footer&gt;&lt;/footer&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="23" name="station1c" tags="nobr" position="350,350" size="100,100">&lt;&lt;set $prevpass to &quot;station1b&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="25" name="station1c" tags="nobr" position="600,350" size="100,100">&lt;&lt;set $prevpass to &quot;station1b&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;station1c&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;station1d&quot;&gt;&gt;
 &lt;&lt;include &quot;title1&quot;&gt;&gt;
@@ -483,7 +529,7 @@ scrollToBottom()
 
 	&lt;/main&gt;
 	&lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="24" name="station1d" tags="nobr" position="475,350" size="100,100">&lt;&lt;set $prevpass to &quot;station1c&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="26" name="station1d" tags="nobr" position="725,350" size="100,100">&lt;&lt;set $prevpass to &quot;station1c&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;station1d&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;station1e&quot;&gt;&gt;
 &lt;&lt;include &quot;title1&quot;&gt;&gt;
@@ -508,7 +554,7 @@ scrollToBottom()
 
 	&lt;/main&gt;
 	&lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="25" name="station1e" tags="nobr" position="600,350" size="100,100">&lt;&lt;set $prevpass to &quot;station1d&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="27" name="station1e" tags="nobr" position="850,350" size="100,100">&lt;&lt;set $prevpass to &quot;station1d&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;station1e&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;station1f&quot;&gt;&gt;
 &lt;&lt;include &quot;title1&quot;&gt;&gt;
@@ -531,7 +577,7 @@ scrollToBottom()
 
 	&lt;/main&gt;
 	&lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="26" name="station1f" tags="nobr" position="725,350" size="100,100">&lt;&lt;set $prevpass to &quot;station1e&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="28" name="station1f" tags="nobr" position="975,350" size="100,100">&lt;&lt;set $prevpass to &quot;station1e&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;station1f&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;station1f2&quot;&gt;&gt;
 &lt;&lt;include &quot;title1&quot;&gt;&gt;
@@ -556,7 +602,7 @@ scrollToBottom()
 
 	&lt;/main&gt;
 	&lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="27" name="station1f2" tags="nobr" position="850,350" size="100,100">&lt;&lt;set $prevpass to &quot;station1f&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="29" name="station1f2" tags="nobr" position="1100,350" size="100,100">&lt;&lt;set $prevpass to &quot;station1f&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;station1f2&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;station1g&quot;&gt;&gt;
 &lt;&lt;include &quot;title1&quot;&gt;&gt;
@@ -581,7 +627,7 @@ scrollToBottom()
 
 	&lt;/main&gt;
 	&lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="28" name="station1g" tags="nobr" position="975,350" size="100,100">&lt;&lt;set $prevpass to &quot;station1f2&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="30" name="station1g" tags="nobr" position="1225,350" size="100,100">&lt;&lt;set $prevpass to &quot;station1f2&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;station1g&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;station2&quot;&gt;&gt;
 &lt;&lt;include &quot;title1&quot;&gt;&gt;
@@ -605,7 +651,7 @@ scrollToBottom()
 
 	&lt;/main&gt;
 	&lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="29" name="station2trans" tags="nobr" position="1100,350" size="100,100">&lt;div class=&quot;wrapper titletrans&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="31" name="station2trans" tags="nobr" position="100,475" size="100,100">&lt;div class=&quot;wrapper titletrans&quot;&gt;
 &lt;div class=&quot;number-title&quot;&gt;
   &lt;span class=&quot;station-num&quot;&gt;02&lt;/span&gt;
   &lt;span class=&quot;station-text&quot;&gt;Station&lt;/span&gt;
@@ -614,7 +660,7 @@ scrollToBottom()
 &lt;&lt;audio &quot;correct&quot; &quot;play&quot;&gt;&gt;
 &lt;&lt;timed 3s&gt;&gt;
 	&lt;&lt;goto $nextpass&gt;&gt;
-	&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="30" name="station2" tags="nobr" position="1225,350" size="100,100">&lt;&lt;set $prevpass to &quot;station1g&quot;&gt;&gt;
+	&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="32" name="station2" tags="nobr" position="225,475" size="100,100">&lt;&lt;set $prevpass to &quot;station1g&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;station2&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;station2b&quot;&gt;&gt;
 &lt;&lt;include &quot;title2&quot;&gt;&gt;
@@ -626,7 +672,7 @@ scrollToBottom()
 
 &lt;div class=&quot;intro-text&quot; id=&quot;intro&quot;&gt;
 &lt;p&gt;The next scribble I have in his notebook is a name, “Maxwell Knight” – now that’s someone I do know about! &lt;/p&gt;
-&lt;p&gt;Have a look and see what you can find out about him nearby. It seems like Kevin might have hidden something near his name on the board marked ‘Methods and techniques’.&lt;/p&gt;
+&lt;p&gt;Have a look and see what you can find out about him nearby. It seems like Kevin might have hidden something near his name on the board marked ‘Methods and techniques’ – retrace your steps and you might find it.  &lt;/p&gt;
 &lt;p&gt;Use your UV torch to see if you can uncover anything.&lt;/p&gt;
 
 
@@ -636,18 +682,66 @@ scrollToBottom()
 
 	&lt;/main&gt;
 	&lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="31" name="station2b" tags="nobr" position="100,475" size="100,100">&lt;&lt;set $prevpass to &quot;station2&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="33" name="station2b" tags="nobr" position="350,475" size="100,100">&lt;&lt;set $prevpass to &quot;station2&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;station2b&quot;&gt;&gt;
+&lt;&lt;set $nextpass to &quot;station2b1&quot;&gt;&gt;
+&lt;&lt;include &quot;title2&quot;&gt;&gt;
+&lt;div class=&quot;wrapper chief&quot;&gt;
+	&lt;&lt;include &quot;headeror&quot;&gt;&gt;
+  &lt;div class=&quot;rotate-warning&quot;&gt;&lt;h3&gt;Rotate your phone.&lt;/h3&gt;&lt;/div&gt;
+	&lt;main id=&quot;main&quot; class=&quot;&quot;&gt;
+	&lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt;
+
+&lt;div class=&quot;intro-text&quot; id=&quot;intro&quot;&gt;
+&lt;p&gt;Head back to the MoTT base, where the logo is on the floor. &lt;/p&gt;
+
+&lt;/div&gt;
+
+ &lt;div class=&quot;green-link-wrapper&quot; aria-label=&quot;Click a button or link to move on&quot;&gt;
+		&lt;&lt;link &quot;We&#39;re here&quot;&gt;&gt;
+		&lt;&lt;goto $nextpass&gt;&gt;
+			&lt;&lt;/link&gt;&gt;
+	&lt;/div&gt; 
+
+
+	&lt;/main&gt;
+	&lt;&lt;include &quot;footer&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="34" name="station2b1" tags="nobr" position="475,475" size="100,100">&lt;&lt;set $prevpass to &quot;station2b&quot;&gt;&gt;
+&lt;&lt;set $passage to &quot;station2b1&quot;&gt;&gt;
+&lt;&lt;set $nextpass to &quot;station2bb&quot;&gt;&gt;
+&lt;&lt;include &quot;title2&quot;&gt;&gt;
+&lt;div class=&quot;wrapper chief&quot;&gt;
+	&lt;&lt;include &quot;headeror&quot;&gt;&gt;
+  &lt;div class=&quot;rotate-warning&quot;&gt;&lt;h3&gt;Rotate your phone.&lt;/h3&gt;&lt;/div&gt;
+	&lt;main id=&quot;main&quot; class=&quot;&quot;&gt;
+	&lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;assets/audio/MoTT_Spies_THANKS_FOR_GETTING_THAT_INTEL__MP3_2.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt;
+
+&lt;div class=&quot;intro-text&quot; id=&quot;intro&quot;&gt;
+&lt;p&gt;Thanks for getting that intel on Maxwell Knight. Staff at MI5 often have to gather information and evidence when they are looking into a situation or person. &lt;/p&gt;
+
+&lt;/div&gt;
+
+ &lt;div class=&quot;green-link-wrapper&quot; aria-label=&quot;Click a button or link to move on&quot;&gt;
+		&lt;&lt;link &quot;Next&quot;&gt;&gt;
+		&lt;&lt;goto $nextpass&gt;&gt;
+			&lt;&lt;/link&gt;&gt;
+	&lt;/div&gt; 
+
+
+	&lt;/main&gt;
+	&lt;&lt;include &quot;footer&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="35" name="station2bb" tags="nobr" position="600,475" size="100,100">&lt;&lt;set $prevpass to &quot;station2b1&quot;&gt;&gt;
+&lt;&lt;set $passage to &quot;station2bb&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;station2b2&quot;&gt;&gt;
 &lt;&lt;include &quot;title2&quot;&gt;&gt;
 &lt;div class=&quot;wrapper chief&quot;&gt;
 	&lt;&lt;include &quot;headeror&quot;&gt;&gt;
   &lt;div class=&quot;rotate-warning&quot;&gt;&lt;h3&gt;Rotate your phone.&lt;/h3&gt;&lt;/div&gt;
 	&lt;main id=&quot;main&quot; class=&quot;&quot;&gt;
-	&lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;assets/audio/MoTT_Spies_THANKS_FOR_GETTING_THAT_INTEL__MP3.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt;
+	&lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;assets/audio/MoTT_Spies_AND_WE_DO_THE_SAME__MP3.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;div class=&quot;intro-text&quot; id=&quot;intro&quot;&gt;
-&lt;p&gt;Thanks for getting that intel on Maxwell Knight. Staff at MI5 often have to gather information and evidence when they are looking into a situation or person. &lt;/p&gt;
+
 &lt;p&gt;And we do the same at the MoTT! We use the historical records at The National Archives to investigate the past and check that nothing has been changed! You see, there’s a renegade group we have to watch out for who are always trying to alter the course of past events.&lt;/p&gt;
 &lt;/div&gt;
 
@@ -660,7 +754,7 @@ scrollToBottom()
 
 	&lt;/main&gt;
 	&lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="32" name="station2b2" tags="nobr" position="225,475" size="100,100">&lt;&lt;set $prevpass to &quot;station2b&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="36" name="station2b2" tags="nobr" position="725,475" size="100,100">&lt;&lt;set $prevpass to &quot;station2bb&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;station2b2&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;station2c&quot;&gt;&gt;
 &lt;&lt;include &quot;title2&quot;&gt;&gt;
@@ -686,7 +780,7 @@ scrollToBottom()
 
 	&lt;/main&gt;
 	&lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="33" name="pwUV" tags="nobr" position="350,475" size="100,100">&lt;div id=&quot;codewordWrapper&quot; class=&quot;codeword-wrapper&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="37" name="pwUV" tags="nobr" position="850,475" size="100,100">&lt;div id=&quot;codewordWrapper&quot; class=&quot;codeword-wrapper&quot;&gt;
   &lt;label for=&quot;textbox--password&quot; tabindex=&quot;0&quot; &gt;&lt;span aria-label=&quot;Enter the word below&quot; role=&quot;label&quot; style=&quot;color:black&quot;&gt;Enter the code below:&lt;/span&gt;&lt;/label&gt;
   /% CODEWORD INPUT %/
    &lt;div class=&quot;code-input&quot;&gt;
@@ -716,7 +810,7 @@ scrollToBottom()
       &lt;div id=&quot;coderesult&quot;&gt;&lt;/div&gt;
   
   &lt;/div&gt;
-    &lt;/div&gt;</tw-passagedata><tw-passagedata pid="34" name="station2c" tags="nobr" position="475,475" size="100,100">&lt;&lt;set $prevpass to &quot;station2b2&quot;&gt;&gt;
+    &lt;/div&gt;</tw-passagedata><tw-passagedata pid="38" name="station2c" tags="nobr" position="975,475" size="100,100">&lt;&lt;set $prevpass to &quot;station2b2&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;station2c&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;station2d&quot;&gt;&gt;
 &lt;&lt;include &quot;title2&quot;&gt;&gt;
@@ -728,7 +822,7 @@ scrollToBottom()
 	&lt;div&gt;
 &lt;div class=&quot;intro-text&quot; id=&quot;intro&quot;&gt;
 &lt;p&gt;Ok, it seems there are lots of arrows and a drawing of a cup of tea in Kevin’s notepad. &lt;/p&gt;
-&lt;p&gt;Use your UV torch and see if you can find any arrows nearby and see where they lead, it must be something to do with tea. Let me know if you find the box. &lt;/p&gt;
+&lt;p&gt;See if you can find any arrows nearby and see where they lead, it must be something to do with tea. Let me know if you find the box. &lt;/p&gt;
 
 &lt;/div&gt;
 
@@ -741,7 +835,7 @@ scrollToBottom()
 
 	&lt;/main&gt;
 	&lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="35" name="station2d" tags="nobr" position="600,475" size="100,100">&lt;&lt;set $prevpass to &quot;station2c&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="39" name="station2d" tags="nobr" position="1100,475" size="100,100">&lt;&lt;set $prevpass to &quot;station2c&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;station2d&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;station2f&quot;&gt;&gt;
 &lt;&lt;include &quot;title2&quot;&gt;&gt;
@@ -762,7 +856,7 @@ scrollToBottom()
 
 	&lt;/main&gt;
 	&lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="36" name="pwFile" tags="nobr" position="725,475" size="100,100">&lt;div id=&quot;codewordWrapper&quot; class=&quot;codeword-wrapper&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="40" name="pwFile" tags="nobr" position="1225,475" size="100,100">&lt;div id=&quot;codewordWrapper&quot; class=&quot;codeword-wrapper&quot;&gt;
   &lt;label for=&quot;textbox--password&quot; tabindex=&quot;0&quot; &gt;&lt;span aria-label=&quot;Enter the word below&quot; role=&quot;label&quot; style=&quot;color:black&quot;&gt;Enter the code below:&lt;/span&gt;&lt;/label&gt;
   /% CODEWORD INPUT %/
    &lt;div class=&quot;code-input&quot;&gt;
@@ -775,13 +869,13 @@ scrollToBottom()
      /% STANDARDISE INPUT %/
          &lt;&lt;set _password to _password.toUpperCase().trim()&gt;&gt;
      /% CODEWORD CORRECT %/
-         &lt;&lt;if _password isnot &quot;&quot; and _password is &quot;JK82-1002&quot;&gt;&gt;
+         &lt;&lt;if _password isnot &quot;&quot; and _password is &quot;JK82&quot;&gt;&gt;
          &lt;&lt;replace &quot;#coderesult&quot;&gt;&gt;&lt;h2 class=&quot;subtitle complete&quot;&gt;Correct!&lt;/h2&gt;&lt;&lt;/replace&gt;&gt;
              &lt;&lt;audio &quot;correct&quot; play&gt;&gt;
          &lt;&lt;timed 3s&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
         &lt;&lt;/if&gt;&gt;
           /% CODEWORD INCORRECT %/
-       &lt;&lt;if _password isnot &quot;&quot; and _password isnot &quot;JK82-1002&quot;&gt;&gt;
+       &lt;&lt;if _password isnot &quot;&quot; and _password isnot &quot;JK82&quot;&gt;&gt;
           &lt;&lt;replace &quot;#coderesult&quot;&gt;&gt;&lt;h2 class=&quot;subtitle&quot;&gt;Thats not right.&lt;/h2&gt;&lt;&lt;/replace&gt;&gt;
         &lt;&lt;timed 1.5s&gt;&gt;&lt;&lt;replace &quot;#coderesult&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
           &lt;&lt;/if&gt;&gt;&lt;&lt;/button&gt;&gt; 
@@ -792,7 +886,7 @@ scrollToBottom()
       &lt;div id=&quot;coderesult&quot;&gt;&lt;/div&gt;
   
   &lt;/div&gt;
-    &lt;/div&gt;</tw-passagedata><tw-passagedata pid="37" name="station2f" tags="nobr" position="850,475" size="100,100">&lt;&lt;set $prevpass to &quot;station2d&quot;&gt;&gt;
+    &lt;/div&gt;</tw-passagedata><tw-passagedata pid="41" name="station2f" tags="nobr" position="100,600" size="100,100">&lt;&lt;set $prevpass to &quot;station2d&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;station2f&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;station2f2&quot;&gt;&gt;
  &lt;&lt;include &quot;title2&quot;&gt;&gt;
@@ -816,7 +910,7 @@ scrollToBottom()
 
 	&lt;/main&gt;
 	&lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="38" name="station2f2" tags="nobr" position="975,475" size="100,100">&lt;&lt;set $prevpass to &quot;station2f&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="42" name="station2f2" tags="nobr" position="225,600" size="100,100">&lt;&lt;set $prevpass to &quot;station2f&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;station2f2&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;station2g&quot;&gt;&gt;
  &lt;&lt;include &quot;title2&quot;&gt;&gt;
@@ -840,7 +934,7 @@ scrollToBottom()
 
 	&lt;/main&gt;
 	&lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="39" name="station2g" tags="nobr" position="1100,475" size="100,100">&lt;&lt;set $prevpass to &quot;station2f2&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="43" name="station2g" tags="nobr" position="350,600" size="100,100">&lt;&lt;set $prevpass to &quot;station2f2&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;station2g&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;transcript&quot;&gt;&gt;
 &lt;&lt;include &quot;title2&quot;&gt;&gt;
@@ -863,7 +957,7 @@ scrollToBottom()
 
 	&lt;/main&gt;
 	&lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="40" name="transcript" tags="nobr" position="1225,475" size="100,100">&lt;&lt;set $prevpass to &quot;station2f&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="44" name="transcript" tags="nobr" position="475,600" size="100,100">&lt;&lt;set $prevpass to &quot;station2f&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;station2g&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;station2h&quot;&gt;&gt;
 
@@ -1047,7 +1141,7 @@ scrollToBottom()
 
 	&lt;/main&gt;
 	&lt;&lt;include &quot;footertranscript&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="41" name="station2h" tags="nobr" position="100,600" size="100,100">&lt;&lt;set $prevpass to &quot;station2g&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="45" name="station2h" tags="nobr" position="600,600" size="100,100">&lt;&lt;set $prevpass to &quot;station2g&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;station2h&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;station2i&quot;&gt;&gt;
 &lt;&lt;include &quot;title2&quot;&gt;&gt;
@@ -1062,6 +1156,7 @@ scrollToBottom()
 &lt;p&gt;Maxwell stayed at MI5 and I was promoted to Chief Timer. &lt;/p&gt;
 &lt;p&gt;So why is Kevin looking into my first case? &lt;/p&gt;
 &lt;p&gt;This is very suspicious behaviour. &lt;/p&gt;
+&lt;p&gt;Leave the mission log and box where you found it. &lt;/p&gt;
 &lt;p&gt;I need you to keep going and see what else we can find out. &lt;/p&gt;
 &lt;/div&gt;
 
@@ -1074,7 +1169,7 @@ scrollToBottom()
 
 	&lt;/main&gt;
 	&lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="42" name="station2i" tags="nobr" position="225,600" size="100,100">&lt;&lt;set $prevpass to &quot;station2h&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="46" name="station2i" tags="nobr" position="725,600" size="100,100">&lt;&lt;set $prevpass to &quot;station2h&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;station2i&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;station3&quot;&gt;&gt;
  &lt;&lt;include &quot;title2&quot;&gt;&gt;
@@ -1095,7 +1190,7 @@ scrollToBottom()
 
 	&lt;/main&gt;
 	&lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="43" name="pwLily" tags="nobr" position="350,600" size="100,100">&lt;div id=&quot;codewordWrapper&quot; class=&quot;codeword-wrapper&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="47" name="pwLily" tags="nobr" position="850,600" size="100,100">&lt;div id=&quot;codewordWrapper&quot; class=&quot;codeword-wrapper&quot;&gt;
   &lt;label for=&quot;textbox--password&quot; tabindex=&quot;0&quot; &gt;&lt;span aria-label=&quot;Enter the word below&quot; role=&quot;label&quot; style=&quot;color:black&quot;&gt;Enter the code below:&lt;/span&gt;&lt;/label&gt;
   /% CODEWORD INPUT %/
    &lt;div class=&quot;code-input&quot;&gt;
@@ -1125,7 +1220,7 @@ scrollToBottom()
       &lt;div id=&quot;coderesult&quot;&gt;&lt;/div&gt;
   
   &lt;/div&gt;
-    &lt;/div&gt;</tw-passagedata><tw-passagedata pid="44" name="station3trans" tags="nobr" position="475,600" size="100,100">&lt;div class=&quot;wrapper titletrans&quot;&gt;
+    &lt;/div&gt;</tw-passagedata><tw-passagedata pid="48" name="station3trans" tags="nobr" position="975,600" size="100,100">&lt;div class=&quot;wrapper titletrans&quot;&gt;
 &lt;div class=&quot;number-title&quot;&gt;
   &lt;span class=&quot;station-num&quot;&gt;03&lt;/span&gt;
   &lt;span class=&quot;station-text&quot;&gt;Station&lt;/span&gt;
@@ -1134,7 +1229,7 @@ scrollToBottom()
 &lt;&lt;audio &quot;correct&quot; &quot;play&quot;&gt;&gt;
 &lt;&lt;timed 3s&gt;&gt;
 	&lt;&lt;goto $nextpass&gt;&gt;
-	&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="45" name="station3" tags="nobr" position="600,600" size="100,100">&lt;&lt;set $prevpass to &quot;station2i&quot;&gt;&gt;
+	&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="49" name="station3" tags="nobr" position="1100,600" size="100,100">&lt;&lt;set $prevpass to &quot;station2i&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;station3&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;station3b&quot;&gt;&gt;
 &lt;&lt;include &quot;title3&quot;&gt;&gt;
@@ -1146,7 +1241,7 @@ scrollToBottom()
 
 &lt;div class=&quot;intro-text&quot; id=&quot;intro&quot;&gt;
 &lt;p&gt;Excellent – let’s get you somewhere we can look into this. &lt;/p&gt;
-&lt;p&gt;Ahead of you is a spycraft table. &lt;/p&gt;
+&lt;p&gt;Head down the corridor and turn left into Anthony Blunt&#39;s Flat.&lt;/p&gt;
 &lt;p&gt;Head there and when you are there click below&lt;/p&gt;
 &lt;/div&gt;
 
@@ -1159,7 +1254,7 @@ scrollToBottom()
 
 	&lt;/main&gt;
 	&lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="46" name="station3b" tags="nobr" position="725,600" size="100,100">&lt;&lt;set $prevpass to &quot;station3&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="50" name="station3b" tags="nobr" position="1225,600" size="100,100">&lt;&lt;set $prevpass to &quot;station3&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;station3b&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;station3c&quot;&gt;&gt;
 &lt;&lt;include &quot;title3&quot;&gt;&gt;
@@ -1184,7 +1279,7 @@ scrollToBottom()
 
 	&lt;/main&gt;
 	&lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="47" name="station3c" tags="nobr" position="850,600" size="100,100">&lt;&lt;set $prevpass to &quot;station3b&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="51" name="station3c" tags="nobr" position="100,725" size="100,100">&lt;&lt;set $prevpass to &quot;station3b&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;station3c&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;station3d&quot;&gt;&gt;
 &lt;&lt;include &quot;title3&quot;&gt;&gt;
@@ -1208,7 +1303,7 @@ scrollToBottom()
 
 	&lt;/main&gt;
 	&lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="48" name="station3d" tags="nobr" position="975,600" size="100,100">&lt;&lt;set $prevpass to &quot;station3c&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="52" name="station3d" tags="nobr" position="225,725" size="100,100">&lt;&lt;set $prevpass to &quot;station3c&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;station3d&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;station3e&quot;&gt;&gt;
 &lt;&lt;include &quot;title3&quot;&gt;&gt;
@@ -1231,7 +1326,7 @@ scrollToBottom()
 
 	&lt;/main&gt;
 	&lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="49" name="station3e" tags="nobr" position="1100,600" size="100,100">&lt;&lt;set $prevpass to &quot;station3d&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="53" name="station3e" tags="nobr" position="350,725" size="100,100">&lt;&lt;set $prevpass to &quot;station3d&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;station3e&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;station3f&quot;&gt;&gt;
 &lt;&lt;include &quot;title3&quot;&gt;&gt;
@@ -1253,7 +1348,7 @@ scrollToBottom()
 	&lt;/div&gt; 
 	&lt;/main&gt;
 	&lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="50" name="station3f" tags="nobr" position="1225,600" size="100,100">&lt;&lt;set $prevpass to &quot;station3e&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="54" name="station3f" tags="nobr" position="475,725" size="100,100">&lt;&lt;set $prevpass to &quot;station3e&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;station3f&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;station3g&quot;&gt;&gt;
  &lt;&lt;include &quot;title3&quot;&gt;&gt;
@@ -1268,10 +1363,12 @@ scrollToBottom()
 
 &lt;p&gt;What has this got to do with Kevin though? &lt;/p&gt;
 
-&lt;p&gt;Use your UV torch to see if you can find anything nearby. &lt;/p&gt;
+&lt;p&gt;See if you can find anything nearby in the drawers. &lt;/p&gt;
+&lt;br/&gt;
 &lt;div class=&quot;green-link-wrapper clue &quot; aria-label=&quot;Click a button or link to move on&quot; id=&quot;clue&quot;&gt;
 		&lt;&lt;link &quot;We need some help&quot;&gt;&gt;
 		&lt;&lt;replace &quot;#clue&quot;&gt;&gt;
+			&lt;&lt;addclass &quot;#clue&quot; &quot;right&quot;&gt;&gt;
 			&lt;span class=&quot;clue&quot;&gt;Maybe use some of the gadgets on your MoTT spy kit to help decipher the code.&lt;/span&gt;
 			&lt;&lt;/replace&gt;&gt;
 			&lt;&lt;/link&gt;&gt;
@@ -1282,7 +1379,7 @@ scrollToBottom()
 
 	&lt;/main&gt;
 	&lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="51" name="pwTorch" tags="nobr" position="100,725" size="100,100">&lt;div id=&quot;codewordWrapper&quot; class=&quot;codeword-wrapper&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="55" name="pwTorch" tags="nobr" position="600,725" size="100,100">&lt;div id=&quot;codewordWrapper&quot; class=&quot;codeword-wrapper&quot;&gt;
   &lt;label for=&quot;textbox--password&quot; tabindex=&quot;0&quot; &gt;&lt;span aria-label=&quot;Enter the word below&quot; role=&quot;label&quot; style=&quot;color:black&quot;&gt;Enter the code below:&lt;/span&gt;&lt;/label&gt;
   /% CODEWORD INPUT %/
    &lt;div class=&quot;code-input&quot;&gt;
@@ -1312,7 +1409,7 @@ scrollToBottom()
       &lt;div id=&quot;coderesult&quot;&gt;&lt;/div&gt;
   
   &lt;/div&gt;
-    &lt;/div&gt;</tw-passagedata><tw-passagedata pid="52" name="station3g" tags="nobr" position="225,725" size="100,100">&lt;&lt;set $prevpass to &quot;station3f&quot;&gt;&gt;
+    &lt;/div&gt;</tw-passagedata><tw-passagedata pid="56" name="station3g" tags="nobr" position="725,725" size="100,100">&lt;&lt;set $prevpass to &quot;station3f&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;station3g&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;station3g2&quot;&gt;&gt;
 &lt;&lt;include &quot;title3&quot;&gt;&gt;
@@ -1337,7 +1434,7 @@ scrollToBottom()
 	&lt;/div&gt; 
 	&lt;/main&gt;
 	&lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="53" name="station3g2" tags="nobr" position="350,725" size="100,100">&lt;&lt;set $prevpass to &quot;station3g&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="57" name="station3g2" tags="nobr" position="850,725" size="100,100">&lt;&lt;set $prevpass to &quot;station3g&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;station3g2&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;station3g3&quot;&gt;&gt;
 &lt;&lt;include &quot;title3&quot;&gt;&gt;
@@ -1358,7 +1455,7 @@ scrollToBottom()
 	&lt;/div&gt; 
 	&lt;/main&gt;
 	&lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="54" name="station3g3" tags="nobr" position="475,725" size="100,100">&lt;&lt;set $prevpass to &quot;station3g2&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="58" name="station3g3" tags="nobr" position="975,725" size="100,100">&lt;&lt;set $prevpass to &quot;station3g2&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;station3g3&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;station3g4&quot;&gt;&gt;
 &lt;&lt;include &quot;title3&quot;&gt;&gt;
@@ -1380,7 +1477,7 @@ scrollToBottom()
 	&lt;/div&gt; 
 	&lt;/main&gt;
 	&lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="55" name="station3g4" tags="nobr" position="600,725" size="100,100">&lt;&lt;set $prevpass to &quot;station3g3&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="59" name="station3g4" tags="nobr" position="1100,725" size="100,100">&lt;&lt;set $prevpass to &quot;station3g3&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;station3g4&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;station4&quot;&gt;&gt;
 &lt;&lt;include &quot;title3&quot;&gt;&gt;
@@ -1405,7 +1502,7 @@ scrollToBottom()
 	&lt;/div&gt; 
 	&lt;/main&gt;
 	&lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="56" name="station4trans" tags="nobr" position="725,725" size="100,100">&lt;div class=&quot;wrapper titletrans&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="60" name="station4trans" tags="nobr" position="1225,725" size="100,100">&lt;div class=&quot;wrapper titletrans&quot;&gt;
 &lt;div class=&quot;number-title&quot;&gt;
   &lt;span class=&quot;station-num&quot;&gt;04&lt;/span&gt;
   &lt;span class=&quot;station-text&quot;&gt;Station&lt;/span&gt;
@@ -1414,7 +1511,7 @@ scrollToBottom()
 &lt;&lt;audio &quot;correct&quot; &quot;play&quot;&gt;&gt;
 &lt;&lt;timed 3s&gt;&gt;
 	&lt;&lt;goto $nextpass&gt;&gt;
-	&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="57" name="station4" tags="nobr" position="850,725" size="100,100">&lt;&lt;set $prevpass to &quot;station3g&quot;&gt;&gt;
+	&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="61" name="station4" tags="nobr" position="100,850" size="100,100">&lt;&lt;set $prevpass to &quot;station3g&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;station4&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;station4b&quot;&gt;&gt;
 &lt;&lt;include &quot;title4&quot;&gt;&gt;
@@ -1440,7 +1537,7 @@ scrollToBottom()
 
 	&lt;/main&gt;
 	&lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="58" name="station4b" tags="nobr" position="975,725" size="100,100">&lt;&lt;set $prevpass to &quot;station4&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="62" name="station4b" tags="nobr" position="225,850" size="100,100">&lt;&lt;set $prevpass to &quot;station4&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;station4b&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;station4c&quot;&gt;&gt;
 &lt;&lt;include &quot;title4&quot;&gt;&gt;
@@ -1464,7 +1561,7 @@ scrollToBottom()
 
 	&lt;/main&gt;
 	&lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="59" name="station4c" tags="nobr" position="1100,725" size="100,100">&lt;&lt;set $prevpass to &quot;station4b&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="63" name="station4c" tags="nobr" position="350,850" size="100,100">&lt;&lt;set $prevpass to &quot;station4b&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;station4c&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;station4d&quot;&gt;&gt;
 &lt;&lt;include &quot;title4&quot;&gt;&gt;
@@ -1472,10 +1569,12 @@ scrollToBottom()
 	&lt;&lt;include &quot;headeror&quot;&gt;&gt;
   &lt;div class=&quot;rotate-warning&quot;&gt;&lt;h3&gt;Rotate your phone.&lt;/h3&gt;&lt;/div&gt;
 	&lt;main id=&quot;main&quot; class=&quot;&quot;&gt;
-	&lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;assets/audio/MoTT_Spies_HEAD_INTO_THE_LIBRARY__MP3.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt;
+	&lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;div class=&quot;intro-text&quot; id=&quot;intro&quot;&gt;
-&lt;p&gt; Head into the library room inside the exhibition &lt;/p&gt;
+&lt;p&gt;Come out of the Anthony Blunt’s Flat and turn right. &lt;/p&gt;
+&lt;p&gt;Head past the spy craft table (you can come back later) and head into the reading room on your right. &lt;/p&gt;
+
 &lt;div class=&quot;green-link-wrapper&quot; aria-label=&quot;Click a button or link to move on&quot;&gt;
 		&lt;&lt;link &quot;We&#39;re here&quot;&gt;&gt;
 		&lt;&lt;goto $nextpass&gt;&gt;
@@ -1485,7 +1584,7 @@ scrollToBottom()
 
 	&lt;/main&gt;
 	&lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="60" name="station4d" tags="nobr" position="1225,725" size="100,100">&lt;&lt;set $prevpass to &quot;station4c&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="64" name="station4d" tags="nobr" position="475,850" size="100,100">&lt;&lt;set $prevpass to &quot;station4c&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;station4d&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;station4e&quot;&gt;&gt;
 &lt;&lt;include &quot;title4&quot;&gt;&gt;
@@ -1509,7 +1608,7 @@ scrollToBottom()
 
 	&lt;/main&gt;
 	&lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="61" name="station4e" tags="nobr" position="100,850" size="100,100">&lt;&lt;set $prevpass to &quot;station4d&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="65" name="station4e" tags="nobr" position="600,850" size="100,100">&lt;&lt;set $prevpass to &quot;station4d&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;station4e&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;outro1&quot;&gt;&gt;
 &lt;&lt;include &quot;title4&quot;&gt;&gt;
@@ -1522,14 +1621,14 @@ scrollToBottom()
 &lt;div class=&quot;intro-text&quot; id=&quot;intro&quot;&gt;
 &lt;p&gt;You should have the MoTT decoder as part of your kit. &lt;/p&gt;
 &lt;p&gt;I need you to find out what has been hidden in code, maybe check the document boxes. Kevin seems to like using them! &lt;/p&gt;
-&lt;p&gt;Use your UV torch to see if you can find anything and then use the decoder to work out the message.&lt;/p&gt;
+&lt;p&gt;Use the MoTT decoder to work out the message.&lt;/p&gt;
 
 &lt;&lt;include &quot;pwDecoder&quot;&gt;&gt;
 	&lt;/div&gt;
 
 	&lt;/main&gt;
 	&lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="62" name="pwDecoder" tags="nobr" position="225,850" size="100,100">&lt;div id=&quot;codewordWrapper&quot; class=&quot;codeword-wrapper&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="66" name="pwDecoder" tags="nobr" position="725,850" size="100,100">&lt;div id=&quot;codewordWrapper&quot; class=&quot;codeword-wrapper&quot;&gt;
   &lt;label for=&quot;textbox--password&quot; tabindex=&quot;0&quot; &gt;&lt;span aria-label=&quot;Enter the word below&quot; role=&quot;label&quot; style=&quot;color:black&quot;&gt;Enter the code below:&lt;/span&gt;&lt;/label&gt;
   /% CODEWORD INPUT %/
    &lt;div class=&quot;code-input multi&quot;&gt;
@@ -1619,13 +1718,13 @@ scrollToBottom()
 		  &lt;div id=&quot;coderesult3&quot;&gt;&lt;/div&gt;
   
   &lt;/div&gt;
-    &lt;/div&gt;</tw-passagedata><tw-passagedata pid="63" name="checkAnswers" tags="nobr" position="350,850" size="100,100">&lt;&lt;if _password1 isnot &quot;&quot; and _password2 isnot &quot;&quot; and _password3 isnot &quot;&quot; &gt;&gt;
+    &lt;/div&gt;</tw-passagedata><tw-passagedata pid="67" name="checkAnswers" tags="nobr" position="850,850" size="100,100">&lt;&lt;if _password1 isnot &quot;&quot; and _password2 isnot &quot;&quot; and _password3 isnot &quot;&quot; &gt;&gt;
     &lt;&lt;if (_password1 + _password2 + _password3) is &quot;TEAANDCRUMPETS&quot;&gt;&gt;
-       &lt;&lt;replace &quot;#coderesult1&quot;&gt;&gt;&lt;h2 class=&quot;subtitle complete&quot;&gt;Correct!&lt;/h2&gt;&lt;&lt;/replace&gt;&gt;
+       &lt;&lt;replace &quot;#coderesult1&quot;&gt;&gt;&lt;h2 class=&quot;subtitle complete&quot;&gt;CORRECT!&lt;/h2&gt;&lt;&lt;/replace&gt;&gt;
         &lt;&lt;audio &quot;correct&quot; play&gt;&gt;
       &lt;&lt;timed 2s&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
     &lt;&lt;/if&gt;&gt;
-  &lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="64" name="outro1" tags="nobr" position="475,850" size="100,100">&lt;&lt;set $prevpass to &quot;station4e&quot;&gt;&gt;
+  &lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="68" name="outro1" tags="nobr" position="975,850" size="100,100">&lt;&lt;set $prevpass to &quot;station4e&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;outro1&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;outro2&quot;&gt;&gt;
 
@@ -1647,7 +1746,7 @@ scrollToBottom()
 
 	&lt;/main&gt;
 	&lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="65" name="outro2" tags="nobr" position="600,850" size="100,100">&lt;&lt;set $prevpass to &quot;outro1&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="69" name="outro2" tags="nobr" position="1100,850" size="100,100">&lt;&lt;set $prevpass to &quot;outro1&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;outro2&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;outro3&quot;&gt;&gt;
 
@@ -1668,7 +1767,7 @@ scrollToBottom()
 
 	&lt;/main&gt;
 	&lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="66" name="outro3" tags="nobr" position="725,850" size="100,100">&lt;&lt;set $prevpass to &quot;outro2&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="70" name="outro3" tags="nobr" position="1225,850" size="100,100">&lt;&lt;set $prevpass to &quot;outro2&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;outro3&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;outro4&quot;&gt;&gt;
 
@@ -1680,7 +1779,7 @@ scrollToBottom()
 
 &lt;div class=&quot;intro-text&quot; id=&quot;intro&quot;&gt;
 &lt;p&gt;We need to stop Kevin passing on that information to TADAH!&lt;/p&gt;
-&lt;nd&gt;I’ve received intel that he went to the shop at The National Archives and placed something there. &lt;/p&gt;
+&lt;p&gt;I’ve received intel that he went to the shop at The National Archives and placed something there. &lt;/p&gt;
 
 
 &lt;div class=&quot;green-link-wrapper&quot; aria-label=&quot;Click a button or link to move on&quot;&gt;
@@ -1692,9 +1791,9 @@ scrollToBottom()
 
 	&lt;/main&gt;
 	&lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="67" name="outro4" tags="nobr" position="850,850" size="100,100">&lt;&lt;set $prevpass to &quot;outro3&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="71" name="outro4" tags="nobr" position="100,975" size="100,100">&lt;&lt;set $prevpass to &quot;outro3&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;outro4&quot;&gt;&gt;
-&lt;&lt;set $nextpass to &quot;outro5&quot;&gt;&gt;
+&lt;&lt;set $nextpass to &quot;outro4b&quot;&gt;&gt;
 
 &lt;div class=&quot;wrapper chief&quot;&gt;
 	&lt;&lt;include &quot;headeror&quot;&gt;&gt;
@@ -1704,7 +1803,7 @@ scrollToBottom()
 
 &lt;div class=&quot;intro-text&quot; id=&quot;intro&quot;&gt;
 &lt;p&gt;I need you to head out of the exhibition, to the shop. &lt;/p&gt;
-&lt;p&gt;Ask my friend behind the counter if they have seen Kevin. &lt;/p&gt;
+&lt;p&gt;Ask my friend behind the counter if they have received anything from Kevin.  &lt;/p&gt;
 &lt;p&gt;We must find out what he has been hiding. &lt;/p&gt;
 
 
@@ -1717,7 +1816,32 @@ scrollToBottom()
 
 	&lt;/main&gt;
 	&lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="68" name="outro5" tags="nobr" position="975,850" size="100,100">&lt;&lt;set $prevpass to &quot;outro4&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="72" name="outro4b" tags="nobr" position="225,975" size="100,100">&lt;&lt;set $prevpass to &quot;outro4&quot;&gt;&gt;
+&lt;&lt;set $passage to &quot;outro4b&quot;&gt;&gt;
+&lt;&lt;set $nextpass to &quot;outro5&quot;&gt;&gt;
+
+&lt;div class=&quot;wrapper chief&quot;&gt;
+	&lt;&lt;include &quot;headeror&quot;&gt;&gt;
+  &lt;div class=&quot;rotate-warning&quot;&gt;&lt;h3&gt;Rotate your phone.&lt;/h3&gt;&lt;/div&gt;
+	&lt;main id=&quot;main&quot; class=&quot;&quot;&gt;
+	&lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;assets/audio/MoTT_Spies_I_NEED_YOU__MP3.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt;
+
+&lt;div class=&quot;intro-text&quot; id=&quot;intro&quot;&gt;
+&lt;p&gt;
+	Let me know when you have what he has stored there. As I have a set of numbers that might be useful. 
+	
+&lt;/p&gt;
+
+&lt;div class=&quot;green-link-wrapper&quot; aria-label=&quot;Click a button or link to move on&quot;&gt;
+		&lt;&lt;link &quot;We have the book&quot;&gt;&gt;
+		&lt;&lt;goto $nextpass&gt;&gt;
+			&lt;&lt;/link&gt;&gt;
+	&lt;/div&gt; 
+	&lt;/div&gt;
+
+	&lt;/main&gt;
+	&lt;&lt;include &quot;footer&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="73" name="outro5" tags="nobr" position="350,975" size="100,100">&lt;&lt;set $prevpass to &quot;outro4b&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;outro5&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;outro5&quot;&gt;&gt;
 
@@ -1728,32 +1852,29 @@ scrollToBottom()
 	&lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;assets/audio/MoTT_Spies_IF_YOU_FIND_THE_PASSWORD__MP3.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;div class=&quot;intro-text&quot; id=&quot;intro&quot;&gt;
-&lt;p&gt;If you find the Secret Bench File password, head back to the tablet and enter it when you can. &lt;/p&gt;
+&lt;p&gt;Enter 527 and open it up. &lt;/p&gt;
+&lt;p&gt;If you find the Secret Bench File password, hand back the book to the bookkeeper and head back to the tablet where you started. &lt;/p&gt;
+&lt;p&gt;Remember it might be in UV Writing. &lt;/p&gt;
 &lt;p&gt;We must know what Kevin is up to. &lt;/p&gt;
 
 
-/* &lt;div class=&quot;green-link-wrapper&quot; aria-label=&quot;Click a button or link to move on&quot;&gt;
-		&lt;&lt;link &quot;Next&quot;&gt;&gt;
-		&lt;&lt;goto $nextpass&gt;&gt;
-			&lt;&lt;/link&gt;&gt;
-	&lt;/div&gt;  */
 	&lt;/div&gt;
 
 	&lt;/main&gt;
 	&lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="69" name="footer" tags="nobr" position="1100,850" size="100,100">&lt;footer&gt;&lt;nav class=&quot;&quot;&gt;&lt;div id=&quot;back&quot; class=&quot;button-wrapper&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="74" name="footer" tags="nobr" position="475,975" size="100,100">&lt;footer&gt;&lt;nav class=&quot;&quot;&gt;&lt;div id=&quot;back&quot; class=&quot;button-wrapper&quot;&gt;
 &lt;&lt;if passage() isnot &quot;onboarding1&quot;&gt;&gt;
   &lt;&lt;button [img[assets/img/arrow.png]]&gt;&gt; 
     &lt;&lt;goto $prevpass&gt;&gt;
     &lt;&lt;/button&gt;&gt;
   &lt;&lt;/if&gt;&gt;
-&lt;/div&gt;&lt;/nav&gt;&lt;/footer&gt;</tw-passagedata><tw-passagedata pid="70" name="footertranscript" tags="nobr" position="1225,850" size="100,100">&lt;footer id=&quot;bottom&quot;&gt;&lt;nav class=&quot;&quot;&gt;&lt;div id=&quot;back&quot; class=&quot;button-wrapper&quot;&gt;
+&lt;/div&gt;&lt;/nav&gt;&lt;/footer&gt;</tw-passagedata><tw-passagedata pid="75" name="footertranscript" tags="nobr" position="600,975" size="100,100">&lt;footer id=&quot;bottom&quot;&gt;&lt;nav class=&quot;&quot;&gt;&lt;div id=&quot;back&quot; class=&quot;button-wrapper&quot;&gt;
 &lt;&lt;if passage() isnot &quot;onboarding1&quot;&gt;&gt;
   &lt;&lt;button [img[assets/img/arrow.png]]&gt;&gt; 
     &lt;&lt;goto $prevpass&gt;&gt;
     &lt;&lt;/button&gt;&gt;
   &lt;&lt;/if&gt;&gt;
-&lt;/div&gt;&lt;/nav&gt;&lt;/footer&gt;</tw-passagedata><tw-passagedata pid="71" name="footernext" tags="nobr" position="100,975" size="100,100">&lt;footer&gt;&lt;nav class=&quot;&quot;&gt;&lt;div id=&quot;back&quot; class=&quot;button-wrapper&quot;&gt;
+&lt;/div&gt;&lt;/nav&gt;&lt;/footer&gt;</tw-passagedata><tw-passagedata pid="76" name="footernext" tags="nobr" position="725,975" size="100,100">&lt;footer&gt;&lt;nav class=&quot;&quot;&gt;&lt;div id=&quot;back&quot; class=&quot;button-wrapper&quot;&gt;
 &lt;&lt;if passage() isnot &quot;onboarding1&quot;&gt;&gt;
   &lt;&lt;button &quot;Back&quot;&gt;&gt; 
     &lt;&lt;goto $prevpass&gt;&gt;

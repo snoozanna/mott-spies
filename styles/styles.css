@@ -641,7 +641,9 @@ input.macro-textbox {
   background-color: var(--turq);
   border: 2px solid var(--blue);
   border-radius: 5px;
-  font-size: 2rem;
+  font-size: 2.2rem;
+  font-weight: 900;
+  font-family: var(--roboto);
 }
 
 input[type=text] {
@@ -671,7 +673,7 @@ h3.subtitle > span.orange {
 
 .code-input.multi > div > input.macro-textbox {
   width: 100%;
-  background-color: var(--orange);
+
 }
 
 .code-input.multi > div.turq > input.macro-textbox {
@@ -691,7 +693,8 @@ h3.subtitle > span.orange {
 }
 
 #coderesult > .subtitle.complete, .turq > .subtitle.complete{
-  color: var(--orange);
+  /* color: var(--orange); */
+  color:white;
   text-transform: uppercase;
   font-weight: 900;
 }
@@ -769,8 +772,12 @@ h3.subtitle > span.orange {
   color: black;
   font-weight: 900;
   font-size: 2rem;
-  text-align: right;
+
 }
 .green-link-wrapper.clue > a{
   font-size: 2.5rem;
+}
+
+.green-link-wrapper.clue.right{
+text-align: right;
 }
