@@ -97,7 +97,7 @@ UIBar.destroy();
 <footer><nav><div class="green-link-wrapper back"><<link "Back" $prevpass>><</link>></div><div id="text"></div></nav></footer>
 </div>
 <<silently>>
-<<timed 0.1s t8n>><<append "#text">><br><span class="green-link-wrapper" aria-label="Click a button or link to move on"><<link "Next" $nextpass>><</link>></span><</append>> <</timed>>
+<<timed 30s t8n>><<append "#text">><br><span class="green-link-wrapper" aria-label="Click a button or link to move on"><<link "Next" $nextpass>><</link>></span><</append>> <</timed>>
 <</silently>>
 
 
@@ -192,12 +192,11 @@ UIBar.destroy();
 	<main id="main" class="video">
 	<div id="video" role="video" class="video-wrapper"  aria-label="Video 4"><iframe src="https://player.vimeo.com/video/1068803631?h=5434f73715&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="MOTT Training 6"></iframe></div>
 	</main>
-		<footer><nav><div id="back" class="button-wrapper"><<link "Back" $prevpass>><</link>></div><div id="text"></div></nav></footer>
+<footer><nav><div class="green-link-wrapper back"><<link "Back" $prevpass>><</link>></div><div id="text"></div></nav></footer>
 </div>
 <<silently>>
-<<timed 0.1s t8n>><<append "#text">><br><span class="button-wrapper" aria-label="Click a button or link to move on"><<button "Next" $nextpass>><</button>></span><</append>> <</timed>>
+<<timed 30s t8n>><<append "#text">><br><span class="green-link-wrapper" aria-label="Click a button or link to move on"><<link "Next" $nextpass>><</link>></span><</append>> <</timed>>
 <</silently>>
-
 
 :: pwVid [nobr]
 <div id="codewordWrapper" class="codeword-wrapper row">
