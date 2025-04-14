@@ -515,7 +515,7 @@ scrollToBottom()
 <p>Good find!</p>
 <p>Lomax. I know her - she worked at MI5.</p>
 <p>Let me bring up her file.</p>
-<p>Head round the corner to [significant point on wall to allow flow of people]</p>
+<p>Head round the corner to the corner where a MoTT logo is on the floor.</p>
 </div>
 
  <div class="green-link-wrapper" aria-label="Click a button or link to move on">
@@ -1972,12 +1972,10 @@ scrollToBottom()
 	<<include "headeror">>
   <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
 	<main id="main" class="">
-	<<if $audioOn is true>><audio src="assets/audio/MoTT_Spies_I_NEED_YOU__MP3.mp3" autoplay>Audio not supported in your browser</audio><</if>>
+	<<if $audioOn is true>><audio src="" autoplay>Audio not supported in your browser</audio><</if>>
 
 <div class="intro-text" id="intro">
-<p>
-	Let me know when you have what he has stored there. As I have a set of numbers that might be useful. 
-	
+<p>Let me know when you have what he has stored there. As I have a set of numbers that might be useful. 	
 </p>
 
 <div class="green-link-wrapper" aria-label="Click a button or link to move on">
