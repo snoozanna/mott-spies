@@ -174,7 +174,7 @@ setup.JSLoaded = false;
 <div class="wrapper chieflogo">
 	<<include "headerorplain">>
 	<main id="main" class="flex-container-col">
-	<<if $audioOn is true>><audio src="assets/audio/MoTT_Spies_ONLINE_PLATFORM__MP3.mp3" autoplay>Audio not supported in your browser</audio><</if>>
+	<<if $audioOn is true>><audio src="assets/audio/MoTT_Spies_v2-01_ONLINE_PLATFORM.mp3" autoplay>Audio not supported in your browser</audio><</if>>
 
 	<div class="intro-text">
 	 <p>You made it</p>
@@ -209,7 +209,7 @@ setup.JSLoaded = false;
 <div class="wrapper chief">
 	<<include "headerorplain">>
 	<main id="main" class="flex-container-col">
-	<<if $audioOn is true>><audio src="assets/audio/MoTT_Spies_YES__MP3.mp3" autoplay>Audio not supported in your browser</audio><</if>>
+	<<if $audioOn is true>><audio src="assets/audio/MoTT_Spies_v2-02_YES.mp3" autoplay>Audio not supported in your browser</audio><</if>>
 
 	<div class="intro-text">
 <p>I knew you would be able to - I believe in you – just pretend you are a regular visitor to the Archives today.</p>
@@ -235,7 +235,7 @@ setup.JSLoaded = false;
 <div class="wrapper chief">
 	<<include "headeror">>
 	<main id="main" class="flex-container-col">
-	<<if $audioOn is true>><audio src="assets/audio/MoTT_Spies_NO__MP3.mp3" autoplay>Audio not supported in your browser</audio><</if>>
+	<<if $audioOn is true>><audio src="assets/audio/MoTT_Spies_v2-03_NO.mp3" autoplay>Audio not supported in your browser</audio><</if>>
 
 	<div class="intro-text">
 <p>You are being too hard on yourself – I believe in you – just pretend you are a regular visitor to the Archives today.</p>
@@ -260,10 +260,10 @@ setup.JSLoaded = false;
 <div class="wrapper chief">
 	<<include "headeror">>
 	<main id="main" class="flex-container-col">
-	<<if $audioOn is true>><audio src="" autoplay>Audio not supported in your browser</audio><</if>>
+	<<if $audioOn is true>><audio src="assets/audio/MoTT_Spies_v2-04_VOLUME.mp3" autoplay>Audio not supported in your browser</audio><</if>>
 
 	<div class="intro-text">
-<p>If you’d prefer to not hear me out loud you could turn the volume down or you could put headphones in to be undercover. </p>
+<p>You can leave the volume up but, if you’d prefer to stay undercover, turn the volume down and read the text or you can put in headphones. </p>
  <div class="green-link-wrapper" aria-label="Click a button or link to move on">
 		<<link "Next">>
 		<<goto $nextpass>>
@@ -282,12 +282,16 @@ setup.JSLoaded = false;
 <div class="wrapper chief">
 	<<include "headeror">>
 	<main id="main" class="flex-container-col">
-	<<if $audioOn is true>><audio src="assets/audio/MoTT_Spies_KEVIN_S_NOTEBOOK__MP3.mp3" autoplay>Audio not supported in your browser</audio><</if>>
+	<<if $audioOn is true>><audio src="assets/audio/MoTT_Spies_v2-05_LOCATION.mp3" autoplay>Audio not supported in your browser</audio><</if>>
 
 	<div class="intro-text">
-<p>Okay, Kevin’s notebook includes a location in the exhibition gallery we need to find – let’s start there.</p>
-<p>I’ll send you directions.</p>
-<p>Head through the doors, past the shop and look for the MoTT marker on the floor. and when there, let me know, by clicking </p>
+<p>	Okay, Kevin’s notebook includes a location in the exhibition gallery we need to find – let’s start there.
+	I’ll send you directions. </p>
+ 
+<p>Head through the doors, past the shop and look for the MoTT marker on the floor.</p>
+ 
+<p>When there, let me know, by clicking</p>
+
  <div class="green-link-wrapper" aria-label="Click a button or link to move on">
 		<<link "Here">>
 		<<goto "station1trans">>
@@ -345,7 +349,7 @@ setup.JSLoaded = false;
 	<<include "headeror">>
   <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
 	<main id="main" class="">
-	<<if $audioOn is true>><audio src="assets/audio/MoTT_Spies_STATION_1__MP3.mp3" autoplay>Audio not supported in your browser</audio><</if>>
+	<<if $audioOn is true>><audio src="assets/audio/MoTT_Spies_v2-06_STATION_1.mp3" autoplay>Audio not supported in your browser</audio><</if>>
 
 <div class="intro-text" id="intro">
 <p>  Well done for making it this far.</p>
@@ -377,10 +381,10 @@ setup.JSLoaded = false;
 	<<include "headeror">>
   <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
 	<main id="main" class="">
-	<<if $audioOn is true>><audio src="" autoplay>Audio not supported in your browser</audio><</if>>
+	<<if $audioOn is true>><audio src="assets/audio/MoTT_Spies_v2-07_EARLY_YEARS.mp3" autoplay>Audio not supported in your browser</audio><</if>>
 
 <div class="intro-text" id="intro">
-<p>Head into the exhibition following the arrows on the floor. </p>
+<p>When you are allowed, head into the exhibition following the arrows on the floor. </p>
 <p>Turn left and you are looking for Early Years. </p>
 
 </div>
@@ -405,12 +409,13 @@ setup.JSLoaded = false;
 	<<include "headeror">>
   <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
 	<main id="main" class="">
-	<<if $audioOn is true>><audio src="assets/audio/MoTT_Spies_IT_SEEMS_WE_NEED_TO_FIND__MP3.mp3" autoplay>Audio not supported in your browser</audio><</if>>
+	<<if $audioOn is true>><audio src="assets/audio/MoTT_Spies_v2-08_CODEWORD.mp3" autoplay>Audio not supported in your browser</audio><</if>>
 	<div>
 <div class="intro-text" id="intro">
 <p>It seems we need to find a MoTT codeword to unlock what Kevin has been hiding.</p>
-<p>I have a photo – which I can load up – maybe if you can find it. The MoTT codeword will be nearby. </p>
-<p>Look out for the MoTT logo. </p>
+<p>I have a photo, which I can load up, you need to find it.</p>
+<p>I think the codeword we are looking for will be located underneath it.</p>
+<p>Look out for the MoTT logo.</p>
 
 </div>
 
@@ -433,8 +438,10 @@ setup.JSLoaded = false;
 	 <div class="green-link-wrapper" aria-label="Click to hide photo">
 		<<link "Hide Photo">>
 		<<replace "#intro">>
-		<p>It seems we need to find a MoTT codeword to unlock what Kevin has been hiding.</p>
-		<p>I have a photo – which I can load up – maybe if you can find it. The MoTT codeword will be nearby. Look out for the log.</p>
+	<p>It seems we need to find a MoTT codeword to unlock what Kevin has been hiding.</p>
+<p>I have a photo, which I can load up, you need to find it.</p>
+<p>I think the codeword we are looking for will be located underneath it.</p>
+<p>Look out for the MoTT logo.</p>
 			<</replace>>
 		<<replace "#toggleBtn">>
 		<<include "togglePhoto">>
@@ -447,7 +454,7 @@ setup.JSLoaded = false;
 
 :: pwPhoto [nobr]
 <div id="codewordWrapper" class="codeword-wrapper">
-  <label for="textbox--password" tabindex="0" ><span aria-label="Enter the word below" role="label" style="color:black">Enter the letters here:</span></label>
+  <label for="textbox--password" tabindex="0" ><span aria-label="Enter the word below" role="label" style="color:black">Enter the codeword here:</span></label>
   /% CODEWORD INPUT %/
    <div class="code-input">
      <<textbox "_password" "" >>
@@ -507,13 +514,14 @@ setup.JSLoaded = false;
 	<<include "headeror">>
   <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
 	<main id="main" class="">
-	<<if $audioOn is true>><audio src="assets/audio/MoTT_Spies_GOOD_FIND__MP3.mp3" autoplay>Audio not supported in your browser</audio><</if>>
+	<<if $audioOn is true>><audio src="assets/audio/MoTT_Spies_v2-09_GOOD_FIND.mp3" autoplay>Audio not supported in your browser</audio><</if>>
 	<div>
 <div class="intro-text" id="intro">
 <p>Good find!</p>
 <p>Lomax. I know her - she worked at MI5.</p>
 <p>Let me bring up her file.</p>
-<p>Head round the corner to the corner where a MoTT logo is on the floor.</p>
+<p>Head round the corner to where a MoTT logo is on the floor.</p> 
+
 </div>
 
  <div class="green-link-wrapper" aria-label="Click a button or link to move on">
@@ -537,11 +545,12 @@ setup.JSLoaded = false;
 	<<include "headeror">>
   <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
 	<main id="main" class="">
-	<<if $audioOn is true>><audio src="assets/audio/MoTT_Spies_EDITH_LOMAX__MP3.mp3" autoplay>Audio not supported in your browser</audio><</if>>
+	<<if $audioOn is true>><audio src="assets/audio/MoTT_Spies_v2-10_EDITH_LOMAX.mp3" autoplay>Audio not supported in your browser</audio><</if>>
 	<div>
 <div class="intro-text" id="intro">
-<p>Edith Lomax worked in the Registry – which keeps all the top-secret files and documents for MI5. </p>
-<p>Without the smooth running of the Registry, MI5 wouldn’t be able to function. </p>
+<p>Edith Lomax worked in the Registry – which keeps all the top-secret files and documents for MI5.</p>
+<p>Without the smooth running of the Registry, MI5 wouldn’t be able to function.</p>
+
 
 </div>
 
@@ -566,10 +575,10 @@ setup.JSLoaded = false;
 	<<include "headeror">>
   <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
 	<main id="main" class="">
-	<<if $audioOn is true>><audio src="assets/audio/MoTT_Spies_I_LL_EXPLAIN__MP3.mp3" autoplay>Audio not supported in your browser</audio><</if>>
+	<<if $audioOn is true>><audio src="assets/audio/MoTT_Spies_v2-11_ILL_EXPLAIN.mp3" autoplay>Audio not supported in your browser</audio><</if>>
 	<div>
 <div class="intro-text" id="intro">
-<p>I’ll explain. In the early years of MI5 the Registry was “almost overwhelmed” by “the tidal wave of documents” which descended on it, but that changed with the appointment of Edith Annie Lomax as lady superintendent. She transformed the Registry. </p>
+<p>I’ll explain, in the early years of MI5 the Registry was “almost overwhelmed” by “the tidal wave of documents” which descended on it, but that changed with the appointment of Edith Annie Lomax as lady superintendent. She transformed the Registry.</p>
 </div>
 
  <div class="green-link-wrapper" aria-label="Click a button or link to move on">
@@ -592,7 +601,7 @@ setup.JSLoaded = false;
 	<<include "headeror">>
   <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
 	<main id="main" class="">
-	<<if $audioOn is true>><audio src="assets/audio/MoTT_Spies_SHE_PROVED_TO_BE__MP3.mp3" autoplay>Audio not supported in your browser</audio><</if>>
+	<<if $audioOn is true>><audio src="assets/audio/MoTT_Spies_v2-12_SHE_PROVED_TO_BE.mp3" autoplay>Audio not supported in your browser</audio><</if>>
 	<div>
 <div class="intro-text" id="intro">
 <p>She proved to be one of the most capable administrators in service history and MI5 wouldn’t be what it is today without the work she did. </p>
@@ -620,7 +629,7 @@ setup.JSLoaded = false;
 	<<include "headeror">>
   <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
 	<main id="main" class="">
-	<<if $audioOn is true>><audio src="assets/audio/MoTT_Spies_SHELATER_BECAME__MP3.mp3" autoplay>Audio not supported in your browser</audio><</if>>
+	<<if $audioOn is true>><audio src="assets/audio/MoTT_Spies_v2-13_SHE_LATER_BECAME.mp3" autoplay>Audio not supported in your browser</audio><</if>>
 	<div>
 <div class="intro-text" id="intro">
 <p>She later becoming the first female member of staff to be appointed MBE. </p>
@@ -648,7 +657,7 @@ setup.JSLoaded = false;
 	<<include "headeror">>
   <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
 	<main id="main" class="">
-	<<if $audioOn is true>><audio src="assets/audio/MoTT_Spies_LOMAX_WAS_IMPORTANT__MP3.mp3" autoplay>Audio not supported in your browser</audio><</if>>
+	<<if $audioOn is true>><audio src="assets/audio/MoTT_Spies_v2-14_LOMAX_IMPORTANT.mp3" autoplay>Audio not supported in your browser</audio><</if>>
 
 <div class="intro-text" id="intro">
 <p>Lomax was important. </p>
@@ -689,13 +698,12 @@ setup.JSLoaded = false;
 	<<include "headeror">>
   <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
 	<main id="main" class="">
-	<<if $audioOn is true>><audio src="assets/audio/MoTT_Spies_STATION_2__MP3.mp3" autoplay>Audio not supported in your browser</audio><</if>>
+	<<if $audioOn is true>><audio src="assets/audio/MoTT_Spies_v2-15_STATION_2.mp3" autoplay>Audio not supported in your browser</audio><</if>>
 
 <div class="intro-text" id="intro">
-<p>The next scribble I have in his notebook is a name, “Maxwell Knight” – now that’s someone I do know about! </p>
-<p>Have a look and see what you can find out about him nearby. It seems like Kevin might have hidden something near his name on the board marked ‘Methods and techniques’ – retrace your steps and you might find it.  </p>
+<p>The next scribble in his notebook is a name, “Maxwell Knight” – now that’s someone I know quite well! Have a look and see what you can find out about him nearby. </p>
+<p>It seems like Kevin might have hidden something near his name on the board marked ‘Methods and techniques’ – retrace your steps and you might find it. </p>
 <p>Use your UV torch to see if you can uncover anything.</p>
-
 
 
 <<include "pwUV">>
@@ -714,10 +722,10 @@ setup.JSLoaded = false;
 	<<include "headeror">>
   <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
 	<main id="main" class="">
-	<<if $audioOn is true>><audio src="" autoplay>Audio not supported in your browser</audio><</if>>
+	<<if $audioOn is true>><audio src="assets/audio/MoTT_Spies_v2-16_STATION_2_NUDGE.mp3" autoplay>Audio not supported in your browser</audio><</if>>
 
 <div class="intro-text" id="intro">
-<p>Head back to the MoTT base, where the logo is on the floor. </p>
+<p>Head back to the MoTT base, where our logo is on the floor. </p>
 
 </div>
 
@@ -741,7 +749,7 @@ setup.JSLoaded = false;
 	<<include "headeror">>
   <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
 	<main id="main" class="">
-	<<if $audioOn is true>><audio src="assets/audio/MoTT_Spies_THANKS_FOR_GETTING_THAT_INTEL__MP3_2.mp3" autoplay>Audio not supported in your browser</audio><</if>>
+	<<if $audioOn is true>><audio src="assets/audio/MoTT_Spies_v2-17_THANKS_FOR_INTEL.mp3" autoplay>Audio not supported in your browser</audio><</if>>
 
 <div class="intro-text" id="intro">
 <p>Thanks for getting that intel on Maxwell Knight. Staff at MI5 often have to gather information and evidence when they are looking into a situation or person. </p>
@@ -768,7 +776,7 @@ setup.JSLoaded = false;
 	<<include "headeror">>
   <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
 	<main id="main" class="">
-	<<if $audioOn is true>><audio src="assets/audio/MoTT_Spies_AND_WE_DO_THE_SAME__MP3.mp3" autoplay>Audio not supported in your browser</audio><</if>>
+	<<if $audioOn is true>><audio src="assets/audio/MoTT_Spies_v2-18_SAME_AT_MOTT.mp3" autoplay>Audio not supported in your browser</audio><</if>>
 
 <div class="intro-text" id="intro">
 
@@ -794,7 +802,7 @@ setup.JSLoaded = false;
 	<<include "headeror">>
   <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
 	<main id="main" class="">
-	<<if $audioOn is true>><audio src="assets/audio/MoTT_Spies_IF_WE_CATCH_THEM__MP3.mp3" autoplay>Audio not supported in your browser</audio><</if>>
+	<<if $audioOn is true>><audio src="assets/audio/MoTT_Spies_v2-19_IF_WE_CATCH_THEM.mp3" autoplay>Audio not supported in your browser</audio><</if>>
 
 <div class="intro-text" id="intro">
 
@@ -856,11 +864,12 @@ setup.JSLoaded = false;
 	<<include "headeror">>
   <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
 	<main id="main" class="">
-	<<if $audioOn is true>><audio src="assets/audio/MoTT_Spies_OK_IT_SEEMS_THERE_ARE_LOTS_OF_ARROWS__MP3.mp3" autoplay>Audio not supported in your browser</audio><</if>>
+	<<if $audioOn is true>><audio src="assets/audio/MoTT_Spies_v2-20_LOTS_OF_ARROWS.mp3" autoplay>Audio not supported in your browser</audio><</if>>
 	<div>
 <div class="intro-text" id="intro">
-<p>Ok, it seems there are lots of arrows and a drawing of a cup of tea in Kevin’s notepad. </p>
-<p>See if you can find any arrows nearby and see where they lead, it must be something to do with tea. Let me know if you find the box. </p>
+<p>It seems there are lots of arrows and a drawing of a cup of tea in Kevin’s notebook.</p>
+<p>Use your UV torch and see if you can find any arrows nearby and see where they lead, it must be something to do with tea. </p>
+<p>I think we’re looking for a box, let me know if you find it. </p>
 
 </div>
 
@@ -884,7 +893,7 @@ setup.JSLoaded = false;
 	<<include "headeror">>
   <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
 	<main id="main" class="">
-	<<if $audioOn is true>><audio src="assets/audio/MoTT_Spies_GREAT_OPEN_THE_BOX__MP3.mp3" autoplay>Audio not supported in your browser</audio><</if>>
+	<<if $audioOn is true>><audio src="assets/audio/MoTT_Spies_v2-21_GREAT_OPEN_THE_BOX.mp3" autoplay>Audio not supported in your browser</audio><</if>>
 
 <div class="intro-text" id="intro">
 <p>
@@ -944,7 +953,7 @@ setup.JSLoaded = false;
 	<<include "headeror">>
   <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
 	<main id="main" class="">
-	<<if $audioOn is true>><audio src="assets/audio/MoTT_Spies_OPERATION_TEA_AND_CRUMPETS__MP3.mp3" autoplay>Audio not supported in your browser</audio><</if>>
+	<<if $audioOn is true>><audio src="assets/audio/MoTT_Spies_v2-22_OPERATION_TEA_AND_CRUMPETS_FIVE_YEARS.mp3" autoplay>Audio not supported in your browser</audio><</if>>
 	<div>
 <div class="intro-text" id="intro">
 <p>Operation Tea and Crumpets was five years ago - my first mission. </p>
@@ -971,7 +980,7 @@ setup.JSLoaded = false;
 	<<include "headeror">>
   <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
 	<main id="main" class="">
-	<<if $audioOn is true>><audio src="assets/audio/MoTT_Spies_MY_PLAN_WAS_SIMPLE__MP3.mp3" autoplay>Audio not supported in your browser</audio><</if>>
+	<<if $audioOn is true>><audio src="assets/audio/MoTT_Spies_v2-23_PLAN_WAS_SIMPLE.mp3" autoplay>Audio not supported in your browser</audio><</if>>
 	<div>
 <div class="intro-text" id="intro">
 
@@ -998,7 +1007,7 @@ setup.JSLoaded = false;
 	<<include "headeror">>
   <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
 	<main id="main" class="">
-	<<if $audioOn is true>><audio src="assets/audio/MoTT_Spies_ACTING_UNDERCOVER__MP3.mp3" autoplay>Audio not supported in your browser</audio><</if>>
+	<<if $audioOn is true>><audio src="assets/audio/MoTT_Spies_v2-24_ACTING_UNDERCOVER.mp3" autoplay>Audio not supported in your browser</audio><</if>>
 	<div>
 <div class="intro-text" id="intro">
 <p>Acting undercover as someone called ‘Harriet P Fredricks’, my favourite secret name, I contacted his receptionist through the Signal Fire System. Let me load up the audio recording & transcript of the interaction.</p>
@@ -1024,7 +1033,7 @@ setup.JSLoaded = false;
 	/* <<include "headerb">> */
   <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
 	<main id="main" class="">
-	<<if $audioOn is true>><audio src="assets/audio/MoTT_Spies_2025_TRANSCRIPT_RADIO_EFFECT__MP3.mp3" autoplay>Audio not supported in your browser</audio><</if>>
+	<<if $audioOn is true>><audio src="assets/audio/MoTT_Spies_v2-25_RADIO_TRANSCRIPT.mp3" autoplay>Audio not supported in your browser</audio><</if>>
 
 <div class="intro-text transcript" id="intro">
 
@@ -1211,15 +1220,16 @@ setup.JSLoaded = false;
 	<<include "headeror">>
   <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
 	<main id="main" class="">
-	<<if $audioOn is true>><audio src="assets/audio/MoTT_Spies_OPERATION_TEA_AND_CRUMPETS_WAS_A_SUCCESS__MP3.mp3" autoplay>Audio not supported in your browser</audio><</if>>
+	<<if $audioOn is true>><audio src="assets/audio/MoTT_Spies_v2-26_TEA_CRUMPETS_WAS_SUCCESS.mp3" autoplay>Audio not supported in your browser</audio><</if>>
 	<div>
 <div class="intro-text" id="intro">
-<p>Operation Tea and Crumpets was a success. </p>
-<p>Maxwell stayed at MI5 and I was promoted to Chief Timer. </p>
-<p>So why is Kevin looking into my first case? </p>
-<p>This is very suspicious behaviour. </p>
-<p>Leave the mission log and box where you found it. </p>
-<p>I need you to keep going and see what else we can find out. </p>
+<p>Operation Tea and Crumpets was a success.</p>
+<p>Maxwell stayed at MI5 and I was promoted to Chief Timer.</p>
+<p>So why is Kevin looking into my first case?</p>
+<p>This is very suspicious behaviour.</p>
+<p>Leave the mission log and box where you found it.</p>
+<p>I need you to keep going and see what else we can find out.</p>
+
 </div>
 
 <div class="green-link-wrapper" aria-label="Click a button or link to move on">
@@ -1242,11 +1252,13 @@ setup.JSLoaded = false;
 	<<include "headeror">>
   <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
 	<main id="main" class="">
-	<<if $audioOn is true>><audio src="assets/audio/MoTT_Spies_THE_NEXT_SCRIBBLE_-_MARY_SHERER__MP3.mp3" autoplay>Audio not supported in your browser</audio><</if>>
+	<<if $audioOn is true>><audio src="assets/audio/MoTT_Spies_v2-27_NEXT_SCRIBBLE.mp3" autoplay>Audio not supported in your browser</audio><</if>>
 	<div>
 <div class="intro-text" id="intro">
 <p>The next scribble in his notebook is the name Mary Sherer – and it’s in the section of the exhibition called Double Cross Masterminds.</p>
-<p>Can you find the name of the codename for the Agent she worked with, Lily Sergeyev?  </p>
+<p>It’s in section S_3 on the MI5 staff profile. </p>
+<p>Can you find the codename for the Agent she worked with, Lily Sergeyev?  </p>
+
 
 </div>
 
@@ -1311,12 +1323,12 @@ setup.JSLoaded = false;
 	<<include "headeror">>
   <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
 	<main id="main" class="">
-	<<if $audioOn is true>><audio src="assets/audio/MoTT_Spies_EXCELLENT_LET_S_GET_YOU_SOMEWHERE__MP3.mp3" autoplay>Audio not supported in your browser</audio><</if>>
+	<<if $audioOn is true>><audio src="assets/audio/MoTT_Spies_v2-28_SOMEWHERE_TO_LOOK.mp3" autoplay>Audio not supported in your browser</audio><</if>>
 
 <div class="intro-text" id="intro">
-<p>Excellent – let’s get you somewhere we can look into this. </p>
+<p>Excellent – let’s get you somewhere we can look into this.</p>
 <p>Head down the corridor and turn left into Anthony Blunt's Flat.</p>
-<p>Head there and when you are there click below</p>
+<p>When you are there click below.</p>
 </div>
 
 <div class="green-link-wrapper" aria-label="Click a button or link to move on">
@@ -1339,7 +1351,7 @@ setup.JSLoaded = false;
 	<<include "headeror">>
   <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
 	<main id="main" class="">
-	<<if $audioOn is true>><audio src="assets/audio/MoTT_Spies_IN_THE_SECOND_WORLD_WAR__MP3.mp3" autoplay>Audio not supported in your browser</audio><</if>>
+	<<if $audioOn is true>><audio src="assets/audio/MoTT_Spies_v2-29_IN_THE_SECOND_WORLD_WAR.mp3" autoplay>Audio not supported in your browser</audio><</if>>
 	<div>
 <div class="intro-text" id="intro">
 <p> In the Second World War, MI5 played a role in combating enemy spies, intercepting German communications and feeding misinformation back to Germany.</p>
@@ -1367,7 +1379,7 @@ setup.JSLoaded = false;
 	<<include "headeror">>
   <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
 	<main id="main" class="">
-	<<if $audioOn is true>><audio src="assets/audio/MoTT_Spies_SHE_JOINED_THE_DEPARTMENT__MP3.mp3" autoplay>Audio not supported in your browser</audio><</if>>
+	<<if $audioOn is true>><audio src="assets/audio/MoTT_Spies_v2-30_SHE_JOINED_A_DEPARTMENT.mp3" autoplay>Audio not supported in your browser</audio><</if>>
 	<div>
 <div class="intro-text" id="intro">
 <p>She joined a department called Double Cross – and her job was to be a Handler for an agent called TREASURE.</p>
@@ -1394,7 +1406,7 @@ setup.JSLoaded = false;
 	<<include "headeror">>
   <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
 	<main id="main" class="">
-	<<if $audioOn is true>><audio src="assets/audio/MoTT_Spies_TREASURE_WAS_A_DOUBLE_AGENT__MP3.mp3" autoplay>Audio not supported in your browser</audio><</if>>
+	<<if $audioOn is true>><audio src="assets/audio/MoTT_Spies_v2-31_TREASURE_WAS_A_DOUBLE.mp3" autoplay>Audio not supported in your browser</audio><</if>>
 	<div>
 <div class="intro-text" id="intro">
 <p>TREASURE was a Double Agent, who was pretending to work for the Germans, but she was actually passing information to Mary Sherer, and to MI5. </p>
@@ -1421,7 +1433,7 @@ setup.JSLoaded = false;
 	<<include "headeror">>
   <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
 	<main id="main" class="">
-	<<if $audioOn is true>><audio src="assets/audio/MoTT_Spies_MARY_WOULD_SEND__MP3.mp3" autoplay>Audio not supported in your browser</audio><</if>>
+	<<if $audioOn is true>><audio src="assets/audio/MoTT_Spies_v2-32_MARY_BOGUS.mp3" autoplay>Audio not supported in your browser</audio><</if>>
 
 <div class="intro-text" id="intro">
 <p>Mary would send bogus messages to TREASURE for her to pass back the Germans to confuse them.</p>
@@ -1446,23 +1458,13 @@ setup.JSLoaded = false;
 	<<include "headeror">>
   <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
 	<main id="main" class="">
-	<<if $audioOn is true>><audio src="assets/audio/MoTT_Spies_I_VE_NOT_HEARD_OF_MARY__MP3.mp3" autoplay>Audio not supported in your browser</audio><</if>>
+	<<if $audioOn is true>><audio src="assets/audio/MoTT_Spies_v2-33_NOT_HEARD_OF_MARY.mp3" autoplay>Audio not supported in your browser</audio><</if>>
 
 <div class="intro-text" id="intro">
-<p>I’ve not heard of Mary before – an unrecognised hero it seems. </p>
-
-<p>What has this got to do with Kevin though? </p>
-
-<p>See if you can find anything nearby in the drawers. </p>
-<br/>
-<div class="green-link-wrapper clue " aria-label="Click a button or link to move on" id="clue">
-		<<link "We need some help">>
-		<<replace "#clue">>
-			<<addclass "#clue" "right">>
-			<span class="clue">Maybe use some of the gadgets on your MoTT spy kit to help decipher the code.</span>
-			<</replace>>
-			<</link>>
-	</div> 
+<p>	I’ve not heard of Mary before – an unrecognised hero it seems.</p>
+<p>What has this got to do with Kevin though?</p>
+<p>See if you can find anything nearby in the drawers.</p>
+<p>You might need to use your red perspex spyglass.</p>
 	<br/>
 <<include "pwTorch">>
 </div>
@@ -1514,7 +1516,7 @@ setup.JSLoaded = false;
 	<<include "headeror">>
   <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
 	<main id="main" class="">
-	<<if $audioOn is true>><audio src="assets/audio/MoTT_Spies_OH_NO_TADAH__MP3.mp3" autoplay>Audio not supported in your browser</audio><</if>>
+	<<if $audioOn is true>><audio src="assets/audio/MoTT_Spies_v2-34_OH_NO_TADAH.mp3" autoplay>Audio not supported in your browser</audio><</if>>
 
 <div class="intro-text" id="intro">
 <p>Oh no, TADAH! That stands for “Time Agent Disrupters Against History”. </p>
@@ -1542,7 +1544,7 @@ setup.JSLoaded = false;
 	<<include "headeror">>
   <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
 	<main id="main" class="">
-	<<if $audioOn is true>><audio src="assets/audio/MoTT_Spies_I_VE_BEEN_KEEPING__MP3.mp3" autoplay>Audio not supported in your browser</audio><</if>>
+	<<if $audioOn is true>><audio src="assets/audio/MoTT_Spies_v2-35_IVE_BEEN_KEEPING.mp3" autoplay>Audio not supported in your browser</audio><</if>>
 
 <div class="intro-text" id="intro">
 <p>I’ve been keeping something from you. Something I read in Kevin’s notebook that made my blood run cold. He wrote: “I can’t wait for the TADAH moment!”</p>
@@ -1566,7 +1568,7 @@ setup.JSLoaded = false;
 	<<include "headeror">>
   <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
 	<main id="main" class="">
-	<<if $audioOn is true>><audio src="assets/audio/MoTT_Spies_BUT_I_JUST_CAN_T_BELIEVE_IT__MP3.mp3" autoplay>Audio not supported in your browser</audio><</if>>
+	<<if $audioOn is true>><audio src="assets/audio/MoTT_Spies_v2-36_BUT_I_JUST_CANT.mp3" autoplay>Audio not supported in your browser</audio><</if>>
 
 <div class="intro-text" id="intro">
 
@@ -1590,7 +1592,7 @@ setup.JSLoaded = false;
 	<<include "headeror">>
   <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
 	<main id="main" class="">
-	<<if $audioOn is true>><audio src="assets/audio/MoTT_Spies_THE_SECRET_BENCH_FILE__MP3.mp3" autoplay>Audio not supported in your browser</audio><</if>>
+	<<if $audioOn is true>><audio src="assets/audio/MoTT_Spies_v2-37_THE_SECRET_BENCH_FILE.mp3" autoplay>Audio not supported in your browser</audio><</if>>
 
 <div class="intro-text" id="intro">
 
@@ -1630,7 +1632,7 @@ setup.JSLoaded = false;
 	<<include "headeror">>
   <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
 	<main id="main" class="">
-	<<if $audioOn is true>><audio src="assets/audio/MoTT_Spies_STATION_4__MP3.mp3" autoplay>Audio not supported in your browser</audio><</if>>
+	<<if $audioOn is true>><audio src="assets/audio/MoTT_Spies_v2-38_STATION_4_x.mp3" autoplay>Audio not supported in your browser</audio><</if>>
 
 <div class="intro-text" id="intro">
 <p>The last scribble I have in his notebook is the word <i>Secret</i>. </p>
@@ -1659,7 +1661,7 @@ setup.JSLoaded = false;
 	<<include "headeror">>
   <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
 	<main id="main" class="">
-	<<if $audioOn is true>><audio src="assets/audio/MoTT_Spies_HAS_HE_BEEN__MP3.mp3" autoplay>Audio not supported in your browser</audio><</if>>
+	<<if $audioOn is true>><audio src="assets/audio/MoTT_Spies_v2-39_HAS_HE_BEEN.mp3" autoplay>Audio not supported in your browser</audio><</if>>
 
 <div class="intro-text" id="intro">
 <p>Has he been a TADAH double agent all along?</p>
@@ -1686,11 +1688,12 @@ setup.JSLoaded = false;
 	<<include "headeror">>
   <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
 	<main id="main" class="">
-	<<if $audioOn is true>><audio src="" autoplay>Audio not supported in your browser</audio><</if>>
+	<<if $audioOn is true>><audio src="assets/audio/MoTT_Spies_v2-40_OUT_OF_ANTHONY_BLUNT.mp3" autoplay>Audio not supported in your browser</audio><</if>>
 
 <div class="intro-text" id="intro">
-<p>Come out of the Anthony Blunt’s Flat and turn right. </p>
-<p>Head past the spy craft table (you can come back later) and head into the reading room on your right. </p>
+<p>Come out of Anthony Blunt’s Flat and turn right.</p>
+<p>Head past the spy craft table and head into the reading room on your right.</p>
+
 
 <div class="green-link-wrapper" aria-label="Click a button or link to move on">
 		<<link "We're here">>
@@ -1712,7 +1715,7 @@ setup.JSLoaded = false;
 	<<include "headeror">>
   <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
 	<main id="main" class="">
-	<<if $audioOn is true>><audio src="assets/audio/MoTT_Spies_IN_THIS_ROOM__MP3.mp3" autoplay>Audio not supported in your browser</audio><</if>>
+	<<if $audioOn is true>><audio src="assets/audio/MoTT_Spies_v2-41_IN_THIS_ROOM.mp3" autoplay>Audio not supported in your browser</audio><</if>>
 
 <div class="intro-text" id="intro">
 <p>In this room I think there is a message that has been put into code. </p>
@@ -1739,12 +1742,14 @@ setup.JSLoaded = false;
 	<<include "headeror">>
   <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
 	<main id="main" class="">
-	<<if $audioOn is true>><audio src="assets/audio/MoTT_Spies_YOU_SHOULD_HAVE__MP3.mp3" autoplay>Audio not supported in your browser</audio><</if>>
+	<<if $audioOn is true>><audio src="assets/audio/MoTT_Spies_v2-42_MOTT_DECODER.mp3" autoplay>Audio not supported in your browser</audio><</if>>
 
 <div class="intro-text" id="intro">
-<p>You should have the MoTT decoder as part of your kit. </p>
-<p>I need you to find out what has been hidden in code, maybe check the document boxes. Kevin seems to like using them! </p>
+<p>You should have the MoTT decoder as part of your kit.</p>
+<p>I need you to find out what has been hidden in code, maybe check the document boxes.</p>
+<p>It might be in UV - Kevin seems to like that!</p>
 <p>Use the MoTT decoder to work out the message.</p>
+
 
 <<include "pwDecoder">>
 	</div>
@@ -1852,7 +1857,7 @@ setup.JSLoaded = false;
     <<if (_password1 + _password2 + _password3) is "TEAANDCRUMPETS">>
        <<replace "#coderesult1">><h2 class="subtitle complete">CORRECT!</h2><</replace>>
         <<audio "correct" play>>
-      <<timed 2s>><<goto $nextpass>><</timed>>
+      <<timed 1.5s>><<goto $nextpass>><</timed>>
     <</if>>
   <</if>>
 
@@ -1865,7 +1870,7 @@ setup.JSLoaded = false;
 	<<include "headerorna">>
   <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
 	<main id="main" class="">
-	<<if $audioOn is true>><audio src="assets/audio/MoTT_Spies_I_TOLD_YOU_MY_FIRST_MISSION__MP3.mp3" autoplay>Audio not supported in your browser</audio><</if>>
+	<<if $audioOn is true>><audio src="assets/audio/MoTT_Spies_v2-43_MY_FIRST_MISSION.mp3" autoplay>Audio not supported in your browser</audio><</if>>
 
 <div class="intro-text" id="intro">
 <p>Operation: Tea & Crumpets. </p>
@@ -1890,10 +1895,10 @@ setup.JSLoaded = false;
 	<<include "headeror">>
   <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
 	<main id="main" class="">
-	<<if $audioOn is true>><audio src="assets/audio/MoTT_Spies_IF_HE_SHOWS_TADAH__MP3.mp3" autoplay>Audio not supported in your browser</audio><</if>>
+	<<if $audioOn is true>><audio src="assets/audio/MoTT_Spies_v2-44_IF_HE_SHOWS.mp3" autoplay>Audio not supported in your browser</audio><</if>>
 
 <div class="intro-text" id="intro">
-<p>If he shows TADAH how to nudge my first mission… so that it fails... I won’t become the Chief Timer! </p>
+<p>If he shows TADAH how to nudge my first mission... so that it fails... I won’t become the Chief Timer! </p>
 <div class="green-link-wrapper" aria-label="Click a button or link to move on">
 		<<link "Next">>
 		<<goto $nextpass>>
@@ -1914,7 +1919,7 @@ setup.JSLoaded = false;
 	<<include "headeror">>
   <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
 	<main id="main" class="">
-	<<if $audioOn is true>><audio src="assets/audio/MoTT_Spies_WE_NEED_TO_STOP_KEVIN__MP3.mp3" autoplay>Audio not supported in your browser</audio><</if>>
+	<<if $audioOn is true>><audio src="assets/audio/MoTT_Spies_v2-45_WE_NEED_TO_STOP.mp3" autoplay>Audio not supported in your browser</audio><</if>>
 
 <div class="intro-text" id="intro">
 <p>We need to stop Kevin passing on that information to TADAH!</p>
@@ -1942,12 +1947,12 @@ setup.JSLoaded = false;
 	<<include "headeror">>
   <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
 	<main id="main" class="">
-	<<if $audioOn is true>><audio src="assets/audio/MoTT_Spies_I_NEED_YOU__MP3.mp3" autoplay>Audio not supported in your browser</audio><</if>>
+	<<if $audioOn is true>><audio src="assets/audio/MoTT_Spies_v2-46_HEAD_TO_THE_SHOP.mp3" autoplay>Audio not supported in your browser</audio><</if>>
 
 <div class="intro-text" id="intro">
-<p>I need you to head out of the exhibition, to the shop. </p>
+<p>I need you to head out of the exhibition, to the shop.</p>
 <p>Ask my friend behind the counter if they have received anything from Kevin.  </p>
-<p>We must find out what he has been hiding. </p>
+<p>We must find out what he has been hiding.</p>
 
 
 <div class="green-link-wrapper" aria-label="Click a button or link to move on">
@@ -1964,16 +1969,16 @@ setup.JSLoaded = false;
 :: outro4b [nobr]
 <<set $prevpass to "outro4">>
 <<set $passage to "outro4b">>
-<<set $nextpass to "outro5">>
+<<set $nextpass to "outro4b2">>
 
 <div class="wrapper chief">
 	<<include "headeror">>
   <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
 	<main id="main" class="">
-	<<if $audioOn is true>><audio src="" autoplay>Audio not supported in your browser</audio><</if>>
+	<<if $audioOn is true>><audio src="assets/audio/MoTT_Spies_v2-47_LET_ME_KNOW.mp3" autoplay>Audio not supported in your browser</audio><</if>>
 
 <div class="intro-text" id="intro">
-<p>Let me know when you have what he has stored there. As I have a set of numbers that might be useful. 	
+<p>Let me know when you have what he has stored there. As I have a set of numbers that might be useful.
 </p>
 
 <div class="green-link-wrapper" aria-label="Click a button or link to move on">
@@ -1987,9 +1992,35 @@ setup.JSLoaded = false;
 	<<include "footer">>
 </div>
 
+:: outro4b2 [nobr]
+<<set $prevpass to "outro4b">>
+<<set $passage to "outro4b2">>
+<<set $nextpass to "outro5">>
+
+<div class="wrapper chief">
+	<<include "headeror">>
+  <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
+	<main id="main" class="">
+	<<if $audioOn is true>><audio src="assets/audio/MoTT_Spies_v2-48_SIT_IN_CAFE.mp3" autoplay>Audio not supported in your browser</audio><</if>>
+
+<div class="intro-text" id="intro">
+<p>Good work.</p>
+<p>Find a place you can sit down in the café.</p>
+<div class="green-link-wrapper" aria-label="Click a button or link to move on">
+		<<link "We're sat down">>
+		<<goto $nextpass>>
+			<</link>>
+	</div> 
+	</div>
+
+	</main>
+	<<include "footer">>
+</div>
+
+
 
 :: outro5 [nobr]
-<<set $prevpass to "outro4b">>
+<<set $prevpass to "outro4b2">>
 <<set $passage to "outro5">>
 <<set $nextpass to "outro5">>
 
@@ -1997,13 +2028,14 @@ setup.JSLoaded = false;
 	<<include "headeror">>
   <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
 	<main id="main" class="">
-	<<if $audioOn is true>><audio src="assets/audio/MoTT_Spies_IF_YOU_FIND_THE_PASSWORD__MP3.mp3" autoplay>Audio not supported in your browser</audio><</if>>
+	<<if $audioOn is true>><audio src="assets/audio/MoTT_Spies_v2-49_I_HAVE_THE_NUMBER.mp3" autoplay>Audio not supported in your browser</audio><</if>>
 
 <div class="intro-text" id="intro">
-<p>Enter 527 and open it up. </p>
-<p>If you find the Secret Bench File password, hand back the book to the bookkeeper and head back to the tablet where you started. </p>
-<p>Remember it might be in UV Writing. </p>
-<p>We must know what Kevin is up to. </p>
+<p>I have the number 527 that you could use. </p>
+<p>If you find the Secret Bench File password, close the book up and hand it back to the bookkeeper, then head back to the tablet where you started.</p>
+<p>We must know what Kevin is up to.</p>
+<br/>
+<p>It's time for the truth Kevin! </p>
 
 
 	</div>
