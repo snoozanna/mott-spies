@@ -1,0 +1,375 @@
+/* GENERAL */
+.intro-text {
+  max-width: 100%;
+}
+header{
+  margin-block-end: 7rem;
+}
+
+header.plain{
+  margin-block-end: 2rem;
+}
+main{
+  z-index: 999;
+}
+
+p {
+  font-size: 2rem;
+  font-family: var(--roboto);
+}
+
+.button-wrapper > button {
+  font-size: 2rem;
+}
+
+footer {
+  padding: 2rem 0;
+}
+
+/* CODEWORDS */
+.result-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+/* VIDEO */
+
+.button-wrapper.videol {
+  position: absolute;
+  left: 4%;
+  bottom: 4%;
+}
+
+.button-wrapper.videor {
+  position: absolute;
+  right: 4%;
+  bottom: 4%;
+}
+
+.rotate-warning {
+  display: none;
+}
+
+@media only screen and (orientation: landscape) {
+  .wrapper.portrait {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    header {
+      display: none;
+    }
+    main {
+      display: none;
+    }
+    .rotate-warning {
+      display: inherit;
+      background: white;
+      padding: 3rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      h3 {
+        color: black;
+        margin-block-end: 0;
+      }
+    }
+  }
+}
+
+@media only screen and (orientation: portrait) {
+  .wrapper.landscape {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    main {
+      display: none;
+    }
+    .rotate-warning {
+      display: inherit;
+      background: white;
+      padding: 3rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      h3 {
+        color: black;
+        margin-block-end: 0;
+      }
+    }
+  }
+}
+
+@media only screen and (orientation: landscape) {
+  /* Your landscape-specific styles here */
+
+  .wrapper.video{
+    background-image: url("./../assets/img/bg-mob2.png");
+    background-size: 108vw;
+    background-position: -3rem;
+    background-repeat: repeat;
+  }
+
+  .button-wrapper.videol {
+    button {
+      font-size: 1.6rem;
+    }
+  }
+
+  .button-wrapper.videor {
+    button {
+      font-size: 1.6rem;
+    }
+  }
+}
+
+/* PHONE DISSOLVE  */
+@keyframes dissolvephone {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+.dissolvephone {
+  animation: 20s dissolve 0.5s ease-out forwards;
+}
+
+/* SPINNIIG LOGO */
+main.spin{
+  height: 100%;
+}
+.mottlogo-wrapper{
+  height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* SHOW NOTHING ON A COMP  */
+
+.comp-warning{
+  display: none;
+  color: black;
+
+}
+
+@media screen and (min-width: 500px) {
+#startBtn{
+  display: none
+}
+  .comp-warning {
+    display: initial;
+    text-align: center;
+  }
+  .comp-warning > p {
+    text-align: center;
+    font-size: 3rem;
+  }
+}
+
+/* SPIES STYLING  */
+
+header{
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+
+header > .logo-wrapper{
+  width: fit-content;
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 2rem;
+    max-width: 30%;
+}
+header > .logo-wrapper > img{
+
+  width: initial;
+  max-width: 100%;
+}
+
+header > .logo-wrapper.black > img{
+  filter: invert(1);
+}
+
+.wrapper{
+  overflow: auto;
+  background-blend-mode: multiply;
+}
+.wrapper.spies {
+  background-image: url("./../assets/img/sq-paper-low.jpeg");
+  background-size: cover;
+  background-repeat:no-repeat;
+  background-position:  center;
+}
+
+
+
+.wrapper.spies1 {
+  background-image: url(./../assets/img/1spy.png), url(./../assets/img/2men-bot.png), url(./../assets/img/1man.png), url(./../assets/img/sq-paper-low.jpeg);
+  background-repeat: no-repeat;
+  background-position: 0% 21%, 17% 100%, 87% 0%, center;
+  background-size: 26%, 59%, 21%, cover;
+}
+
+
+.wrapper.spies2 {
+  background-image: url(./../assets/img/1spy.png), url(./../assets/img/2men.png), url(./../assets/img/1man.png), url(./../assets/img/sq-paper-low.jpeg);
+  background-repeat: no-repeat;
+  background-position: 0% 82%, 100% 72%, 75% 0%, center;
+  background-size: 10%, 25%, 13%, cover;
+}
+
+.wrapper.chief {
+  background-image: url(./../assets/img/chief-timer-face.png), url(./../assets/img/sq-paper-low.jpeg);
+  background-repeat: no-repeat;
+  background-position: 85% 100%, center;
+  background-size: 53%, cover;
+}
+
+.wrapper.chieflogo {
+  background-image: url(./../assets/img/chief-timer-face.png), url(./../assets/img/na-logo-black.png), url(./../assets/img/sq-paper-low.jpeg);
+  background-repeat: no-repeat;
+  background-position: 85% 100%, 10% 95%, center;
+  background-size: 53%,20%, cover;
+}
+
+.wrapper.transcript {
+  background-image: url(./../assets/img/sq-paper-low.jpeg);
+  background-repeat: no-repeat;
+  background-position:  center;
+  background-size:  cover;
+}
+
+
+
+.number-title {
+  font-family: var(--body);
+  background-color: transparent;
+  position: fixed;
+  text-transform: uppercase;
+  display: inline-block;
+  margin-left: -5rem;
+  margin-top: 2rem;
+}
+
+.station-num {
+  font-size: 26rem;
+  font-weight: 900;
+  text-decoration: underline;
+  line-height: 22rem;
+  position: relative; /* Allows proper stacking */
+}
+
+.station-text {
+  font-size: 4rem;  /* Adjust size */
+  font-weight: bold;
+  position: absolute;
+  top: 50%; /* Adjust to position over number */
+  left: 50%;
+  transform: translate(-50%, -50%); /* Centers text over number */
+  margin-left: 5rem;
+  padding: 0.5rem;
+  color: var(--orange);
+}
+
+/* title transition  */
+
+.wrapper.titletrans {
+  background-image: url(./../assets/img/1spy.png), url(./../assets/img/2men-bot.png), url(./../assets/img/1man.png), url(./../assets/img/sq-paper-low.jpeg);
+  background-repeat: no-repeat;
+  background-position: 0% 21%, 17% 100%, 87% 0%, center;
+  background-size: 26%, 59%, 21%, cover;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapper.titletrans > .number-title{
+  margin-left: initial; 
+margin-top: initial;
+}
+
+.wrapper.titletrans > .number-title > .station-num{
+  position: initial;
+  font-size: 30rem;
+}
+
+
+
+/* TYPOGRAPHY  */
+
+.intro-text > p{
+  background-color: initial;
+  font-family: var(--roboto);
+  color: black;
+  margin-block-end: 0.5rem;
+  font-weight: 400;
+}
+
+
+
+
+/* ENTRANCE  */
+
+.entrance {
+  display: flex;
+  justify-content: center;
+  align-items:center;
+flex-direction: column;
+}
+.entrance > .entrance-btn-wrapper{
+  display: flex;
+  justify-content: center;
+  align-items:center;
+flex-direction: column;
+gap:2rem;
+}
+
+.entrance > .entrance-btn-wrapper >.center-img-wrapper{
+  max-width: 200px;
+  mix-blend-mode: multiply;
+}
+
+
+/* TRASNCRIPT  */
+.intro-text.transcript{
+  color: black;
+}
+
+.intro-text.transcript > .message{
+  display: flex;
+  flex-direction: column;
+}
+
+.intro-text.transcript > .message > p{
+  background: aliceblue;
+    border-radius: 20px;
+    padding: 1rem;
+    width: fit-content;
+    max-width: 90%;
+    font-size: 1.6rem;
+}
+
+.intro-text.transcript > .message.b{
+  text-align: end;
+  align-items: end;
+}
+
+.intro-text.transcript > .message.b > p{
+  background: rgb(224 235 230);
+}
+
+.intro-text.transcript > .message.r > p{
+  background: rgb(241 238 232);
+}
+
+.intro-text.transcript > .message > .sender{
+font-weight: 900;
+}
+
+#intro{
+  overflow-y: auto;
+}

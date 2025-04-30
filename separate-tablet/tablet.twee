@@ -15,9 +15,9 @@ MoTT Spies - National Archives - Tablet
 @import url('https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Fondamento:ital@1&family=Italianno&family=Cairo:wght@500&family=Noto+Sans+Mono:wght@700&family=Tangerine:wght@400;700&family=IM+Fell+Double+Pica+SC&family=IM+Fell+English+SC&family=IM+Fell+English:ital@0;1&family=Niconne&family=Montserrat:wght@400;800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
 
-@import url("../styles/generics.css");
-@import url("../styles/styles.css");
-@import url("../styles/tablet.css");s
+@import url("styles/generics.css");
+@import url("styles/styles.css");
+@import url("styles/tablet.css");s
 /* @import url("ogstyles.css"); */
 
 
@@ -26,18 +26,18 @@ UIBar.destroy();
 
 
 :: StoryInit
-<<cacheaudio "ping1" "../assets/sound/ping1.mp3">>
-<<cacheaudio "correct" "../assets/sound/keep2.mp3">>
-<<cacheaudio "uploading" "../assets/sound/uploading.mp3">>
-<<cacheaudio "complete" "../assets/sound/uploadcomplete.mp3">>
-<<cacheaudio "signal" "../assets/sound/signal.mp3">>
+<<cacheaudio "ping1" "assets/sound/ping1.mp3">>
+<<cacheaudio "correct" "assets/sound/keep2.mp3">>
+<<cacheaudio "uploading" "assets/sound/uploading.mp3">>
+<<cacheaudio "complete" "assets/sound/uploadcomplete.mp3">>
+<<cacheaudio "signal" "assets/sound/signal.mp3">>
 <<waitforaudio>>
 
 
 
 :: header [nobr]
 <header class="tablet">
-	<div class="logo-wrapper"><img src="../assets/img/na-logo.png" alt="The National Archives Logo" class="logo na" aria-hidden="true"></div> </header>
+	<div class="logo-wrapper"><img src="assets/img/na-logo.png" alt="The National Archives Logo" class="logo na" aria-hidden="true"></div> </header>
 
 
 :: entrance [nobr]
@@ -49,7 +49,7 @@ UIBar.destroy();
 <main id="main" class="tabletmain entrance">
 
 <div class="entrance-btn-wrapper">
-	<div class="center-img-wrapper"><img src="../assets/img/green-cog-logo.png" alt="Green Cog Logo"/></div>
+	<div class="center-img-wrapper"><img src="assets/img/green-cog-logo.png" alt="Green Cog Logo"/></div>
 	
 	<div class="green-link-wrapper">
 		<<link "Start ">>
@@ -111,9 +111,9 @@ UIBar.destroy();
 	/* <<include "header">> */
 	<main id="main" class="tabletmain ">
 
-	<audio src="../assets/audio/MoTT_Spies_TABLET_PLATFORM__MP3.mp3" autoplay>Audio not supported in your browser</audio>
+	<audio src="assets/audio/MoTT_Spies_TABLET_PLATFORM__MP3.mp3" autoplay>Audio not supported in your browser</audio>
 <div class="tablet-text">
-<div class="logo-wrapper"><img src="../assets/img/na-logo.png" alt="The National Archives Logo" class="logo na" aria-hidden="true"></div> 
+<div class="logo-wrapper"><img src="assets/img/na-logo.png" alt="The National Archives Logo" class="logo na" aria-hidden="true"></div> 
 <p>Before you head into the exhibition here’s a few things you should know.</p>
 <p>It’s all about MI5, which is the Security Service for the UK that works hard to keep us all safe, and it is full of stories about the people who have made MI5 what it is.</p>
 <p>I need to stay here and keep an eye on Kevin, but you can access the online platform with your MoTT spy kit. </p>
@@ -149,7 +149,7 @@ UIBar.destroy();
 
 
 :: pwBench [nobr]
-  <div class="doc-container"> <img src="../assets/img/4468641.png"/>
+  <div class="doc-container"> <img src="assets/img/4468641.png"/>
  <span>Secret Bench File</span>
 <div id="codewordWrapper" class="codeword-wrapper">
   <label for="textbox--password" tabindex="0" ><span aria-label="Enter password" role="label">Enter password:</span></label>
