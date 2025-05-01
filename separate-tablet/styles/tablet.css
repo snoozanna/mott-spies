@@ -142,12 +142,13 @@ main.tabletmain.entrance > .bench-file-wrapper{
     color:black;
     font-weight: 900;
     text-transform: uppercase;
-    img {
-      max-width: 8rem;
-    }
+  
  
   }
 
+  .bench-file-wrapper > img {
+    max-width: 8rem;
+  }
 
   .folder-container,
   .doc-container {
@@ -155,24 +156,28 @@ main.tabletmain.entrance > .bench-file-wrapper{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    img {
-      max-width: 6rem;
-    }
+   
+  }
+
+  .folder-container,
+  .doc-container >
+  img {
+    max-width: 6rem;
   }
   
-  .doc-container > #codewordWrapper > .code-input,
-  .sfsMount > #codewordWrapper > .code-input {
-    input {
+  .doc-container > #codewordWrapper > .code-input > input {
       min-width: inherit;
       max-width: 15rem;
       margin-block-end: 1rem;
       padding: 0.3rem;
       font-weight: 900;
       color: black;
-      &:focus {
+  
+    
+  }
+
+  .doc-container > #codewordWrapper > .code-input > input:focus {
         color: white;
-      }
-    }
   }
   
   .doc-container > #codewordWrapper,
@@ -182,10 +187,13 @@ main.tabletmain.entrance > .bench-file-wrapper{
       flex-direction: column;
       justify-content: center;
       text-align: center;
-    .button-wrapper {
+  }
+  
+
+
+  .doc-container > #codewordWrapper > 
+    .button-wrapper >
       button {
         font-size: 1.2rem;
       }
-    }
-  }
   
