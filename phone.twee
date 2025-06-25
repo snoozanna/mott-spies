@@ -703,7 +703,8 @@ setup.JSLoaded = false;
 <div class="intro-text" id="intro">
 <p>The next scribble in his notebook is a name, “Maxwell Knight” – now that’s someone I know quite well! Have a look and see what you can find out about him nearby. </p>
 <p>It seems like Kevin might have hidden something near his name on the board marked ‘Methods and techniques’ – retrace your steps and you might find it. </p>
-<p>Use your UV torch to see if you can uncover anything.</p>
+<p>Use your UV torch to see if you can uncover anything.</p> 
+<p>(Check near his photo)</p>
 
 
 <<include "pwUV">>
@@ -725,7 +726,7 @@ setup.JSLoaded = false;
 	<<if $audioOn is true>><audio src="assets/audio/MoTT_Spies_v2-16_STATION_2_NUDGE.mp3" autoplay>Audio not supported in your browser</audio><</if>>
 
 <div class="intro-text" id="intro">
-<p>Head back to the MoTT base, where our logo is on the floor. </p>
+<p>Head back to the MoTT base, where our logo is on the floor  (in the gallery).</p>
 
 </div>
 
